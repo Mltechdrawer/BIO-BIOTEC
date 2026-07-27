@@ -1,0 +1,83 @@
+site_name: Bioinformática - Grado en Biotecnología
+theme:
+  name: material
+extra_css:
+  - styles/extra.css
+nav:
+  - Inicio: index.md
+  - Contenidos: contenidos.md
+  - Bloque I. Gestión de información biológica y recursos bioinformáticos:
+      - Presentación: bloque1_gestion_informacion/index.md
+      - Teoría:
+          - Tema 1: bloque1_gestion_informacion/teoria/tema01_introduccion_bioinformatica.md
+          - Tema 2: bloque1_gestion_informacion/teoria/tema02_bases_datos_biologicas.md
+          - Tema 3: bloque1_gestion_informacion/teoria/tema03_representacion_gestion_datos.md
+      - Prácticas en aula:
+          - Aula 1.1: bloque1_gestion_informacion/aula/aula1_01.md
+          - Aula 1.2: bloque1_gestion_informacion/aula/aula1_02.md
+          - Aula 1.3: bloque1_gestion_informacion/aula/aula1_03.md
+          - Aula 1.4: bloque1_gestion_informacion/aula/aula1_04.md
+          - Aula 1.5: bloque1_gestion_informacion/aula/aula1_05.md
+      - Prácticas de laboratorio:
+          - Laboratorio 1.1: bloque1_gestion_informacion/laboratorio/lab1_01.md
+          - Laboratorio 1.2: bloque1_gestion_informacion/laboratorio/lab1_02.md
+          - Laboratorio 1.3: bloque1_gestion_informacion/laboratorio/lab1_03.md
+          - Laboratorio 1.4: bloque1_gestion_informacion/laboratorio/lab1_04.md
+          - Laboratorio 1.5: bloque1_gestion_informacion/laboratorio/lab1_05.md
+  - Bloque II. Métodos computacionales para el análisis de secuencias:
+      - Presentación: bloque2_analisis_secuencias/index.md
+      - Teoría:
+          - Tema 4: bloque2_analisis_secuencias/teoria/tema04_comparacion_secuencias.md
+          - Tema 5: bloque2_analisis_secuencias/teoria/tema05_busqueda_alineamiento.md
+          - Tema 6: bloque2_analisis_secuencias/teoria/tema06_filogenia_computacional.md
+      - Prácticas en aula:
+          - Aula 2.1: bloque2_analisis_secuencias/aula/aula2_01.md
+          - Aula 2.2: bloque2_analisis_secuencias/aula/aula2_02.md
+          - Aula 2.3: bloque2_analisis_secuencias/aula/aula2_03.md
+          - Aula 2.4: bloque2_analisis_secuencias/aula/aula2_04.md
+          - Aula 2.5: bloque2_analisis_secuencias/aula/aula2_05.md
+      - Prácticas de laboratorio:
+          - Laboratorio 2.1: bloque2_analisis_secuencias/laboratorio/lab2_01.md
+          - Laboratorio 2.2: bloque2_analisis_secuencias/laboratorio/lab2_02.md
+          - Laboratorio 2.3: bloque2_analisis_secuencias/laboratorio/lab2_03.md
+          - Laboratorio 2.4: bloque2_analisis_secuencias/laboratorio/lab2_04.md
+          - Laboratorio 2.5: bloque2_analisis_secuencias/laboratorio/lab2_05.md
+  - Bloque III. Análisis funcional y minería de datos biológicos:
+      - Presentación: bloque3_analisis_funcional/index.md
+      - Teoría:
+          - Tema 7: bloque3_analisis_funcional/teoria/tema07_anotacion_computacional.md
+          - Tema 8: bloque3_analisis_funcional/teoria/tema08_integracion_explotacion.md
+          - Tema 9: bloque3_analisis_funcional/teoria/tema09_ia_automatizacion.md
+      - Prácticas en aula:
+          - Aula 3.1: bloque3_analisis_funcional/aula/aula3_01.md
+          - Aula 3.2: bloque3_analisis_funcional/aula/aula3_02.md
+          - Aula 3.3: bloque3_analisis_funcional/aula/aula3_03.md
+          - Aula 3.4: bloque3_analisis_funcional/aula/aula3_04.md
+          - Aula 3.5: bloque3_analisis_funcional/aula/aula3_05.md
+      - Prácticas de laboratorio:
+          - Laboratorio 3.1: bloque3_analisis_funcional/laboratorio/lab3_01.md
+          - Laboratorio 3.2: bloque3_analisis_funcional/laboratorio/lab3_02.md
+          - Laboratorio 3.3: bloque3_analisis_funcional/laboratorio/lab3_03.md
+          - Laboratorio 3.4: bloque3_analisis_funcional/laboratorio/lab3_04.md
+          - Laboratorio 3.5: bloque3_analisis_funcional/laboratorio/lab3_05.md
+  - Bloque IV. Bioinformática estructural y modelado computacional:
+      - Presentación: bloque4_bioinformatica_estructural/index.md
+      - Teoría:
+          - Tema 10: bloque4_bioinformatica_estructural/teoria/tema10_recursos_estructurales.md
+          - Tema 11: bloque4_bioinformatica_estructural/teoria/tema11_visualizacion_estructuras.md
+          - Tema 12: bloque4_bioinformatica_estructural/teoria/tema12_prediccion_ia.md
+      - Prácticas en aula:
+          - Aula 4.1: bloque4_bioinformatica_estructural/aula/aula4_01.md
+          - Aula 4.2: bloque4_bioinformatica_estructural/aula/aula4_02.md
+          - Aula 4.3: bloque4_bioinformatica_estructural/aula/aula4_03.md
+          - Aula 4.4: bloque4_bioinformatica_estructural/aula/aula4_04.md
+          - Aula 4.5: bloque4_bioinformatica_estructural/aula/aula4_05.md
+      - Prácticas de laboratorio:
+          - Laboratorio 4.1: bloque4_bioinformatica_estructural/laboratorio/lab4_01.md
+          - Laboratorio 4.2: bloque4_bioinformatica_estructural/laboratorio/lab4_02.md
+          - Laboratorio 4.3: bloque4_bioinformatica_estructural/laboratorio/lab4_03.md
+          - Laboratorio 4.4: bloque4_bioinformatica_estructural/laboratorio/lab4_04.md
+          - Laboratorio 4.5: bloque4_bioinformatica_estructural/laboratorio/lab4_05.md
+  - Recursos: recursos.md
+  - Bibliografía: bibliografia.md
+  - Proyecto: proyecto.md
