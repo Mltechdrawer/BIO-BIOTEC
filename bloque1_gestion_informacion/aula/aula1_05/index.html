@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#actividad-de-aula-1-recursos-bioinformaticos-y-gestion-de-informacion-biologica-sesion-5" class="md-skip">
+        <a href="#practica-de-aula-5-representacion-calidad-y-trazabilidad-de-datos-biologicos" class="md-skip">
           Skip to content
         </a>
       
@@ -600,27 +600,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#proposito" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Propósito
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#desarrollo-de-la-actividad" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Desarrollo de la actividad
+      Objetivos
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entregable" class="md-nav__link">
+  <a href="#contexto" class="md-nav__link">
     <span class="md-ellipsis">
-      Entregable
+      Contexto
     </span>
   </a>
   
@@ -2419,27 +2419,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#proposito" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Propósito
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#desarrollo-de-la-actividad" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Desarrollo de la actividad
+      Objetivos
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entregable" class="md-nav__link">
+  <a href="#contexto" class="md-nav__link">
     <span class="md-ellipsis">
-      Entregable
+      Contexto
     </span>
   </a>
   
@@ -2461,13 +2461,382 @@
 
 
 
-<h1 id="actividad-de-aula-1-recursos-bioinformaticos-y-gestion-de-informacion-biologica-sesion-5">Actividad de aula 1. Recursos bioinformáticos y gestión de información biológica. Sesión 5</h1>
-<h2 id="proposito">Propósito</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="desarrollo-de-la-actividad">Desarrollo de la actividad</h2>
-<p>Pendiente de desarrollar.</p>
+<h1 id="practica-de-aula-5-representacion-calidad-y-trazabilidad-de-datos-biologicos">Práctica de Aula 5. Representación, calidad y trazabilidad de datos biológicos</h1>
+<h2 id="duracion">Duración</h2>
+<p><strong>1 hora</strong></p>
+<p>Esta práctica cierra el <strong>Bloque I. Gestión de información biológica y recursos bioinformáticos</strong> y se realiza después de completar el Tema 3.</p>
+<p>Se trabajarán de forma integrada los contenidos relacionados con:</p>
+<ul>
+<li>formatos FASTA, GenBank y PDB;</li>
+<li>metadatos y anotación;</li>
+<li>calidad de los datos;</li>
+<li>interoperabilidad;</li>
+<li>reutilización;</li>
+<li>trazabilidad;</li>
+<li>y principios FAIR.</li>
+</ul>
+<hr />
+<h2 id="objetivos">Objetivos</h2>
+<p>Al finalizar la práctica, el estudiante será capaz de:</p>
+<ul>
+<li>Reconocer qué información contiene y qué información omite cada formato bioinformático.</li>
+<li>Comparar distintas representaciones de una misma entidad biológica.</li>
+<li>Diferenciar entre secuencia, metadatos y anotación.</li>
+<li>Identificar pérdidas de información producidas al transformar datos entre formatos.</li>
+<li>Evaluar la trazabilidad y reutilización de un conjunto de datos biológicos.</li>
+<li>Aplicar criterios básicos de calidad e interoperabilidad.</li>
+<li>Documentar un pequeño flujo de gestión de datos de forma reproducible.</li>
+</ul>
+<hr />
+<h2 id="contexto">Contexto</h2>
+<p>En las prácticas anteriores se ha trabajado cómo localizar información en bases de datos y cómo relacionar registros procedentes de distintos recursos.</p>
+<p>El último paso del Bloque I consiste en analizar <strong>cómo se representa y conserva esa información</strong>.</p>
+<p>Una misma entidad biológica puede aparecer de distintas formas:</p>
+<ul>
+<li>como secuencia FASTA;</li>
+<li>como registro GenBank;</li>
+<li>como registro de proteína;</li>
+<li>como estructura PDB;</li>
+<li>o como información integrada en una base de datos.</li>
+</ul>
+<p>Estas representaciones no son equivalentes.</p>
+<p>Cada una conserva determinados elementos y omite otros.</p>
+<p>Por ello, gestionar correctamente un dato implica saber:</p>
+<blockquote>
+<p><strong>qué información contiene, qué contexto necesita y qué debemos conservar para poder reutilizarlo más adelante.</strong></p>
+</blockquote>
+<hr />
+<h1 id="caso-de-estudio">Caso de estudio</h1>
+<p>El profesorado proporcionará un pequeño conjunto de datos relacionado con una entidad biológica.</p>
+<p>El conjunto incluirá, cuando sea posible:</p>
+<ul>
+<li>una secuencia en formato FASTA;</li>
+<li>un registro GenBank o equivalente;</li>
+<li>información asociada a una proteína;</li>
+<li>y un registro estructural o fragmento de información PDB.</li>
+</ul>
+<p>El objetivo será comparar las representaciones y evaluar qué información se conserva en cada una.</p>
+<hr />
+<h1 id="tarea-1-identificar-los-componentes-del-dato">Tarea 1. Identificar los componentes del dato</h1>
+<p>Para cada representación, indica:</p>
+<ol>
+<li>Qué entidad representa.</li>
+<li>Qué identificador utiliza.</li>
+<li>Si contiene secuencia.</li>
+<li>Si contiene metadatos.</li>
+<li>Si contiene anotaciones.</li>
+<li>Si contiene referencias bibliográficas.</li>
+<li>Si contiene información de versión o actualización.</li>
+<li>Si contiene referencias cruzadas.</li>
+</ol>
+<h3 id="tabla-de-trabajo">Tabla de trabajo</h3>
+<table>
+<thead>
+<tr>
+<th>Representación</th>
+<th>Entidad</th>
+<th>Secuencia</th>
+<th>Metadatos</th>
+<th>Anotaciones</th>
+<th>Referencias</th>
+<th>Versión</th>
+<th>Referencias cruzadas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FASTA</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GenBank</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PDB / registro estructural</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="tarea-2-fasta-frente-a-genbank">Tarea 2. FASTA frente a GenBank</h1>
+<p>Compara la representación FASTA con el registro GenBank correspondiente.</p>
+<p>Responde:</p>
+<ol>
+<li>¿Qué información aparece en ambos?</li>
+<li>¿Qué información aparece únicamente en GenBank?</li>
+<li>¿Qué información se pierde si convertimos GenBank a FASTA?</li>
+<li>¿Qué ventajas ofrece FASTA para el procesamiento automático?</li>
+<li>¿En qué situación preferirías conservar el registro GenBank completo?</li>
+<li>¿Qué información adicional deberías guardar junto al fichero FASTA para mantener la trazabilidad?</li>
+</ol>
+<hr />
+<h1 id="tarea-3-dato-metadato-y-anotacion">Tarea 3. Dato, metadato y anotación</h1>
+<p>Selecciona al menos seis elementos del registro analizado y clasifícalos como:</p>
+<ul>
+<li><strong>dato</strong>;</li>
+<li><strong>metadato</strong>;</li>
+<li><strong>anotación</strong>.</li>
+</ul>
+<h3 id="tabla">Tabla</h3>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Clasificación</th>
+<th>Justificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Dato / Metadato / Anotación</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Dato / Metadato / Anotación</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Dato / Metadato / Anotación</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Dato / Metadato / Anotación</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Dato / Metadato / Anotación</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Dato / Metadato / Anotación</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Después responde:</p>
+<blockquote>
+<p>¿Puede una anotación convertirse en un dato de entrada para otro análisis? Explica brevemente tu respuesta.</p>
+</blockquote>
+<hr />
+<h1 id="tarea-4-calidad-del-dato">Tarea 4. Calidad del dato</h1>
+<p>Evalúa el conjunto proporcionado utilizando los siguientes criterios:</p>
+<h3 id="completitud">Completitud</h3>
+<ul>
+<li>¿Falta alguna información necesaria?</li>
+<li>¿La secuencia está completa?</li>
+<li>¿Existen campos vacíos o no disponibles?</li>
+</ul>
+<h3 id="consistencia">Consistencia</h3>
+<ul>
+<li>¿Coinciden organismo, identificadores y descripción entre recursos?</li>
+<li>¿Existen diferencias que deban aclararse?</li>
+</ul>
+<h3 id="procedencia">Procedencia</h3>
+<ul>
+<li>¿Puede determinarse de dónde procede cada dato?</li>
+<li>¿Se conoce el recurso de origen?</li>
+</ul>
+<h3 id="evidencia">Evidencia</h3>
+<ul>
+<li>¿Qué información es experimental?</li>
+<li>¿Qué información está anotada o predicha?</li>
+</ul>
+<h3 id="actualizacion">Actualización</h3>
+<ul>
+<li>¿Se conoce la versión o fecha de actualización?</li>
+</ul>
+<p>Resume la evaluación en una tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Valoración</th>
+<th>Evidencia encontrada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Completitud</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Consistencia</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Procedencia</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Evidencia</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Actualización</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="tarea-5-trazabilidad">Tarea 5. Trazabilidad</h1>
+<p>Imagina que vas a utilizar la secuencia proporcionada en un análisis bioinformático.</p>
+<p>Indica qué información conservarías para que otra persona pudiera repetir tu trabajo.</p>
+<p>Como mínimo, considera:</p>
+<ul>
+<li>recurso de origen;</li>
+<li>identificador;</li>
+<li>versión;</li>
+<li>organismo;</li>
+<li>fecha de descarga;</li>
+<li>formato;</li>
+<li>descripción;</li>
+<li>transformación realizada;</li>
+<li>herramienta utilizada;</li>
+<li>parámetros relevantes.</li>
+</ul>
+<p>Completa:</p>
+<pre><code class="language-text">Recurso de origen:
+Identificador:
+Versión:
+Organismo:
+Fecha de descarga:
+Formato original:
+Formato utilizado en el análisis:
+Transformaciones realizadas:
+Herramienta:
+Parámetros:
+Observaciones:
+</code></pre>
+<hr />
+<h1 id="tarea-6-interoperabilidad">Tarea 6. Interoperabilidad</h1>
+<p>Observa los identificadores asociados a la entidad estudiada.</p>
+<p>Identifica al menos dos relaciones entre recursos.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-text">GenBank accession
+      ↓
+UniProt accession
+      ↓
+PDB ID
+</code></pre>
+<p>Responde:</p>
+<ol>
+<li>¿Se utiliza el mismo identificador en todos los recursos?</li>
+<li>¿Cómo se establece la relación entre ellos?</li>
+<li>¿Qué ocurriría si se conservara únicamente uno de los identificadores sin indicar su base de datos?</li>
+<li>¿Por qué las referencias cruzadas favorecen la interoperabilidad?</li>
+</ol>
+<hr />
+<h1 id="tarea-7-evaluacion-fair">Tarea 7. Evaluación FAIR</h1>
+<p>Valora brevemente el conjunto de datos según los principios FAIR.</p>
+<h2 id="findable">Findable</h2>
+<p>¿Dispone de identificadores y metadatos que permitan localizarlo?</p>
+<p><strong>Valoración:</strong><br />
+...</p>
+<h2 id="accessible">Accessible</h2>
+<p>¿Puede recuperarse desde un recurso claramente identificado?</p>
+<p><strong>Valoración:</strong><br />
+...</p>
+<h2 id="interoperable">Interoperable</h2>
+<p>¿Utiliza formatos e identificadores que permiten relacionarlo con otros recursos?</p>
+<p><strong>Valoración:</strong><br />
+...</p>
+<h2 id="reusable">Reusable</h2>
+<p>¿Dispone de suficiente contexto, procedencia y documentación para reutilizarlo?</p>
+<p><strong>Valoración:</strong><br />
+...</p>
+<hr />
+<h1 id="tarea-8-decision-final">Tarea 8. Decisión final</h1>
+<p>Imagina que debes entregar a otro grupo de investigación los datos utilizados para continuar el análisis.</p>
+<p>Dispones de tres opciones:</p>
+<h3 id="opcion-a">Opción A</h3>
+<p>Entregar únicamente el fichero FASTA.</p>
+<h3 id="opcion-b">Opción B</h3>
+<p>Entregar FASTA y una captura de pantalla del registro original.</p>
+<h3 id="opcion-c">Opción C</h3>
+<p>Entregar FASTA junto con identificador, versión, recurso de origen, metadatos relevantes y documentación del procedimiento utilizado.</p>
+<p>Selecciona una opción y justifica tu elección en un máximo de 100 palabras.</p>
+<hr />
 <h2 id="entregable">Entregable</h2>
-<p>Pendiente de definir.</p>
+<p>El documento final debe incluir:</p>
+<ol>
+<li>Tabla comparativa de representaciones.</li>
+<li>Comparación FASTA/GenBank.</li>
+<li>Clasificación de dato, metadato y anotación.</li>
+<li>Evaluación de calidad.</li>
+<li>Ficha de trazabilidad.</li>
+<li>Relaciones entre identificadores.</li>
+<li>Valoración FAIR.</li>
+<li>Decisión final justificada.</li>
+</ol>
+<p>La extensión orientativa es de <strong>2 páginas</strong>.</p>
+<hr />
+<h2 id="criterios-de-realizacion">Criterios de realización</h2>
+<p>Se valorará:</p>
+<ul>
+<li>la correcta interpretación de los formatos;</li>
+<li>la distinción entre dato, metadato y anotación;</li>
+<li>la identificación de información perdida entre representaciones;</li>
+<li>la calidad de la documentación;</li>
+<li>la capacidad para mantener la trazabilidad;</li>
+<li>la comprensión de la interoperabilidad;</li>
+<li>y la justificación de las decisiones tomadas.</li>
+</ul>
+<p>No se valorará la copia literal de campos, sino la capacidad para explicar <strong>qué información es necesaria para comprender y reutilizar un dato biológico</strong>.</p>
+<hr />
+<h2 id="preguntas-de-cierre">Preguntas de cierre</h2>
+<ol>
+<li>¿Por qué FASTA es adecuado para muchos análisis pero insuficiente para documentar completamente un dato?</li>
+<li>¿Qué diferencia existe entre formato y significado biológico?</li>
+<li>¿Qué elemento de la trazabilidad consideras más importante?</li>
+<li>¿Qué problema puede producir una conversión de formatos?</li>
+<li>¿Por qué los principios FAIR son relevantes en Bioinformática?</li>
+</ol>
+<hr />
+<h2 id="cierre-del-bloque-i">Cierre del Bloque I</h2>
+<p>Con esta práctica se completa el Bloque I.</p>
+<p>Las cinco prácticas de aula han seguido la secuencia:</p>
+<ol>
+<li>Leer y comprender literatura científica.</li>
+<li>Utilizar correctamente artículos científicos.</li>
+<li>Comprender bases de datos y registros.</li>
+<li>Recuperar información entre varios recursos.</li>
+<li>Representar, documentar y reutilizar datos.</li>
+</ol>
+<p>La lógica global del bloque puede resumirse así:</p>
+<blockquote>
+<p><strong>buscar → evaluar → recuperar → relacionar → representar → documentar → reutilizar</strong></p>
+</blockquote>
+<p>Estas competencias se utilizarán a partir del Bloque II, donde comenzaremos a trabajar con métodos computacionales para comparar y analizar secuencias.</p>
 
 
 

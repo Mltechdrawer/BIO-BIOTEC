@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-1" class="md-skip">
+        <a href="#practica-de-laboratorio-11-repaso-de-algoritmia-y-fundamentos-de-python" class="md-skip">
           Skip to content
         </a>
       
@@ -669,36 +669,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2428,36 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2479,15 +2443,187 @@
 
 
 
-<h1 id="practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-1">Práctica 1. Recursos bioinformáticos y bases de datos biológicas. Sesión 1</h1>
-<h2 id="objetivo-practico">Objetivo práctico</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="herramientas">Herramientas</h2>
-<p>Pendiente de definir.</p>
-<h2 id="tareas">Tareas</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="resultado-esperado">Resultado esperado</h2>
-<p>Pendiente de definir.</p>
+<h1 id="practica-de-laboratorio-11-repaso-de-algoritmia-y-fundamentos-de-python">Práctica de Laboratorio 1.1. Repaso de algoritmia y fundamentos de Python</h1>
+<h2 id="duracion">Duración</h2>
+<p><strong>1 hora</strong></p>
+<p>Esta sesión inicia la práctica de laboratorio del Bloque I y tiene como objetivo recuperar los conocimientos mínimos de programación necesarios para trabajar posteriormente con datos biológicos.</p>
+<p>No se plantea como un curso general de Python, sino como una <strong>nivelación técnica orientada a Bioinformática</strong>.</p>
+<hr />
+<h2 id="objetivos">Objetivos</h2>
+<p>Al finalizar la sesión, el estudiante será capaz de:</p>
+<ul>
+<li>Interpretar un problema sencillo como una secuencia de pasos.</li>
+<li>Identificar entrada, procesamiento y salida.</li>
+<li>Utilizar variables y tipos básicos en Python.</li>
+<li>Emplear condicionales y bucles.</li>
+<li>Definir funciones sencillas.</li>
+<li>Aplicar estos elementos a pequeños ejemplos relacionados con secuencias biológicas.</li>
+</ul>
+<hr />
+<h1 id="1-pensamiento-algoritmico">1. Pensamiento algorítmico</h1>
+<p>Un algoritmo es una secuencia finita y ordenada de instrucciones para resolver un problema.</p>
+<p>En Bioinformática muchos procedimientos pueden describirse mediante el esquema:</p>
+<p><strong>entrada → procesamiento → salida</strong></p>
+<p>Ejemplo:</p>
+<p><strong>Entrada:</strong> una secuencia de ADN.<br />
+<strong>Procesamiento:</strong> contar sus nucleótidos.<br />
+<strong>Salida:</strong> número de A, C, G y T.</p>
+<p>Antes de programar conviene describir el procedimiento.</p>
+<h3 id="ejemplo">Ejemplo</h3>
+<p>Problema: calcular la longitud de una secuencia.</p>
+<p>Algoritmo:</p>
+<ol>
+<li>Recibir la secuencia.</li>
+<li>Contar el número de caracteres.</li>
+<li>Mostrar el resultado.</li>
+</ol>
+<p>En Python:</p>
+<pre><code class="language-python">sequence = &quot;ATGCGTAAC&quot;
+length = len(sequence)
+print(length)
+</code></pre>
+<hr />
+<h1 id="2-variables-y-tipos-basicos">2. Variables y tipos básicos</h1>
+<p>Una variable permite almacenar un valor.</p>
+<pre><code class="language-python">sequence = &quot;ATGCGTAAC&quot;
+length = 9
+gc_content = 55.6
+valid = True
+</code></pre>
+<p>Tipos básicos utilizados en esta práctica:</p>
+<ul>
+<li><code>str</code>: cadenas de texto;</li>
+<li><code>int</code>: números enteros;</li>
+<li><code>float</code>: números decimales;</li>
+<li><code>bool</code>: valores lógicos.</li>
+</ul>
+<p>Podemos comprobar el tipo de una variable:</p>
+<pre><code class="language-python">print(type(sequence))
+</code></pre>
+<hr />
+<h1 id="3-operaciones-con-cadenas">3. Operaciones con cadenas</h1>
+<p>Una secuencia puede representarse inicialmente como una cadena de caracteres.</p>
+<pre><code class="language-python">sequence = &quot;ATGCGTAAC&quot;
+</code></pre>
+<p>Algunas operaciones útiles:</p>
+<pre><code class="language-python">print(len(sequence))
+print(sequence[0])
+print(sequence[-1])
+print(sequence.count(&quot;A&quot;))
+print(sequence.upper())
+</code></pre>
+<p>También podemos extraer fragmentos:</p>
+<pre><code class="language-python">fragment = sequence[2:6]
+print(fragment)
+</code></pre>
+<hr />
+<h1 id="4-condicionales">4. Condicionales</h1>
+<p>Los condicionales permiten ejecutar acciones diferentes según una condición.</p>
+<pre><code class="language-python">base = &quot;G&quot;
+
+if base == &quot;G&quot;:
+    print(&quot;La base es guanina&quot;)
+else:
+    print(&quot;La base es otra&quot;)
+</code></pre>
+<p>Ejemplo de validación:</p>
+<pre><code class="language-python">base = &quot;X&quot;
+
+if base in &quot;ACGT&quot;:
+    print(&quot;Base válida&quot;)
+else:
+    print(&quot;Base no válida&quot;)
+</code></pre>
+<hr />
+<h1 id="5-bucles">5. Bucles</h1>
+<p>Un bucle permite repetir una acción.</p>
+<pre><code class="language-python">sequence = &quot;ATGC&quot;
+
+for base in sequence:
+    print(base)
+</code></pre>
+<p>Podemos utilizarlo para contar manualmente:</p>
+<pre><code class="language-python">sequence = &quot;ATGCGTAAC&quot;
+count_a = 0
+
+for base in sequence:
+    if base == &quot;A&quot;:
+        count_a += 1
+
+print(count_a)
+</code></pre>
+<hr />
+<h1 id="6-funciones">6. Funciones</h1>
+<p>Una función agrupa instrucciones que resuelven una tarea concreta.</p>
+<pre><code class="language-python">def sequence_length(sequence):
+    return len(sequence)
+
+print(sequence_length(&quot;ATGCGTAAC&quot;))
+</code></pre>
+<p>Otro ejemplo:</p>
+<pre><code class="language-python">def count_base(sequence, base):
+    return sequence.count(base)
+
+print(count_base(&quot;ATGCGTAAC&quot;, &quot;G&quot;))
+</code></pre>
+<p>Las funciones permiten:</p>
+<ul>
+<li>evitar repetir código;</li>
+<li>organizar mejor un programa;</li>
+<li>separar tareas;</li>
+<li>y reutilizar procedimientos.</li>
+</ul>
+<hr />
+<h1 id="7-actividad-practica">7. Actividad práctica</h1>
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+<p>Crea una variable con la siguiente secuencia:</p>
+<pre><code class="language-text">ATGCGTATCGATCGATCG
+</code></pre>
+<p>Calcula:</p>
+<ul>
+<li>longitud;</li>
+<li>número de A;</li>
+<li>número de C;</li>
+<li>número de G;</li>
+<li>número de T.</li>
+</ul>
+<hr />
+<h2 id="ejercicio-2">Ejercicio 2</h2>
+<p>Escribe un programa que recorra una secuencia y muestre cada base junto con su posición.</p>
+<p>Ejemplo esperado:</p>
+<pre><code class="language-text">1 A
+2 T
+3 G
+...
+</code></pre>
+<hr />
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+<p>Escribe una función:</p>
+<pre><code class="language-python">def is_valid_dna(sequence):
+    ...
+</code></pre>
+<p>que devuelva <code>True</code> si la secuencia contiene únicamente A, C, G y T.</p>
+<hr />
+<h2 id="ejercicio-4">Ejercicio 4</h2>
+<p>Modifica la función anterior para que acepte indistintamente mayúsculas y minúsculas.</p>
+<hr />
+<h1 id="8-entregable">8. Entregable</h1>
+<p>Entrega un fichero Python o un cuaderno con:</p>
+<ul>
+<li>los cuatro ejercicios;</li>
+<li>una breve explicación de qué hace cada fragmento de código;</li>
+<li>y una captura o copia de la salida obtenida.</li>
+</ul>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>Antes de programar conviene describir el algoritmo.</li>
+<li>Una secuencia biológica puede representarse inicialmente como una cadena.</li>
+<li>Los condicionales permiten tomar decisiones.</li>
+<li>Los bucles permiten recorrer datos.</li>
+<li>Las funciones permiten organizar y reutilizar soluciones.</li>
+<li>La programación se utilizará como herramienta para trabajar con datos biológicos.</li>
+</ul>
 
 
 

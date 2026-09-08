@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-2" class="md-skip">
+        <a href="#practica-de-laboratorio-12-secuencias-biologicas-como-datos" class="md-skip">
           Skip to content
         </a>
       
@@ -692,36 +692,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2428,36 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2479,15 +2443,185 @@
 
 
 
-<h1 id="practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-2">Práctica 1. Recursos bioinformáticos y bases de datos biológicas. Sesión 2</h1>
-<h2 id="objetivo-practico">Objetivo práctico</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="herramientas">Herramientas</h2>
-<p>Pendiente de definir.</p>
-<h2 id="tareas">Tareas</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="resultado-esperado">Resultado esperado</h2>
-<p>Pendiente de definir.</p>
+<h1 id="practica-de-laboratorio-12-secuencias-biologicas-como-datos">Práctica de Laboratorio 1.2. Secuencias biológicas como datos</h1>
+<h2 id="duracion">Duración</h2>
+<p><strong>1 hora</strong></p>
+<p>Esta sesión continúa el repaso de Python y se centra en el tratamiento de secuencias biológicas como datos computacionales.</p>
+<hr />
+<h2 id="objetivos">Objetivos</h2>
+<p>Al finalizar la sesión, el estudiante será capaz de:</p>
+<ul>
+<li>Representar secuencias de ADN mediante cadenas de texto.</li>
+<li>Calcular longitud y composición.</li>
+<li>Calcular contenido GC.</li>
+<li>Validar secuencias.</li>
+<li>Obtener complementaria y reverso complementario.</li>
+<li>Organizar pequeñas funciones reutilizables.</li>
+</ul>
+<hr />
+<h1 id="1-una-secuencia-como-dato">1. Una secuencia como dato</h1>
+<p>Una secuencia de ADN puede representarse mediante una cadena:</p>
+<pre><code class="language-python">sequence = &quot;ATGCGTAAC&quot;
+</code></pre>
+<p>Esto permite aplicar operaciones básicas de programación.</p>
+<hr />
+<h1 id="2-longitud-y-composicion">2. Longitud y composición</h1>
+<pre><code class="language-python">sequence = &quot;ATGCGTAAC&quot;
+
+print(&quot;Longitud:&quot;, len(sequence))
+print(&quot;A:&quot;, sequence.count(&quot;A&quot;))
+print(&quot;C:&quot;, sequence.count(&quot;C&quot;))
+print(&quot;G:&quot;, sequence.count(&quot;G&quot;))
+print(&quot;T:&quot;, sequence.count(&quot;T&quot;))
+</code></pre>
+<p>La composición permite obtener una primera descripción del dato.</p>
+<hr />
+<h1 id="3-contenido-gc">3. Contenido GC</h1>
+<p>El contenido GC es el porcentaje de nucleótidos G y C.</p>
+<p>[
+GC\% = \frac{G+C}{Longitud} \times 100
+]</p>
+<p>En Python:</p>
+<pre><code class="language-python">sequence = &quot;ATGCGTAAC&quot;
+
+g = sequence.count(&quot;G&quot;)
+c = sequence.count(&quot;C&quot;)
+
+gc = (g + c) / len(sequence) * 100
+
+print(gc)
+</code></pre>
+<p>Podemos convertirlo en una función:</p>
+<pre><code class="language-python">def gc_content(sequence):
+    g = sequence.count(&quot;G&quot;)
+    c = sequence.count(&quot;C&quot;)
+    return (g + c) / len(sequence) * 100
+</code></pre>
+<hr />
+<h1 id="4-validacion">4. Validación</h1>
+<p>Una secuencia de ADN básica debería contener únicamente:</p>
+<pre><code class="language-text">A C G T
+</code></pre>
+<p>Podemos comprobarlo:</p>
+<pre><code class="language-python">def is_valid_dna(sequence):
+    sequence = sequence.upper()
+
+    for base in sequence:
+        if base not in &quot;ACGT&quot;:
+            return False
+
+    return True
+</code></pre>
+<p>Ejemplo:</p>
+<pre><code class="language-python">print(is_valid_dna(&quot;ATGCC&quot;))
+print(is_valid_dna(&quot;ATGCX&quot;))
+</code></pre>
+<hr />
+<h1 id="5-complementaria">5. Complementaria</h1>
+<p>Las parejas de bases son:</p>
+<pre><code class="language-text">A ↔ T
+C ↔ G
+</code></pre>
+<p>Podemos utilizar un diccionario:</p>
+<pre><code class="language-python">complement = {
+    &quot;A&quot;: &quot;T&quot;,
+    &quot;T&quot;: &quot;A&quot;,
+    &quot;C&quot;: &quot;G&quot;,
+    &quot;G&quot;: &quot;C&quot;
+}
+</code></pre>
+<p>Y construir la secuencia complementaria:</p>
+<pre><code class="language-python">sequence = &quot;ATGC&quot;
+result = &quot;&quot;
+
+for base in sequence:
+    result += complement[base]
+
+print(result)
+</code></pre>
+<hr />
+<h1 id="6-reverso-complementario">6. Reverso complementario</h1>
+<p>El reverso complementario se obtiene:</p>
+<ol>
+<li>calculando la secuencia complementaria;</li>
+<li>invirtiendo el resultado.</li>
+</ol>
+<pre><code class="language-python">def reverse_complement(sequence):
+    complement = {
+        &quot;A&quot;: &quot;T&quot;,
+        &quot;T&quot;: &quot;A&quot;,
+        &quot;C&quot;: &quot;G&quot;,
+        &quot;G&quot;: &quot;C&quot;
+    }
+
+    result = &quot;&quot;
+
+    for base in sequence.upper():
+        result += complement[base]
+
+    return result[::-1]
+</code></pre>
+<hr />
+<h1 id="7-actividad-practica">7. Actividad práctica</h1>
+<p>Utiliza la secuencia:</p>
+<pre><code class="language-text">ATGCGCGTTAACCGTAGCTA
+</code></pre>
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+<p>Calcula:</p>
+<ul>
+<li>longitud;</li>
+<li>A;</li>
+<li>C;</li>
+<li>G;</li>
+<li>T;</li>
+<li>contenido GC.</li>
+</ul>
+<h2 id="ejercicio-2">Ejercicio 2</h2>
+<p>Comprueba si la secuencia es válida.</p>
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+<p>Obtén:</p>
+<ul>
+<li>complementaria;</li>
+<li>reverso complementario.</li>
+</ul>
+<h2 id="ejercicio-4">Ejercicio 4</h2>
+<p>Crea una función:</p>
+<pre><code class="language-python">def sequence_summary(sequence):
+    ...
+</code></pre>
+<p>que muestre:</p>
+<pre><code class="language-text">Longitud:
+A:
+C:
+G:
+T:
+GC%:
+Válida:
+</code></pre>
+<hr />
+<h1 id="8-actividad-de-reflexion">8. Actividad de reflexión</h1>
+<p>Responde:</p>
+<ol>
+<li>¿Qué información biológica estamos ignorando al representar una secuencia únicamente como una cadena?</li>
+<li>¿Qué ocurriría si aparecieran caracteres diferentes de A, C, G y T?</li>
+<li>¿Por qué sería útil separar cada operación en una función?</li>
+</ol>
+<hr />
+<h1 id="9-entregable">9. Entregable</h1>
+<p>Entrega:</p>
+<ul>
+<li>código de los ejercicios;</li>
+<li>resultados obtenidos;</li>
+<li>respuesta breve a las tres preguntas de reflexión.</li>
+</ul>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>Una secuencia puede ser tratada como una estructura de datos.</li>
+<li>Muchas operaciones bioinformáticas básicas pueden expresarse mediante algoritmos sencillos.</li>
+<li>Validar los datos antes de analizarlos evita errores posteriores.</li>
+<li>La organización del código en funciones mejora la reutilización.</li>
+</ul>
 
 
 

@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-4" class="md-skip">
+        <a href="#practica-de-laboratorio-14-recuperacion-de-datos-biologicos-reales" class="md-skip">
           Skip to content
         </a>
       
@@ -738,36 +738,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2428,36 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2479,15 +2443,149 @@
 
 
 
-<h1 id="practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-4">Práctica 1. Recursos bioinformáticos y bases de datos biológicas. Sesión 4</h1>
-<h2 id="objetivo-practico">Objetivo práctico</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="herramientas">Herramientas</h2>
-<p>Pendiente de definir.</p>
-<h2 id="tareas">Tareas</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="resultado-esperado">Resultado esperado</h2>
-<p>Pendiente de definir.</p>
+<h1 id="practica-de-laboratorio-14-recuperacion-de-datos-biologicos-reales">Práctica de Laboratorio 1.4. Recuperación de datos biológicos reales</h1>
+<h2 id="duracion">Duración</h2>
+<p><strong>1 hora</strong></p>
+<p>Esta sesión aplica los conocimientos anteriores a información obtenida de recursos bioinformáticos reales.</p>
+<hr />
+<h2 id="objetivos">Objetivos</h2>
+<p>Al finalizar la sesión, el estudiante será capaz de:</p>
+<ul>
+<li>Localizar un registro biológico en un recurso oficial.</li>
+<li>Identificar correctamente la entidad y el organismo.</li>
+<li>Recuperar una secuencia en formato FASTA.</li>
+<li>Registrar identificador y procedencia.</li>
+<li>Procesar la secuencia con Python.</li>
+<li>Diferenciar recuperación de datos y análisis.</li>
+</ul>
+<hr />
+<h1 id="1-flujo-de-trabajo">1. Flujo de trabajo</h1>
+<p>La sesión seguirá este esquema:</p>
+<p><strong>buscar → verificar → descargar → documentar → procesar</strong></p>
+<hr />
+<h1 id="2-buscar">2. Buscar</h1>
+<p>El profesorado asignará un gen o una proteína.</p>
+<p>Utiliza un recurso oficial, por ejemplo:</p>
+<ul>
+<li>NCBI;</li>
+<li>EMBL-EBI;</li>
+<li>UniProt.</li>
+</ul>
+<p>Localiza el registro correspondiente.</p>
+<hr />
+<h1 id="3-verificar">3. Verificar</h1>
+<p>Antes de descargar, comprueba:</p>
+<ul>
+<li>nombre;</li>
+<li>organismo;</li>
+<li>tipo de entidad;</li>
+<li>identificador;</li>
+<li>descripción;</li>
+<li>estado de revisión si procede.</li>
+</ul>
+<p>Completa:</p>
+<pre><code class="language-text">Recurso:
+Entidad:
+Organismo:
+Identificador:
+Descripción:
+</code></pre>
+<hr />
+<h1 id="4-descargar">4. Descargar</h1>
+<p>Descarga la secuencia en formato FASTA.</p>
+<p>Guarda el fichero utilizando un nombre claro.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-text">P12345_human.fasta
+</code></pre>
+<p>Evita nombres como:</p>
+<pre><code class="language-text">sequence1.fasta
+download.fasta
+file.fasta
+</code></pre>
+<hr />
+<h1 id="5-documentar">5. Documentar</h1>
+<p>Crea un pequeño fichero de texto o bloque de documentación:</p>
+<pre><code class="language-text">Recurso:
+URL:
+Identificador:
+Organismo:
+Fecha de descarga:
+Formato:
+Observaciones:
+</code></pre>
+<hr />
+<h1 id="6-procesar-con-python">6. Procesar con Python</h1>
+<p>Utiliza las funciones desarrolladas en las sesiones anteriores para obtener:</p>
+<ul>
+<li>longitud;</li>
+<li>composición;</li>
+<li>contenido GC si se trata de ADN;</li>
+<li>validación;</li>
+<li>número de registros.</li>
+</ul>
+<p>Si se trata de proteína, adapta el análisis para trabajar con aminoácidos.</p>
+<hr />
+<h1 id="7-comparar-registro-y-fichero">7. Comparar registro y fichero</h1>
+<p>Responde:</p>
+<ol>
+<li>¿Qué información aparece en el registro web pero no en FASTA?</li>
+<li>¿Qué información conserva FASTA?</li>
+<li>¿Qué identificador aparece en la cabecera?</li>
+<li>¿El nombre del fichero permite identificar claramente su contenido?</li>
+<li>¿Podría otra persona repetir la descarga a partir de tu documentación?</li>
+</ol>
+<hr />
+<h1 id="8-actividad-practica">8. Actividad práctica</h1>
+<h2 id="parte-a">Parte A</h2>
+<p>Localiza el registro asignado.</p>
+<h2 id="parte-b">Parte B</h2>
+<p>Descarga FASTA.</p>
+<h2 id="parte-c">Parte C</h2>
+<p>Procesa la secuencia con Python.</p>
+<h2 id="parte-d">Parte D</h2>
+<p>Genera una salida resumida:</p>
+<pre><code class="language-text">Recurso:
+Identificador:
+Organismo:
+Longitud:
+Tipo de secuencia:
+Fecha:
+</code></pre>
+<h2 id="parte-e">Parte E</h2>
+<p>Guarda conjuntamente:</p>
+<ul>
+<li>FASTA;</li>
+<li>script;</li>
+<li>documentación.</li>
+</ul>
+<hr />
+<h1 id="9-entregable">9. Entregable</h1>
+<p>Entrega una carpeta con:</p>
+<pre><code class="language-text">datos/
+    secuencia.fasta
+
+codigo/
+    analisis.py
+
+README.txt
+</code></pre>
+<p>El <code>README.txt</code> debe incluir:</p>
+<ul>
+<li>origen de los datos;</li>
+<li>identificador;</li>
+<li>fecha;</li>
+<li>instrucciones para ejecutar el script;</li>
+<li>y breve descripción del resultado.</li>
+</ul>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>Los datos reales deben verificarse antes de descargarse.</li>
+<li>Un identificador permite recuperar el mismo registro.</li>
+<li>Un dato sin procedencia pierde valor.</li>
+<li>FASTA conserva la secuencia, pero no todo el contexto.</li>
+<li>Código, datos y documentación forman parte del análisis.</li>
+</ul>
 
 
 

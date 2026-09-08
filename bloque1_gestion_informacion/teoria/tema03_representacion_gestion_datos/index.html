@@ -439,27 +439,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#planificacion-de-la-sesion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Planificación de la sesión
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2419,27 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#planificacion-de-la-sesion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Planificación de la sesión
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2462,16 +2444,749 @@
 
 
 <h1 id="tema-3-representacion-y-gestion-de-datos-biologicos">Tema 3. Representación y gestión de datos biológicos</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="planificacion-de-la-sesion">Planificación de la sesión</h2>
+<p>Este tema está previsto para <strong>2 horas de teoría</strong>, distribuidas entre la semana 3 y la semana 4.</p>
+<p>La primera hora se centra principalmente en:</p>
 <ul>
-<li>3.1 Formatos FASTA, GenBank y PDB.</li>
-<li>3.2 Metadatos y anotación.</li>
-<li>3.3 Calidad, interoperabilidad y reutilización de datos.</li>
+<li>3.1. Formatos FASTA, GenBank y PDB.</li>
+<li>Introducción a la representación estructurada de datos biológicos.</li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<p>La segunda hora se centra principalmente en:</p>
+<ul>
+<li>3.2. Metadatos y anotación.</li>
+<li>3.3. Calidad, interoperabilidad y reutilización de datos.</li>
+</ul>
+<hr />
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Explicar por qué los datos biológicos necesitan representaciones computacionales estandarizadas.</li>
+<li>Reconocer la estructura básica de los formatos FASTA, GenBank y PDB.</li>
+<li>Diferenciar entre dato biológico, metadato y anotación.</li>
+<li>Identificar qué información contextual es necesaria para interpretar correctamente un registro biológico.</li>
+<li>Comprender la importancia de la calidad, la interoperabilidad y la reutilización de datos.</li>
+<li>Relacionar formatos, metadatos, identificadores y anotaciones dentro de un flujo de trabajo bioinformático.</li>
+<li>Valorar la trazabilidad y la reproducibilidad como propiedades esenciales de la gestión de datos biológicos.</li>
+</ul>
+<hr />
+<h1 id="introduccion">Introducción</h1>
+<p>En el tema anterior se estudió dónde se almacena la información biológica y cómo se organiza dentro de bases de datos y recursos bioinformáticos.</p>
+<p>El siguiente paso consiste en comprender <strong>cómo se representa esa información para que pueda ser almacenada, intercambiada y procesada por herramientas computacionales</strong>.</p>
+<p>Una secuencia de ADN, una proteína o una estructura tridimensional pueden describirse de muchas formas. Sin embargo, para que diferentes programas, bases de datos y equipos de investigación puedan trabajar con los mismos datos es necesario utilizar convenciones comunes.</p>
+<p>Estas convenciones se materializan en:</p>
+<ul>
+<li>formatos de archivo;</li>
+<li>campos estructurados;</li>
+<li>identificadores;</li>
+<li>metadatos;</li>
+<li>anotaciones;</li>
+<li>y reglas para describir la procedencia del dato.</li>
+</ul>
+<p>En Bioinformática, representar correctamente la información es tan importante como analizarla.</p>
+<p>Un análisis puede ser técnicamente correcto y, sin embargo, resultar difícil de reproducir si:</p>
+<ul>
+<li>el formato de entrada no está bien documentado;</li>
+<li>faltan metadatos;</li>
+<li>no se conoce la versión de los datos;</li>
+<li>las anotaciones son ambiguas;</li>
+<li>o no se conserva la procedencia de la información.</li>
+</ul>
+<p>Por ello, este tema se centra en una idea fundamental:</p>
+<blockquote>
+<p><strong>Los datos biológicos necesitan una representación estructurada, contextualizada y trazable para poder ser interpretados y reutilizados.</strong></p>
+</blockquote>
+<hr />
+<h1 id="31-formatos-fasta-genbank-y-pdb">3.1. Formatos FASTA, GenBank y PDB</h1>
+<h2 id="311-por-que-existen-formatos-bioinformaticos">3.1.1. ¿Por qué existen formatos bioinformáticos?</h2>
+<p>Los ordenadores no interpretan directamente conceptos como "gen", "proteína" o "estructura molecular".</p>
+<p>Para procesar estos elementos es necesario representarlos mediante estructuras de datos.</p>
+<p>Un formato define:</p>
+<ul>
+<li>cómo comienza un registro;</li>
+<li>cómo se identifican sus campos;</li>
+<li>cómo se representa una secuencia;</li>
+<li>cómo se incorporan anotaciones;</li>
+<li>y cómo se distinguen diferentes tipos de información.</li>
+</ul>
+<p>Los formatos permiten que diferentes herramientas puedan intercambiar datos.</p>
+<p>Un mismo dato puede representarse de distintas formas según el objetivo.</p>
+<p>Por ejemplo, una secuencia puede almacenarse:</p>
+<ul>
+<li>de forma muy simple, únicamente con un identificador y la secuencia;</li>
+<li>o en un registro más completo que incluya organismo, anotaciones, referencias y características funcionales.</li>
+</ul>
+<p>La elección del formato depende de la tarea.</p>
+<hr />
+<h2 id="312-fasta">3.1.2. FASTA</h2>
+<p>FASTA es uno de los formatos más sencillos y utilizados en Bioinformática para representar secuencias.</p>
+<p>Puede contener:</p>
+<ul>
+<li>secuencias de ADN;</li>
+<li>ARN;</li>
+<li>o proteínas.</li>
+</ul>
+<p>Su estructura básica es:</p>
+<pre><code class="language-text">&gt;identificador descripción
+SECUENCIA
+</code></pre>
+<p>La primera línea comienza con el símbolo <code>&gt;</code>.</p>
+<p>Después aparece un identificador y, opcionalmente, una descripción.</p>
+<p>Las líneas siguientes contienen la secuencia.</p>
+<h3 id="ejemplo">Ejemplo</h3>
+<pre><code class="language-text">&gt;seq01 proteína hipotética
+MKTLLVLAVAVSA...
+</code></pre>
+<p>El formato FASTA es deliberadamente simple.</p>
+<p>No intenta almacenar toda la información sobre la entidad biológica.</p>
+<p>Su objetivo principal es representar la secuencia de forma fácilmente procesable.</p>
+<h3 id="ventajas">Ventajas</h3>
+<ul>
+<li>Es simple.</li>
+<li>Es legible por humanos.</li>
+<li>Es compatible con muchas herramientas.</li>
+<li>Es fácil de generar y procesar.</li>
+<li>Puede contener una o muchas secuencias.</li>
+</ul>
+<h3 id="limitaciones">Limitaciones</h3>
+<p>FASTA tiene poca capacidad para representar información compleja.</p>
+<p>Por ejemplo, no contiene de forma estructurada:</p>
+<ul>
+<li>anotaciones funcionales;</li>
+<li>posiciones de genes;</li>
+<li>referencias;</li>
+<li>taxonomía detallada;</li>
+<li>calidad;</li>
+<li>o características moleculares.</li>
+</ul>
+<p>Por ello, suele utilizarse cuando el elemento principal de interés es la <strong>secuencia</strong>.</p>
+<hr />
+<h2 id="313-identificadores-en-fasta">3.1.3. Identificadores en FASTA</h2>
+<p>La línea de cabecera puede contener distintos tipos de identificadores dependiendo del recurso del que proceda la secuencia.</p>
+<p>Esto puede generar problemas si no se conserva la procedencia.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">&gt;ABC123
+</code></pre>
+<p>no permite saber por sí solo:</p>
+<ul>
+<li>qué base de datos generó el identificador;</li>
+<li>qué versión corresponde;</li>
+<li>qué organismo representa;</li>
+<li>o qué tipo de entidad contiene.</li>
+</ul>
+<p>Por ello, cuando se trabaja con FASTA es recomendable conservar información adicional sobre el origen de la secuencia.</p>
+<p>Una práctica adecuada consiste en registrar:</p>
+<ul>
+<li>recurso de origen;</li>
+<li>identificador;</li>
+<li>versión;</li>
+<li>fecha de descarga;</li>
+<li>organismo;</li>
+<li>y criterios utilizados para seleccionar la secuencia.</li>
+</ul>
+<hr />
+<h2 id="314-fasta-con-multiples-secuencias">3.1.4. FASTA con múltiples secuencias</h2>
+<p>Un fichero FASTA puede contener varios registros.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-text">&gt;seq01
+ATGCGT...
+&gt;seq02
+ATGACT...
+&gt;seq03
+ATGAAA...
+</code></pre>
+<p>Este tipo de fichero es frecuente en:</p>
+<ul>
+<li>alineamientos;</li>
+<li>análisis comparativos;</li>
+<li>búsquedas de similitud;</li>
+<li>filogenia;</li>
+<li>y procesamiento masivo de secuencias.</li>
+</ul>
+<p>La simplicidad del formato facilita su uso en flujos de trabajo automatizados.</p>
+<hr />
+<h2 id="315-genbank">3.1.5. GenBank</h2>
+<p>El formato GenBank contiene una representación mucho más rica que FASTA.</p>
+<p>No almacena únicamente una secuencia.</p>
+<p>También puede incluir:</p>
+<ul>
+<li>identificadores;</li>
+<li>descripción;</li>
+<li>organismo;</li>
+<li>taxonomía;</li>
+<li>referencias;</li>
+<li>características anotadas;</li>
+<li>genes;</li>
+<li>regiones codificantes;</li>
+<li>coordenadas;</li>
+<li>productos;</li>
+<li>y la secuencia.</li>
+</ul>
+<p>Un registro GenBank puede interpretarse como una combinación de:</p>
+<p><strong>secuencia + metadatos + anotaciones</strong></p>
+<h3 id="estructura-general">Estructura general</h3>
+<p>Un registro suele incluir campos como:</p>
+<pre><code class="language-text">LOCUS
+DEFINITION
+ACCESSION
+VERSION
+SOURCE
+ORGANISM
+REFERENCE
+FEATURES
+ORIGIN
+</code></pre>
+<p>Cada campo tiene una función.</p>
+<hr />
+<h2 id="316-locus-accession-y-version">3.1.6. LOCUS, ACCESSION y VERSION</h2>
+<h3 id="locus">LOCUS</h3>
+<p>Incluye información general sobre el registro, como:</p>
+<ul>
+<li>nombre;</li>
+<li>longitud;</li>
+<li>tipo de molécula;</li>
+<li>y otros atributos.</li>
+</ul>
+<h3 id="accession">ACCESSION</h3>
+<p>Contiene el número de acceso.</p>
+<p>Es un identificador estable del registro.</p>
+<h3 id="version">VERSION</h3>
+<p>Permite distinguir diferentes versiones de la secuencia.</p>
+<p>Esta diferencia es importante.</p>
+<p>El identificador puede mantenerse, mientras que la versión cambia cuando se modifica la secuencia.</p>
+<p>Para reproducir un análisis resulta preferible registrar la versión concreta utilizada.</p>
+<hr />
+<h2 id="317-source-y-organism">3.1.7. SOURCE y ORGANISM</h2>
+<p>Estos campos describen el origen biológico de la secuencia.</p>
+<p>Pueden incluir:</p>
+<ul>
+<li>nombre científico;</li>
+<li>clasificación taxonómica;</li>
+<li>y otra información relacionada con el organismo.</li>
+</ul>
+<p>Esta información es esencial.</p>
+<p>Dos secuencias similares pueden pertenecer a especies diferentes y tener funciones distintas.</p>
+<hr />
+<h2 id="318-features">3.1.8. FEATURES</h2>
+<p>La sección <code>FEATURES</code> contiene anotaciones asociadas a posiciones concretas de la secuencia.</p>
+<p>Puede representar:</p>
+<ul>
+<li>genes;</li>
+<li>regiones codificantes;</li>
+<li>exones;</li>
+<li>intrones;</li>
+<li>promotores;</li>
+<li>regiones reguladoras;</li>
+<li>o características moleculares.</li>
+</ul>
+<p>Ejemplo conceptual:</p>
+<pre><code class="language-text">gene            100..900
+CDS             150..850
+</code></pre>
+<p>Las coordenadas permiten relacionar información biológica con posiciones concretas.</p>
+<p>A partir de esta sección es posible responder preguntas como:</p>
+<ul>
+<li>¿dónde comienza un gen?</li>
+<li>¿qué región codifica una proteína?</li>
+<li>¿qué producto se asocia a una región?</li>
+<li>¿qué anotaciones existen sobre una posición?</li>
+</ul>
+<hr />
+<h2 id="319-origin">3.1.9. ORIGIN</h2>
+<p>La sección <code>ORIGIN</code> contiene la secuencia.</p>
+<p>La información se presenta con numeración y organización por bloques.</p>
+<p>A diferencia de FASTA, la secuencia aparece integrada dentro de un registro más amplio.</p>
+<hr />
+<h2 id="3110-fasta-frente-a-genbank">3.1.10. FASTA frente a GenBank</h2>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>FASTA</th>
+<th>GenBank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Secuencia</td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Identificador</td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Descripción</td>
+<td>Limitada</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Organismo</td>
+<td>No estructurado</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Referencias</td>
+<td>No</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Anotaciones</td>
+<td>No</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Coordenadas</td>
+<td>No</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td>Procesamiento simple</td>
+<td>Muy fácil</td>
+<td>Más complejo</td>
+</tr>
+<tr>
+<td>Uso típico</td>
+<td>Análisis de secuencias</td>
+<td>Registro anotado</td>
+</tr>
+</tbody>
+</table>
+<p>No existe un formato "mejor".</p>
+<p>Cada uno responde a una necesidad diferente.</p>
+<hr />
+<h2 id="3111-pdb">3.1.11. PDB</h2>
+<p>El formato PDB se utiliza para representar estructuras tridimensionales de macromoléculas.</p>
+<p>A diferencia de FASTA o GenBank, el elemento principal no es una secuencia lineal, sino la posición de átomos en el espacio.</p>
+<p>Un fichero PDB puede incluir:</p>
+<ul>
+<li>identificadores;</li>
+<li>información experimental;</li>
+<li>cadenas;</li>
+<li>residuos;</li>
+<li>átomos;</li>
+<li>coordenadas tridimensionales;</li>
+<li>ligandos;</li>
+<li>y otros elementos estructurales.</li>
+</ul>
+<h3 id="representacion-de-coordenadas">Representación de coordenadas</h3>
+<p>Las líneas <code>ATOM</code> contienen información sobre átomos pertenecientes a macromoléculas.</p>
+<p>Ejemplo simplificado:</p>
+<pre><code class="language-text">ATOM      1  N   MET A   1      11.104  13.207   9.245
+</code></pre>
+<p>Este tipo de línea codifica:</p>
+<ul>
+<li>número de átomo;</li>
+<li>nombre del átomo;</li>
+<li>residuo;</li>
+<li>cadena;</li>
+<li>posición del residuo;</li>
+<li>coordenadas X, Y, Z.</li>
+</ul>
+<p>Estas coordenadas permiten reconstruir una estructura tridimensional.</p>
+<hr />
+<h2 id="3112-secuencia-y-estructura">3.1.12. Secuencia y estructura</h2>
+<p>FASTA representa principalmente una secuencia.</p>
+<p>GenBank representa una secuencia acompañada de anotaciones.</p>
+<p>PDB representa una estructura tridimensional.</p>
+<p>Podemos resumirlo así:</p>
+<p><strong>FASTA → secuencia</strong></p>
+<p><strong>GenBank → secuencia + contexto + anotación</strong></p>
+<p><strong>PDB → estructura tridimensional + información estructural</strong></p>
+<p>Esta diferencia refleja que los formatos bioinformáticos se diseñan según el tipo de dato que necesitan representar.</p>
+<hr />
+<h1 id="32-metadatos-y-anotacion">3.2. Metadatos y anotación</h1>
+<h2 id="321-que-son-los-metadatos">3.2.1. Qué son los metadatos</h2>
+<p>Los <strong>metadatos</strong> son datos que describen otros datos.</p>
+<p>En Bioinformática pueden indicar:</p>
+<ul>
+<li>organismo;</li>
+<li>tejido;</li>
+<li>muestra;</li>
+<li>método experimental;</li>
+<li>fecha;</li>
+<li>laboratorio;</li>
+<li>tecnología utilizada;</li>
+<li>versión;</li>
+<li>condiciones experimentales;</li>
+<li>o procedencia.</li>
+</ul>
+<p>Una secuencia sin metadatos puede resultar difícil de interpretar.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">ATGCGT...
+</code></pre>
+<p>es una secuencia.</p>
+<p>Pero sin contexto no sabemos:</p>
+<ul>
+<li>de qué organismo procede;</li>
+<li>qué región representa;</li>
+<li>cómo se obtuvo;</li>
+<li>si corresponde a ADN genómico o ARN;</li>
+<li>ni qué experimento la generó.</li>
+</ul>
+<p>Los metadatos aportan ese contexto.</p>
+<hr />
+<h2 id="322-metadatos-tecnicos-y-biologicos">3.2.2. Metadatos técnicos y biológicos</h2>
+<p>Podemos distinguir, de forma general, dos grandes categorías.</p>
+<h3 id="metadatos-biologicos">Metadatos biológicos</h3>
+<p>Describen el contexto biológico.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>organismo;</li>
+<li>tejido;</li>
+<li>tipo celular;</li>
+<li>estado fisiológico;</li>
+<li>condición experimental.</li>
+</ul>
+<h3 id="metadatos-tecnicos">Metadatos técnicos</h3>
+<p>Describen cómo se obtuvo o procesó el dato.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>plataforma;</li>
+<li>software;</li>
+<li>versión;</li>
+<li>parámetros;</li>
+<li>fecha;</li>
+<li>protocolo.</li>
+</ul>
+<p>Ambos tipos son necesarios para interpretar y reproducir un análisis.</p>
+<hr />
+<h2 id="323-que-es-una-anotacion">3.2.3. Qué es una anotación</h2>
+<p>Una <strong>anotación</strong> añade significado biológico a un dato.</p>
+<p>Puede consistir en:</p>
+<ul>
+<li>identificar un gen;</li>
+<li>asignar una función;</li>
+<li>marcar una región;</li>
+<li>asociar una proteína con un proceso;</li>
+<li>identificar un dominio;</li>
+<li>o relacionar una secuencia con una estructura.</li>
+</ul>
+<p>La anotación transforma un dato aislado en información interpretada.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">100..900
+</code></pre>
+<p>son coordenadas.</p>
+<p>Pero:</p>
+<pre><code class="language-text">gene 100..900
+</code></pre>
+<p>es una anotación.</p>
+<p>La anotación indica qué significa esa región.</p>
+<hr />
+<h2 id="324-anotacion-manual-y-automatica">3.2.4. Anotación manual y automática</h2>
+<h3 id="anotacion-automatica">Anotación automática</h3>
+<p>Se genera mediante algoritmos.</p>
+<p>Es necesaria cuando existen millones de registros.</p>
+<p>Puede basarse en:</p>
+<ul>
+<li>similitud;</li>
+<li>reglas;</li>
+<li>modelos;</li>
+<li>perfiles;</li>
+<li>o predicciones.</li>
+</ul>
+<h3 id="anotacion-manual">Anotación manual</h3>
+<p>Es revisada por expertos.</p>
+<p>Puede incorporar:</p>
+<ul>
+<li>literatura científica;</li>
+<li>evidencia experimental;</li>
+<li>conocimiento del dominio;</li>
+<li>y evaluación crítica.</li>
+</ul>
+<p>Ambos tipos de anotación pueden coexistir en un mismo recurso.</p>
+<p>Por ello, al utilizar una anotación debemos comprobar:</p>
+<blockquote>
+<p><strong>¿cómo se ha generado?</strong></p>
+</blockquote>
+<hr />
+<h2 id="325-evidencia-asociada-a-las-anotaciones">3.2.5. Evidencia asociada a las anotaciones</h2>
+<p>Una anotación no debería interpretarse de forma aislada.</p>
+<p>Conviene conocer:</p>
+<ul>
+<li>si está basada en experimento;</li>
+<li>si se infiere por homología;</li>
+<li>si es automática;</li>
+<li>si ha sido revisada;</li>
+<li>o si deriva de una predicción.</li>
+</ul>
+<p>Esta información determina el nivel de confianza.</p>
+<p>En Bioinformática, una afirmación puede ser técnicamente correcta dentro de un registro y, sin embargo, estar asociada a un nivel de evidencia limitado.</p>
+<hr />
+<h2 id="326-la-anotacion-como-proceso-dinamico">3.2.6. La anotación como proceso dinámico</h2>
+<p>Las anotaciones cambian.</p>
+<p>A medida que aparecen nuevos datos, una anotación puede:</p>
+<ul>
+<li>modificarse;</li>
+<li>ampliarse;</li>
+<li>corregirse;</li>
+<li>o reemplazarse.</li>
+</ul>
+<p>Por ello es importante registrar:</p>
+<ul>
+<li>identificador;</li>
+<li>versión;</li>
+<li>fecha de consulta;</li>
+<li>y recurso.</li>
+</ul>
+<hr />
+<h1 id="33-calidad-interoperabilidad-y-reutilizacion-de-datos">3.3. Calidad, interoperabilidad y reutilización de datos</h1>
+<h2 id="331-calidad-de-los-datos">3.3.1. Calidad de los datos</h2>
+<p>La calidad no es una propiedad única.</p>
+<p>Puede depender de:</p>
+<ul>
+<li>precisión;</li>
+<li>completitud;</li>
+<li>consistencia;</li>
+<li>procedencia;</li>
+<li>actualización;</li>
+<li>nivel de evidencia;</li>
+<li>documentación;</li>
+<li>y adecuación al uso.</li>
+</ul>
+<p>Un dato puede ser correcto para una tarea y no ser adecuado para otra.</p>
+<p>Por ejemplo, una secuencia parcial puede ser suficiente para identificar un organismo, pero insuficiente para estudiar una proteína completa.</p>
+<p>Por ello, siempre debemos preguntar:</p>
+<blockquote>
+<p><strong>¿Es este dato adecuado para la pregunta que quiero responder?</strong></p>
+</blockquote>
+<hr />
+<h2 id="332-procedencia">3.3.2. Procedencia</h2>
+<p>La <strong>procedencia</strong> describe de dónde viene el dato.</p>
+<p>Debe permitir reconstruir:</p>
+<ul>
+<li>quién lo generó;</li>
+<li>dónde se obtuvo;</li>
+<li>cómo se procesó;</li>
+<li>qué transformaciones sufrió;</li>
+<li>y qué recurso lo proporciona.</li>
+</ul>
+<p>La procedencia es esencial para la trazabilidad.</p>
+<p>Sin ella, un resultado puede ser difícil de validar.</p>
+<hr />
+<h2 id="333-interoperabilidad">3.3.3. Interoperabilidad</h2>
+<p>La interoperabilidad es la capacidad de diferentes sistemas para intercambiar y utilizar datos de forma coherente.</p>
+<p>En Bioinformática es especialmente importante porque una misma investigación puede combinar información de:</p>
+<ul>
+<li>NCBI;</li>
+<li>EMBL-EBI;</li>
+<li>UniProt;</li>
+<li>PDB;</li>
+<li>literatura;</li>
+<li>y herramientas de análisis.</li>
+</ul>
+<p>La interoperabilidad depende de elementos como:</p>
+<ul>
+<li>formatos;</li>
+<li>identificadores;</li>
+<li>vocabularios;</li>
+<li>metadatos;</li>
+<li>referencias cruzadas;</li>
+<li>y estándares.</li>
+</ul>
+<p>Sin interoperabilidad, cada recurso funcionaría como una isla.</p>
+<hr />
+<h2 id="334-el-problema-de-los-identificadores">3.3.4. El problema de los identificadores</h2>
+<p>Una misma entidad puede tener identificadores diferentes en recursos distintos.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">gen → identificador NCBI
+proteína → identificador UniProt
+estructura → identificador PDB
+</code></pre>
+<p>Estos identificadores no son intercambiables.</p>
+<p>La interoperabilidad requiere saber cómo relacionarlos.</p>
+<p>Por ello, conservar referencias cruzadas es una parte esencial de la gestión de datos.</p>
+<hr />
+<h2 id="335-reutilizacion">3.3.5. Reutilización</h2>
+<p>Un dato reutilizable debe poder ser:</p>
+<ul>
+<li>encontrado;</li>
+<li>interpretado;</li>
+<li>descargado;</li>
+<li>procesado;</li>
+<li>y relacionado con su contexto.</li>
+</ul>
+<p>Para reutilizar un conjunto de datos necesitamos conocer:</p>
+<ul>
+<li>qué representa;</li>
+<li>cómo se obtuvo;</li>
+<li>qué formato utiliza;</li>
+<li>qué versión corresponde;</li>
+<li>qué licencia o condiciones de uso existen;</li>
+<li>y qué limitaciones presenta.</li>
+</ul>
+<p>La reutilización permite responder nuevas preguntas sin repetir necesariamente el experimento original.</p>
+<hr />
+<h2 id="336-principios-fair">3.3.6. Principios FAIR</h2>
+<p>Un marco ampliamente utilizado para describir buenas prácticas de gestión de datos son los principios FAIR.</p>
+<p>FAIR significa:</p>
+<ul>
+<li><strong>Findable</strong>: localizables.</li>
+<li><strong>Accessible</strong>: accesibles.</li>
+<li><strong>Interoperable</strong>: interoperables.</li>
+<li><strong>Reusable</strong>: reutilizables.</li>
+</ul>
+<p>Estos principios no significan que todos los datos deban ser completamente abiertos.</p>
+<p>Significan que deben estar gestionados de forma que puedan ser encontrados, comprendidos e integrados adecuadamente según sus condiciones de acceso.</p>
+<h3 id="findable">Findable</h3>
+<p>Los datos deben disponer de:</p>
+<ul>
+<li>identificadores;</li>
+<li>metadatos;</li>
+<li>mecanismos de búsqueda.</li>
+</ul>
+<h3 id="accessible">Accessible</h3>
+<p>Debe existir una forma clara de recuperar los datos o conocer sus condiciones de acceso.</p>
+<h3 id="interoperable">Interoperable</h3>
+<p>Deben utilizar formatos y vocabularios que permitan integrarlos con otros recursos.</p>
+<h3 id="reusable">Reusable</h3>
+<p>Deben incluir suficiente información sobre:</p>
+<ul>
+<li>procedencia;</li>
+<li>contexto;</li>
+<li>licencias;</li>
+<li>calidad;</li>
+<li>y condiciones de uso.</li>
+</ul>
+<hr />
+<h2 id="337-trazabilidad-y-reproducibilidad">3.3.7. Trazabilidad y reproducibilidad</h2>
+<p>Un análisis bioinformático debería poder reconstruirse.</p>
+<p>Para ello conviene registrar:</p>
+<ul>
+<li>fuente de datos;</li>
+<li>identificadores;</li>
+<li>versiones;</li>
+<li>fecha de descarga;</li>
+<li>formato;</li>
+<li>transformaciones;</li>
+<li>herramientas;</li>
+<li>parámetros.</li>
+</ul>
+<p>Podemos resumir este principio así:</p>
+<blockquote>
+<p><strong>Un resultado reproducible necesita datos identificables y un proceso documentado.</strong></p>
+</blockquote>
+<hr />
+<h1 id="34-un-mismo-dato-diferentes-representaciones">3.4. Un mismo dato, diferentes representaciones</h1>
+<p>Una misma entidad puede representarse de distintas maneras.</p>
+<p>Supongamos una proteína.</p>
+<p>Podemos tener:</p>
+<ul>
+<li>una secuencia FASTA;</li>
+<li>un registro UniProt;</li>
+<li>una secuencia codificante en GenBank;</li>
+<li>una estructura PDB;</li>
+<li>una publicación asociada.</li>
+</ul>
+<p>Todos estos elementos se refieren a aspectos relacionados de la misma entidad, pero no contienen la misma información.</p>
+<p>Por ello, un análisis bioinformático suele requerir combinar representaciones.</p>
+<p>El reto consiste en mantener las relaciones entre ellas.</p>
+<hr />
+<h1 id="35-ejemplo-de-flujo-de-gestion-de-datos">3.5. Ejemplo de flujo de gestión de datos</h1>
+<p>Supongamos que queremos estudiar una proteína.</p>
+<h3 id="paso-1-recuperar-el-registro">Paso 1. Recuperar el registro</h3>
+<p>Localizamos el identificador en UniProt.</p>
+<h3 id="paso-2-descargar-la-secuencia">Paso 2. Descargar la secuencia</h3>
+<p>Exportamos la secuencia en FASTA.</p>
+<h3 id="paso-3-conservar-metadatos">Paso 3. Conservar metadatos</h3>
+<p>Registramos:</p>
+<ul>
+<li>organismo;</li>
+<li>identificador;</li>
+<li>estado de revisión;</li>
+<li>fecha;</li>
+<li>versión.</li>
+</ul>
+<h3 id="paso-4-analizar">Paso 4. Analizar</h3>
+<p>Utilizamos la secuencia en una herramienta bioinformática.</p>
+<h3 id="paso-5-consultar-estructura">Paso 5. Consultar estructura</h3>
+<p>Relacionamos el registro con PDB.</p>
+<h3 id="paso-6-documentar">Paso 6. Documentar</h3>
+<p>Conservamos:</p>
+<ul>
+<li>identificadores;</li>
+<li>enlaces;</li>
+<li>parámetros;</li>
+<li>resultados.</li>
+</ul>
+<p>De esta forma, la información puede reproducirse y reutilizarse.</p>
+<hr />
+<h1 id="36-errores-frecuentes">3.6. Errores frecuentes</h1>
+<h2 id="descargar-datos-sin-conservar-identificadores">Descargar datos sin conservar identificadores</h2>
+<p>Después puede ser difícil determinar su origen.</p>
+<h2 id="confundir-formato-con-contenido">Confundir formato con contenido</h2>
+<p>Dos ficheros pueden contener la misma secuencia pero diferentes metadatos.</p>
+<h2 id="no-registrar-versiones">No registrar versiones</h2>
+<p>Una actualización puede modificar un resultado.</p>
+<h2 id="interpretar-una-anotacion-automatica-como-evidencia-experimental">Interpretar una anotación automática como evidencia experimental</h2>
+<p>El nivel de evidencia debe comprobarse.</p>
+<h2 id="eliminar-metadatos-durante-una-conversion">Eliminar metadatos durante una conversión</h2>
+<p>Convertir GenBank a FASTA simplifica la información, pero también elimina anotaciones y contexto.</p>
+<h2 id="mezclar-identificadores-de-distintas-entidades">Mezclar identificadores de distintas entidades</h2>
+<p>Un gen, un transcrito, una proteína y una estructura representan niveles diferentes.</p>
+<h2 id="conservar-unicamente-el-resultado-final">Conservar únicamente el resultado final</h2>
+<p>Sin información sobre los datos y el procedimiento, el análisis puede no ser reproducible.</p>
+<hr />
+<h1 id="37-cuestiones-guia">3.7. Cuestiones guía</h1>
+<ol>
+<li>¿Qué información se pierde al convertir un registro GenBank a FASTA?</li>
+<li>¿Por qué FASTA sigue siendo tan utilizado a pesar de ser un formato muy simple?</li>
+<li>¿Qué diferencia existe entre metadato y anotación?</li>
+<li>¿Por qué una anotación debe ir acompañada de información sobre evidencia?</li>
+<li>¿Qué problemas puede causar utilizar un identificador sin indicar el recurso de origen?</li>
+<li>¿Por qué la interoperabilidad es esencial cuando se combinan varias bases de datos?</li>
+<li>¿Qué información mínima deberíamos conservar al descargar una secuencia?</li>
+<li>¿Cómo ayudan los principios FAIR a mejorar la reutilización de datos?</li>
+<li>¿Qué relación existe entre versión y reproducibilidad?</li>
+<li>¿Por qué un análisis puede ser correcto pero no reproducible?</li>
+</ol>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>Los formatos permiten representar datos biológicos de forma procesable.</li>
+<li>FASTA representa principalmente secuencias.</li>
+<li>GenBank integra secuencia, metadatos y anotaciones.</li>
+<li>PDB representa información estructural tridimensional.</li>
+<li>Los metadatos describen el contexto del dato.</li>
+<li>Las anotaciones añaden significado biológico.</li>
+<li>El nivel de evidencia debe considerarse al interpretar una anotación.</li>
+<li>La calidad depende de la adecuación del dato a la pregunta.</li>
+<li>La interoperabilidad permite integrar información procedente de distintos recursos.</li>
+<li>La reutilización requiere procedencia, documentación y contexto.</li>
+<li>Los principios FAIR proporcionan un marco para mejorar la gestión de datos.</li>
+<li>La reproducibilidad exige conservar identificadores, versiones, formatos y transformaciones.</li>
+</ul>
+<hr />
+<h1 id="cierre-del-bloque-i">Cierre del Bloque I</h1>
+<p>Este tema completa el Bloque I: <strong>Gestión de información biológica y recursos bioinformáticos</strong>.</p>
+<p>A lo largo del bloque se ha seguido una progresión:</p>
+<p><strong>Tema 1 → ecosistema bioinformático</strong></p>
+<p><strong>Tema 2 → bases de datos y recuperación</strong></p>
+<p><strong>Tema 3 → representación y gestión de datos</strong></p>
+<p>La idea central puede resumirse mediante una cadena:</p>
+<blockquote>
+<p><strong>localizar → identificar → interpretar → representar → documentar → reutilizar</strong></p>
+</blockquote>
+<p>Estas competencias serán necesarias en los siguientes bloques.</p>
+<p>En el Bloque II comenzaremos a utilizar secuencias como objeto de análisis computacional y estudiaremos los fundamentos de la comparación de secuencias.</p>
+<hr />
+<h1 id="recursos-de-referencia">Recursos de referencia</h1>
+<ul>
+<li>NCBI: https://www.ncbi.nlm.nih.gov/</li>
+<li>EMBL-EBI: https://www.ebi.ac.uk/</li>
+<li>UniProt: https://www.uniprot.org/</li>
+<li>RCSB PDB: https://www.rcsb.org/</li>
+</ul>
+<hr />
+<h1 id="bibliografia-del-bloque">Bibliografía del bloque</h1>
+<p>Según el proyecto docente, para el Bloque I se recomienda:</p>
+<ul>
+<li>Lesk, A. M. <em>Introduction to Bioinformatics</em>.</li>
+<li>Pevsner, J. <em>Bioinformatics and Functional Genomics</em>.</li>
+<li>Buffalo, V. <em>Bioinformatics Data Skills</em>.</li>
+<li>Zvelebil, M. J. y Baum, J. O. <em>Understanding Bioinformatics</em>.</li>
+</ul>
 
 
 

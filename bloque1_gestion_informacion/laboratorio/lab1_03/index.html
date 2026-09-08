@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-3" class="md-skip">
+        <a href="#practica-de-laboratorio-13-lectura-de-ficheros-y-formato-fasta" class="md-skip">
           Skip to content
         </a>
       
@@ -715,36 +715,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2428,36 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2479,15 +2443,170 @@
 
 
 
-<h1 id="practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-3">Práctica 1. Recursos bioinformáticos y bases de datos biológicas. Sesión 3</h1>
-<h2 id="objetivo-practico">Objetivo práctico</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="herramientas">Herramientas</h2>
-<p>Pendiente de definir.</p>
-<h2 id="tareas">Tareas</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="resultado-esperado">Resultado esperado</h2>
-<p>Pendiente de definir.</p>
+<h1 id="practica-de-laboratorio-13-lectura-de-ficheros-y-formato-fasta">Práctica de Laboratorio 1.3. Lectura de ficheros y formato FASTA</h1>
+<h2 id="duracion">Duración</h2>
+<p><strong>1 hora</strong></p>
+<p>Esta sesión conecta la programación básica con uno de los formatos más utilizados en Bioinformática: FASTA.</p>
+<hr />
+<h2 id="objetivos">Objetivos</h2>
+<p>Al finalizar la sesión, el estudiante será capaz de:</p>
+<ul>
+<li>Abrir y leer un fichero de texto en Python.</li>
+<li>Reconocer la estructura de un fichero FASTA.</li>
+<li>Separar cabecera y secuencia.</li>
+<li>Leer secuencias distribuidas en varias líneas.</li>
+<li>Procesar varios registros FASTA.</li>
+<li>Aplicar funciones desarrolladas en sesiones anteriores.</li>
+</ul>
+<hr />
+<h1 id="1-lectura-de-ficheros">1. Lectura de ficheros</h1>
+<p>Python permite abrir un fichero con:</p>
+<pre><code class="language-python">with open(&quot;secuencia.txt&quot;) as f:
+    content = f.read()
+
+print(content)
+</code></pre>
+<p>También podemos leer línea a línea:</p>
+<pre><code class="language-python">with open(&quot;secuencia.txt&quot;) as f:
+    for line in f:
+        print(line)
+</code></pre>
+<p>Para eliminar saltos de línea:</p>
+<pre><code class="language-python">line = line.strip()
+</code></pre>
+<hr />
+<h1 id="2-estructura-fasta">2. Estructura FASTA</h1>
+<p>Un registro FASTA contiene:</p>
+<pre><code class="language-text">&gt;identificador descripción
+SECUENCIA
+</code></pre>
+<p>Ejemplo:</p>
+<pre><code class="language-text">&gt;seq01 proteína hipotética
+ATGCGTAGCTAGCTAG
+</code></pre>
+<p>La línea que comienza por <code>&gt;</code> es la <strong>cabecera</strong>.</p>
+<p>Las líneas siguientes contienen la secuencia.</p>
+<hr />
+<h1 id="3-leer-un-fasta-simple">3. Leer un FASTA simple</h1>
+<p>Supongamos:</p>
+<pre><code class="language-text">&gt;seq01
+ATGCGTAA
+CGTAGCTA
+</code></pre>
+<p>Podemos leerlo así:</p>
+<pre><code class="language-python">header = &quot;&quot;
+sequence = &quot;&quot;
+
+with open(&quot;sequence.fasta&quot;) as f:
+    for line in f:
+        line = line.strip()
+
+        if line.startswith(&quot;&gt;&quot;):
+            header = line
+        else:
+            sequence += line
+
+print(header)
+print(sequence)
+</code></pre>
+<hr />
+<h1 id="4-aplicar-funciones-previas">4. Aplicar funciones previas</h1>
+<p>Podemos combinar el lector con funciones ya creadas:</p>
+<pre><code class="language-python">print(&quot;Longitud:&quot;, len(sequence))
+print(&quot;GC%:&quot;, gc_content(sequence))
+print(&quot;Válida:&quot;, is_valid_dna(sequence))
+</code></pre>
+<p>Esto muestra una idea central de programación:</p>
+<blockquote>
+<p><strong>dividir un problema complejo en tareas sencillas y reutilizables.</strong></p>
+</blockquote>
+<hr />
+<h1 id="5-fasta-con-varios-registros">5. FASTA con varios registros</h1>
+<p>Ejemplo:</p>
+<pre><code class="language-text">&gt;seq01
+ATGCGT
+&gt;seq02
+ATTTGG
+&gt;seq03
+CCGGTA
+</code></pre>
+<p>Una estrategia consiste en almacenar cada secuencia en un diccionario:</p>
+<pre><code class="language-python">sequences = {}
+current_id = None
+
+with open(&quot;sequences.fasta&quot;) as f:
+    for line in f:
+        line = line.strip()
+
+        if line.startswith(&quot;&gt;&quot;):
+            current_id = line[1:]
+            sequences[current_id] = &quot;&quot;
+        else:
+            sequences[current_id] += line
+</code></pre>
+<p>Después:</p>
+<pre><code class="language-python">for identifier, sequence in sequences.items():
+    print(identifier, len(sequence))
+</code></pre>
+<hr />
+<h1 id="6-actividad-practica">6. Actividad práctica</h1>
+<p>El profesorado proporcionará un fichero FASTA con varias secuencias.</p>
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+<p>Lee el fichero y muestra:</p>
+<ul>
+<li>identificador;</li>
+<li>longitud;</li>
+<li>contenido GC.</li>
+</ul>
+<h2 id="ejercicio-2">Ejercicio 2</h2>
+<p>Indica si todas las secuencias son válidas.</p>
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+<p>Identifica:</p>
+<ul>
+<li>la secuencia más larga;</li>
+<li>la secuencia más corta;</li>
+<li>la secuencia con mayor contenido GC.</li>
+</ul>
+<h2 id="ejercicio-4">Ejercicio 4</h2>
+<p>Genera una salida como:</p>
+<pre><code class="language-text">ID          Length    GC%
+seq01       542       48.3
+seq02       311       52.1
+...
+</code></pre>
+<hr />
+<h1 id="7-trazabilidad">7. Trazabilidad</h1>
+<p>Junto al fichero FASTA debe conservarse información sobre:</p>
+<ul>
+<li>origen;</li>
+<li>identificadores;</li>
+<li>organismo;</li>
+<li>fecha de descarga;</li>
+<li>recurso de procedencia.</li>
+</ul>
+<p>Un fichero FASTA aislado puede perder gran parte de su contexto.</p>
+<hr />
+<h1 id="8-entregable">8. Entregable</h1>
+<p>Entrega:</p>
+<ul>
+<li>código utilizado;</li>
+<li>fichero de salida;</li>
+<li>breve explicación de la estructura FASTA;</li>
+<li>respuesta a la pregunta:</li>
+</ul>
+<blockquote>
+<p>¿Qué información se pierde si únicamente conservamos el fichero FASTA?</p>
+</blockquote>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>FASTA es un formato sencillo y ampliamente utilizado.</li>
+<li>La cabecera identifica el registro.</li>
+<li>Una secuencia puede ocupar varias líneas.</li>
+<li>Los ficheros pueden contener múltiples registros.</li>
+<li>La lectura automática permite procesar muchas secuencias.</li>
+<li>La procedencia debe conservarse junto con los datos.</li>
+</ul>
 
 
 

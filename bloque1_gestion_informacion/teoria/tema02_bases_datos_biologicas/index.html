@@ -416,27 +416,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#planificacion-de-la-sesion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Planificación de la sesión
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
+      Objetivos de aprendizaje
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
+  <a href="#introduccion" class="md-nav__link">
     <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Introducción
     </span>
   </a>
   
@@ -2419,27 +2419,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#planificacion-de-la-sesion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Planificación de la sesión
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
+      Objetivos de aprendizaje
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
+  <a href="#introduccion" class="md-nav__link">
     <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Introducción
     </span>
   </a>
   
@@ -2462,16 +2462,688 @@
 
 
 <h1 id="tema-2-bases-de-datos-biologicas-y-recuperacion-de-informacion">Tema 2. Bases de datos biológicas y recuperación de información</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="planificacion-de-la-sesion">Planificación de la sesión</h2>
+<p>Este tema está previsto para <strong>2 horas de teoría</strong>, distribuidas en dos sesiones durante la semana 2.</p>
+<p>La primera hora se centra en:</p>
 <ul>
-<li>2.1 Bases de datos primarias y secundarias.</li>
-<li>2.2 Arquitectura y organización de recursos biológicos.</li>
-<li>2.3 NCBI, EMBL-EBI, UniProt y PDB.</li>
+<li>2.1. Bases de datos primarias y secundarias.</li>
+<li>2.2. Arquitectura y organización de recursos biológicos.</li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<p>La segunda hora se centra principalmente en:</p>
+<ul>
+<li>2.3. NCBI, EMBL-EBI, UniProt y PDB.</li>
+</ul>
+<hr />
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Explicar por qué las bases de datos biológicas son una infraestructura esencial de la investigación actual.</li>
+<li>Diferenciar entre bases de datos primarias y secundarias.</li>
+<li>Comprender cómo se organiza la información dentro de un recurso bioinformático.</li>
+<li>Identificar el papel de los registros, identificadores, anotaciones y referencias cruzadas.</li>
+<li>Reconocer las funciones generales de NCBI, EMBL-EBI, UniProt y PDB.</li>
+<li>Seleccionar, de forma razonada, el recurso más adecuado para recuperar un determinado tipo de información biológica.</li>
+<li>Comprender que una búsqueda bioinformática requiere interpretar el contexto del dato y no únicamente localizar un resultado.</li>
+</ul>
+<hr />
+<h2 id="introduccion">Introducción</h2>
+<p>En el tema anterior se presentó la Bioinformática como una disciplina que permite trabajar de forma sistemática con grandes cantidades de información biológica. También se introdujo la idea de un <strong>ecosistema digital biomolecular</strong> en el que los datos generados por laboratorios de todo el mundo pueden almacenarse, organizarse, relacionarse y reutilizarse.</p>
+<p>El siguiente paso consiste en comprender cómo funciona ese ecosistema desde el punto de vista de sus recursos de información.</p>
+<p>Una parte importante del trabajo bioinformático comienza con preguntas aparentemente sencillas:</p>
+<ul>
+<li>¿se conoce ya la secuencia de este gen?</li>
+<li>¿qué proteína codifica?</li>
+<li>¿qué función se le atribuye?</li>
+<li>¿qué variantes se han descrito?</li>
+<li>¿existe una estructura tridimensional?</li>
+<li>¿qué publicaciones están asociadas?</li>
+<li>¿qué información está experimentalmente comprobada y qué información ha sido predicha?</li>
+<li>¿qué identificador debo utilizar para recuperar el mismo registro más adelante?</li>
+</ul>
+<p>Responder correctamente requiere saber <strong>dónde buscar</strong>, pero también entender <strong>qué tipo de información almacena cada recurso y cómo está organizada</strong>.</p>
+<p>Una base de datos biológica no es simplemente una colección de páginas web. Es un sistema estructurado en el que los datos se representan mediante registros, campos, relaciones, identificadores y procedimientos de actualización.</p>
+<p>Por ello, aprender a utilizar recursos bioinformáticos implica desarrollar una forma de lectura diferente a la utilizada en una página web convencional. No buscamos únicamente texto: buscamos <strong>datos estructurados, relaciones y evidencias</strong>.</p>
+<hr />
+<h1 id="21-bases-de-datos-primarias-y-secundarias">2.1. Bases de datos primarias y secundarias</h1>
+<h2 id="211-que-es-una-base-de-datos-biologica">2.1.1. ¿Qué es una base de datos biológica?</h2>
+<p>Una <strong>base de datos biológica</strong> es un recurso organizado que almacena información relacionada con entidades o procesos biológicos y permite recuperarla mediante consultas.</p>
+<p>La información puede incluir, entre otros elementos:</p>
+<ul>
+<li>secuencias de ADN o ARN;</li>
+<li>secuencias de proteínas;</li>
+<li>genes;</li>
+<li>variantes;</li>
+<li>estructuras tridimensionales;</li>
+<li>funciones moleculares;</li>
+<li>interacciones;</li>
+<li>vías metabólicas;</li>
+<li>organismos;</li>
+<li>publicaciones;</li>
+<li>o anotaciones funcionales.</li>
+</ul>
+<p>El elemento fundamental de una base de datos no es únicamente el dato, sino su <strong>organización</strong>.</p>
+<p>Una secuencia aislada tiene un valor limitado. En cambio, una secuencia asociada a:</p>
+<ul>
+<li>un organismo;</li>
+<li>un gen;</li>
+<li>un método de obtención;</li>
+<li>un identificador;</li>
+<li>una publicación;</li>
+<li>una función;</li>
+<li>y referencias a otros recursos</li>
+</ul>
+<p>se convierte en un registro mucho más informativo.</p>
+<hr />
+<h2 id="212-datos-primarios">2.1.2. Datos primarios</h2>
+<p>Las <strong>bases de datos primarias</strong> almacenan datos biológicos que proceden directamente de experimentos, procesos de secuenciación o depósitos realizados por investigadores y centros de datos.</p>
+<p>En este tipo de recursos, el dato depositado constituye la información fundamental.</p>
+<p>Ejemplos de datos primarios pueden ser:</p>
+<ul>
+<li>una secuencia nucleotídica;</li>
+<li>una secuencia proteica;</li>
+<li>coordenadas experimentales de una estructura tridimensional;</li>
+<li>lecturas de secuenciación;</li>
+<li>o determinados conjuntos de datos experimentales.</li>
+</ul>
+<p>Estas bases de datos suelen desempeñar una función de <strong>archivo</strong>.</p>
+<p>El objetivo es conservar la información y hacerla accesible para que pueda utilizarse posteriormente.</p>
+<h3 id="caracteristicas-habituales">Características habituales</h3>
+<p>Las bases de datos primarias suelen presentar varias características:</p>
+<ul>
+<li>reciben datos procedentes de la comunidad científica;</li>
+<li>asignan identificadores a los registros;</li>
+<li>conservan diferentes versiones;</li>
+<li>almacenan metadatos;</li>
+<li>mantienen información sobre la procedencia;</li>
+<li>y permiten descargar los datos.</li>
+</ul>
+<p>Esto no significa que toda la información contenida sea automáticamente correcta.</p>
+<p>El hecho de que un dato esté depositado en una base de datos no elimina la necesidad de valorar:</p>
+<ul>
+<li>cómo se obtuvo;</li>
+<li>qué controles se realizaron;</li>
+<li>qué nivel de evidencia existe;</li>
+<li>o si el registro ha sido revisado posteriormente.</li>
+</ul>
+<hr />
+<h2 id="213-datos-secundarios">2.1.3. Datos secundarios</h2>
+<p>Las <strong>bases de datos secundarias</strong> contienen información derivada del análisis, integración, clasificación o anotación de datos existentes.</p>
+<p>En lugar de limitarse a almacenar datos originales, añaden una capa de interpretación.</p>
+<p>Pueden incluir:</p>
+<ul>
+<li>funciones asignadas;</li>
+<li>familias de proteínas;</li>
+<li>dominios;</li>
+<li>relaciones evolutivas;</li>
+<li>clasificaciones;</li>
+<li>anotaciones;</li>
+<li>o conexiones entre registros procedentes de distintas fuentes.</li>
+</ul>
+<p>La frontera entre base de datos primaria y secundaria no siempre es absoluta.</p>
+<p>Muchos recursos modernos integran ambos tipos de información.</p>
+<p>Un mismo registro puede contener:</p>
+<ul>
+<li>datos originales;</li>
+<li>anotaciones automáticas;</li>
+<li>información revisada manualmente;</li>
+<li>enlaces a otras bases de datos;</li>
+<li>y resultados derivados de análisis computacionales.</li>
+</ul>
+<p>Por tanto, la clasificación primaria/secundaria debe utilizarse como una <strong>herramienta conceptual</strong>, no como una división rígida.</p>
+<hr />
+<h2 id="214-curacion-de-datos">2.1.4. Curación de datos</h2>
+<p>Un concepto importante al trabajar con bases de datos biológicas es la <strong>curación</strong>.</p>
+<p>La curación consiste en revisar, organizar y mejorar la información almacenada.</p>
+<p>Puede incluir:</p>
+<ul>
+<li>comprobación de consistencia;</li>
+<li>corrección de errores;</li>
+<li>incorporación de información procedente de literatura científica;</li>
+<li>establecimiento de relaciones entre registros;</li>
+<li>revisión de nomenclatura;</li>
+<li>o actualización de anotaciones.</li>
+</ul>
+<p>La curación puede ser:</p>
+<h3 id="automatica">Automática</h3>
+<p>Se realiza mediante procedimientos computacionales.</p>
+<p>Es necesaria cuando el volumen de datos es muy grande.</p>
+<h3 id="manual">Manual</h3>
+<p>Intervienen expertos que revisan la evidencia disponible.</p>
+<p>Es más costosa, pero puede aportar un nivel de calidad y contextualización difícil de conseguir exclusivamente mediante procesos automáticos.</p>
+<p>En muchos recursos se combinan ambos procedimientos.</p>
+<hr />
+<h2 id="215-datos-experimentales-y-datos-predichos">2.1.5. Datos experimentales y datos predichos</h2>
+<p>Otro aspecto esencial es distinguir entre:</p>
+<ul>
+<li><strong>información obtenida experimentalmente</strong>;</li>
+<li><strong>información inferida o predicha computacionalmente</strong>.</li>
+</ul>
+<p>Esta distinción aparece continuamente en Bioinformática.</p>
+<p>Por ejemplo, una función proteica puede haber sido:</p>
+<ul>
+<li>demostrada experimentalmente;</li>
+<li>inferida por similitud con otra proteína;</li>
+<li>asignada automáticamente;</li>
+<li>o predicha mediante un modelo computacional.</li>
+</ul>
+<p>Del mismo modo, una estructura tridimensional puede proceder de un experimento o de una predicción computacional.</p>
+<p>Dos registros pueden mostrar aparentemente el mismo tipo de información, pero su nivel de evidencia puede ser muy diferente.</p>
+<p>Por ello, al recuperar información no basta con preguntar:</p>
+<blockquote>
+<p><strong>¿Qué dice la base de datos?</strong></p>
+</blockquote>
+<p>También debemos preguntar:</p>
+<blockquote>
+<p><strong>¿De dónde procede esa información y qué evidencia la respalda?</strong></p>
+</blockquote>
+<hr />
+<h1 id="22-arquitectura-y-organizacion-de-recursos-biologicos">2.2. Arquitectura y organización de recursos biológicos</h1>
+<h2 id="221-el-registro-como-unidad-de-informacion">2.2.1. El registro como unidad de información</h2>
+<p>La mayor parte de las bases de datos biológicas organizan la información mediante <strong>registros</strong>.</p>
+<p>Un registro representa una entidad determinada:</p>
+<ul>
+<li>un gen;</li>
+<li>una secuencia;</li>
+<li>una proteína;</li>
+<li>una estructura;</li>
+<li>una publicación;</li>
+<li>un organismo;</li>
+<li>o cualquier otro elemento relevante para el recurso.</li>
+</ul>
+<p>Cada registro suele incluir distintos campos.</p>
+<p>Por ejemplo:</p>
+<p><strong>Identificador → nombre → organismo → descripción → secuencia → anotaciones → referencias</strong></p>
+<p>La estructura exacta depende del recurso.</p>
+<p>Comprender qué representa un registro es fundamental.</p>
+<p>Un identificador de proteína no equivale necesariamente a un identificador de gen, y un identificador de secuencia no tiene por qué identificar una función biológica.</p>
+<hr />
+<h2 id="222-identificadores">2.2.2. Identificadores</h2>
+<p>Los identificadores permiten localizar de manera inequívoca los registros.</p>
+<p>Pueden aparecer como:</p>
+<ul>
+<li>números de acceso;</li>
+<li>códigos;</li>
+<li>identificadores persistentes;</li>
+<li>o identificadores internos de una base de datos.</li>
+</ul>
+<p>Su función es evitar ambigüedades.</p>
+<p>Los nombres biológicos pueden cambiar o presentar sinónimos. Los identificadores proporcionan una referencia más estable.</p>
+<h3 id="ejemplo-conceptual">Ejemplo conceptual</h3>
+<p>Una proteína puede aparecer con:</p>
+<ul>
+<li>un nombre completo;</li>
+<li>una abreviatura;</li>
+<li>varios sinónimos;</li>
+<li>el nombre del gen;</li>
+<li>y diferentes denominaciones históricas.</li>
+</ul>
+<p>Sin un identificador, una búsqueda puede producir resultados ambiguos.</p>
+<hr />
+<h2 id="223-versiones">2.2.3. Versiones</h2>
+<p>Los datos biológicos cambian.</p>
+<p>Una secuencia puede corregirse, una anotación puede actualizarse y un registro puede incorporar nueva evidencia.</p>
+<p>Por ello, algunos sistemas utilizan <strong>versiones</strong>.</p>
+<p>Una versión permite distinguir:</p>
+<blockquote>
+<p>el registro actual</p>
+</blockquote>
+<p>de</p>
+<blockquote>
+<p>una representación anterior del mismo registro.</p>
+</blockquote>
+<p>Esta cuestión es especialmente importante para la reproducibilidad.</p>
+<p>Si un análisis se realizó utilizando una versión determinada de un conjunto de datos, una actualización posterior podría producir resultados diferentes.</p>
+<hr />
+<h2 id="224-campos">2.2.4. Campos</h2>
+<p>Los registros se dividen en campos que describen distintos aspectos de la información.</p>
+<p>Algunos campos habituales pueden contener:</p>
+<ul>
+<li>nombre;</li>
+<li>descripción;</li>
+<li>organismo;</li>
+<li>taxonomía;</li>
+<li>longitud;</li>
+<li>secuencia;</li>
+<li>función;</li>
+<li>referencias;</li>
+<li>anotaciones;</li>
+<li>fechas;</li>
+<li>palabras clave;</li>
+<li>estructuras asociadas;</li>
+<li>o referencias cruzadas.</li>
+</ul>
+<p>Una búsqueda avanzada suele consistir precisamente en consultar determinados campos.</p>
+<p>No es lo mismo buscar una palabra:</p>
+<ul>
+<li>en cualquier parte del registro;</li>
+<li>únicamente en el nombre del gen;</li>
+<li>en el organismo;</li>
+<li>en el título de una publicación;</li>
+<li>o en un identificador.</li>
+</ul>
+<p>Comprender los campos permite realizar búsquedas más precisas.</p>
+<hr />
+<h2 id="225-relaciones-entre-registros">2.2.5. Relaciones entre registros</h2>
+<p>Los datos biológicos están relacionados.</p>
+<p>Por ejemplo:</p>
+<p><strong>gen → transcrito → proteína → estructura → función → publicación</strong></p>
+<p>Una base de datos moderna intenta representar parte de estas relaciones.</p>
+<p>Estas conexiones permiten navegar desde un tipo de información hacia otro.</p>
+<p>Podemos comenzar con un gen y llegar a:</p>
+<ul>
+<li>su secuencia;</li>
+<li>proteínas asociadas;</li>
+<li>publicaciones;</li>
+<li>variantes;</li>
+<li>estructuras;</li>
+<li>o recursos externos.</li>
+</ul>
+<p>Esta navegación constituye una de las características más potentes del ecosistema bioinformático.</p>
+<hr />
+<h2 id="226-referencias-cruzadas">2.2.6. Referencias cruzadas</h2>
+<p>Las <strong>referencias cruzadas</strong> enlazan registros pertenecientes a recursos diferentes.</p>
+<p>Por ejemplo, un registro de proteína puede incluir enlaces hacia:</p>
+<ul>
+<li>una base de datos de genes;</li>
+<li>una base de datos estructural;</li>
+<li>un recurso de dominios;</li>
+<li>una publicación;</li>
+<li>o una vía metabólica.</li>
+</ul>
+<p>Estas referencias permiten integrar información distribuida.</p>
+<p>Una misma entidad biológica puede tener diferentes identificadores dependiendo del recurso.</p>
+<p>Por ello, una parte importante del trabajo bioinformático consiste en saber traducir o relacionar identificadores.</p>
+<hr />
+<h2 id="227-busqueda-simple-y-busqueda-avanzada">2.2.7. Búsqueda simple y búsqueda avanzada</h2>
+<h3 id="busqueda-simple">Búsqueda simple</h3>
+<p>Se basa normalmente en una palabra, nombre o identificador.</p>
+<p>Es útil para una primera exploración.</p>
+<h3 id="busqueda-avanzada">Búsqueda avanzada</h3>
+<p>Permite combinar diferentes criterios.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>organismo;</li>
+<li>tipo de molécula;</li>
+<li>longitud;</li>
+<li>fecha;</li>
+<li>estado de revisión;</li>
+<li>función;</li>
+<li>presencia de estructura;</li>
+<li>o términos específicos.</li>
+</ul>
+<p>La diferencia es importante.</p>
+<p>Una búsqueda simple responde:</p>
+<blockquote>
+<p>¿qué registros contienen este término?</p>
+</blockquote>
+<p>Una búsqueda avanzada puede responder:</p>
+<blockquote>
+<p>¿qué proteínas humanas revisadas contienen este término y además tienen información estructural?</p>
+</blockquote>
+<hr />
+<h2 id="228-recuperacion-frente-a-interpretacion">2.2.8. Recuperación frente a interpretación</h2>
+<p>Recuperar un registro no significa haber resuelto un problema.</p>
+<p>Una búsqueda correcta implica al menos tres fases:</p>
+<p><strong>Localizar → interpretar → validar</strong></p>
+<h3 id="localizar">Localizar</h3>
+<p>Encontrar el registro adecuado.</p>
+<h3 id="interpretar">Interpretar</h3>
+<p>Comprender qué representa cada campo.</p>
+<h3 id="validar">Validar</h3>
+<p>Comprobar procedencia, evidencia, estado de revisión y coherencia con otras fuentes.</p>
+<p>Esta secuencia será importante en todas las prácticas de la asignatura.</p>
+<hr />
+<h1 id="23-ncbi-embl-ebi-uniprot-y-pdb">2.3. NCBI, EMBL-EBI, UniProt y PDB</h1>
+<p>Los cuatro recursos que se presentan en este apartado no cumplen exactamente la misma función.</p>
+<p>Algunos son grandes infraestructuras que agrupan muchos servicios y bases de datos, mientras que otros están especializados en un tipo concreto de información.</p>
+<p>La pregunta no debería ser:</p>
+<blockquote>
+<p><strong>¿Cuál es la mejor base de datos?</strong></p>
+</blockquote>
+<p>sino:</p>
+<blockquote>
+<p><strong>¿Cuál es el recurso adecuado para la información que necesito?</strong></p>
+</blockquote>
+<hr />
+<h2 id="231-ncbi">2.3.1. NCBI</h2>
+<p>El <strong>National Center for Biotechnology Information (NCBI)</strong> proporciona acceso a una amplia colección de información biomédica y genómica.</p>
+<p>Entre sus recursos más conocidos se encuentran:</p>
+<ul>
+<li>PubMed;</li>
+<li>Nucleotide;</li>
+<li>Gene;</li>
+<li>Protein;</li>
+<li>Genome;</li>
+<li>BLAST;</li>
+<li>PubChem;</li>
+<li>y otros recursos especializados.</li>
+</ul>
+<p>NCBI actúa como un gran punto de entrada a información biológica diversa.</p>
+<h3 id="que-tipo-de-preguntas-podemos-abordar">Qué tipo de preguntas podemos abordar</h3>
+<p>Podemos utilizar NCBI para localizar:</p>
+<ul>
+<li>información sobre genes;</li>
+<li>secuencias de nucleótidos;</li>
+<li>secuencias de proteínas;</li>
+<li>genomas;</li>
+<li>publicaciones;</li>
+<li>variantes;</li>
+<li>o relaciones entre diferentes tipos de registros.</li>
+</ul>
+<h3 id="navegacion-entre-recursos">Navegación entre recursos</h3>
+<p>Una de las características más importantes de NCBI es la conexión entre bases de datos.</p>
+<p>Desde un registro de Gene, por ejemplo, podemos acceder a:</p>
+<ul>
+<li>secuencias;</li>
+<li>publicaciones;</li>
+<li>proteínas;</li>
+<li>genomas;</li>
+<li>y otros recursos relacionados.</li>
+</ul>
+<p>Esto permite pasar de una entidad biológica a distintos niveles de información.</p>
+<h3 id="sitio-web">Sitio web</h3>
+<p>https://www.ncbi.nlm.nih.gov/</p>
+<hr />
+<h2 id="232-embl-ebi">2.3.2. EMBL-EBI</h2>
+<p>El <strong>European Bioinformatics Institute (EMBL-EBI)</strong> forma parte del European Molecular Biology Laboratory.</p>
+<p>Mantiene una amplia colección de recursos de datos y herramientas para investigación en ciencias de la vida.</p>
+<p>Entre los recursos vinculados a EMBL-EBI se encuentran servicios relacionados con:</p>
+<ul>
+<li>secuencias;</li>
+<li>genomas;</li>
+<li>proteínas;</li>
+<li>estructuras;</li>
+<li>expresión;</li>
+<li>literatura;</li>
+<li>anotación funcional;</li>
+<li>y análisis bioinformático.</li>
+</ul>
+<p>EMBL-EBI no debe entenderse como una única base de datos.</p>
+<p>Es una <strong>infraestructura que mantiene y coordina numerosos recursos especializados</strong>.</p>
+<h3 id="una-perspectiva-europea">Una perspectiva europea</h3>
+<p>EMBL-EBI desempeña un papel central en la infraestructura europea de datos biológicos y participa en iniciativas internacionales de intercambio y conservación de información.</p>
+<p>Muchos recursos utilizados diariamente en Bioinformática están alojados, coordinados o mantenidos desde EMBL-EBI.</p>
+<h3 id="sitio-web_1">Sitio web</h3>
+<p>https://www.ebi.ac.uk/</p>
+<hr />
+<h2 id="233-uniprot">2.3.3. UniProt</h2>
+<p><strong>UniProt</strong> es uno de los principales recursos de información sobre proteínas.</p>
+<p>Su núcleo es <strong>UniProtKB</strong>, que integra:</p>
+<ul>
+<li>secuencias de proteínas;</li>
+<li>nombres;</li>
+<li>funciones;</li>
+<li>información sobre genes;</li>
+<li>taxonomía;</li>
+<li>localización;</li>
+<li>dominios;</li>
+<li>modificaciones;</li>
+<li>referencias bibliográficas;</li>
+<li>y referencias cruzadas.</li>
+</ul>
+<p>Una característica importante es la distinción entre registros:</p>
+<ul>
+<li><strong>revisados</strong>, asociados a UniProtKB/Swiss-Prot;</li>
+<li><strong>no revisados</strong>, asociados a UniProtKB/TrEMBL.</li>
+</ul>
+<p>Los registros revisados han sido objeto de curación, mientras que los no revisados dependen en mayor medida de procedimientos automáticos.</p>
+<p>Esto convierte UniProt en un ejemplo especialmente útil para comprender la diferencia entre:</p>
+<p><strong>dato → anotación automática → curación → conocimiento integrado</strong></p>
+<h3 id="preguntas-tipicas">Preguntas típicas</h3>
+<p>UniProt puede utilizarse para consultar:</p>
+<ul>
+<li>la secuencia de una proteína;</li>
+<li>su función;</li>
+<li>el gen asociado;</li>
+<li>dominios;</li>
+<li>modificaciones;</li>
+<li>localización;</li>
+<li>referencias;</li>
+<li>y conexiones con otros recursos.</li>
+</ul>
+<h3 id="sitio-web_2">Sitio web</h3>
+<p>https://www.uniprot.org/</p>
+<hr />
+<h2 id="234-pdb">2.3.4. PDB</h2>
+<p>El <strong>Protein Data Bank (PDB)</strong> es el archivo internacional de estructuras tridimensionales de macromoléculas biológicas.</p>
+<p>Contiene información estructural sobre:</p>
+<ul>
+<li>proteínas;</li>
+<li>ADN;</li>
+<li>ARN;</li>
+<li>complejos biomoleculares;</li>
+<li>y moléculas asociadas.</li>
+</ul>
+<p>Las estructuras del archivo PDB proceden fundamentalmente de métodos experimentales de determinación estructural.</p>
+<p>El portal RCSB PDB permite buscar, visualizar y analizar estas estructuras.</p>
+<h3 id="informacion-que-puede-encontrarse">Información que puede encontrarse</h3>
+<p>Un registro estructural puede incluir:</p>
+<ul>
+<li>coordenadas atómicas;</li>
+<li>cadenas;</li>
+<li>ligandos;</li>
+<li>método experimental;</li>
+<li>resolución;</li>
+<li>autores;</li>
+<li>publicaciones;</li>
+<li>organismo;</li>
+<li>y referencias cruzadas.</li>
+</ul>
+<h3 id="estructuras-experimentales-y-modelos-computacionales">Estructuras experimentales y modelos computacionales</h3>
+<p>Es importante distinguir entre:</p>
+<ul>
+<li>estructuras depositadas en el archivo PDB;</li>
+<li>y modelos estructurales calculados mediante métodos computacionales.</li>
+</ul>
+<p>Los portales actuales pueden mostrar ambos tipos de información, pero no representan el mismo nivel de evidencia.</p>
+<p>Esta diferencia será especialmente importante en el Bloque IV, cuando estudiemos predicción estructural e inteligencia artificial.</p>
+<h3 id="sitio-web_3">Sitio web</h3>
+<p>https://www.rcsb.org/</p>
+<hr />
+<h1 id="24-comparacion-de-recursos">2.4. Comparación de recursos</h1>
+<p>Una misma pregunta biológica puede requerir varios recursos.</p>
+<table>
+<thead>
+<tr>
+<th>Necesidad</th>
+<th>Recurso que puede ser útil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buscar información general sobre un gen</td>
+<td>NCBI Gene</td>
+</tr>
+<tr>
+<td>Recuperar una secuencia nucleotídica</td>
+<td>NCBI Nucleotide / recursos EMBL-EBI</td>
+</tr>
+<tr>
+<td>Consultar información funcional de una proteína</td>
+<td>UniProt</td>
+</tr>
+<tr>
+<td>Localizar literatura científica</td>
+<td>PubMed</td>
+</tr>
+<tr>
+<td>Buscar una estructura tridimensional</td>
+<td>PDB</td>
+</tr>
+<tr>
+<td>Explorar recursos y herramientas europeas</td>
+<td>EMBL-EBI</td>
+</tr>
+</tbody>
+</table>
+<p>Esta tabla es únicamente orientativa.</p>
+<p>Los recursos están conectados y, en muchos casos, la información se solapa.</p>
+<p>La competencia importante no consiste en memorizar qué botón utilizar, sino en comprender:</p>
+<blockquote>
+<p><strong>qué representa cada registro y qué nivel de evidencia contiene.</strong></p>
+</blockquote>
+<hr />
+<h1 id="25-ejemplo-de-recorrido-de-informacion">2.5. Ejemplo de recorrido de información</h1>
+<p>Supongamos que queremos investigar una proteína relacionada con una enfermedad.</p>
+<p>Podríamos comenzar con el nombre del gen.</p>
+<h3 id="paso-1-ncbi">Paso 1. NCBI</h3>
+<p>Localizamos el registro del gen y obtenemos:</p>
+<ul>
+<li>identificadores;</li>
+<li>organismo;</li>
+<li>localización;</li>
+<li>referencias;</li>
+<li>secuencias relacionadas.</li>
+</ul>
+<h3 id="paso-2-uniprot">Paso 2. UniProt</h3>
+<p>Seguimos una referencia hacia la proteína correspondiente.</p>
+<p>Consultamos:</p>
+<ul>
+<li>secuencia;</li>
+<li>función;</li>
+<li>estado de revisión;</li>
+<li>dominios;</li>
+<li>variantes;</li>
+<li>referencias.</li>
+</ul>
+<h3 id="paso-3-pdb">Paso 3. PDB</h3>
+<p>Comprobamos si existe una estructura tridimensional experimental.</p>
+<p>Podemos analizar:</p>
+<ul>
+<li>método experimental;</li>
+<li>cadenas;</li>
+<li>ligandos;</li>
+<li>resolución;</li>
+<li>regiones representadas.</li>
+</ul>
+<h3 id="paso-4-literatura">Paso 4. Literatura</h3>
+<p>Consultamos las publicaciones asociadas.</p>
+<p>De esta manera, diferentes recursos aportan distintas capas de información sobre la misma entidad biológica.</p>
+<hr />
+<h1 id="26-estrategia-basica-de-recuperacion-de-informacion">2.6. Estrategia básica de recuperación de información</h1>
+<p>Ante cualquier consulta bioinformática puede utilizarse el siguiente esquema:</p>
+<h2 id="paso-1-definir-la-entidad">Paso 1. Definir la entidad</h2>
+<p>¿Qué estoy buscando?</p>
+<ul>
+<li>un gen;</li>
+<li>una proteína;</li>
+<li>una secuencia;</li>
+<li>una estructura;</li>
+<li>una publicación;</li>
+<li>o una función.</li>
+</ul>
+<h2 id="paso-2-seleccionar-el-recurso">Paso 2. Seleccionar el recurso</h2>
+<p>¿Dónde se representa mejor ese tipo de información?</p>
+<h2 id="paso-3-buscar">Paso 3. Buscar</h2>
+<p>Utilizar:</p>
+<ul>
+<li>nombre;</li>
+<li>sinónimo;</li>
+<li>organismo;</li>
+<li>identificador;</li>
+<li>o combinación de campos.</li>
+</ul>
+<h2 id="paso-4-confirmar-el-registro">Paso 4. Confirmar el registro</h2>
+<p>Comprobar:</p>
+<ul>
+<li>organismo;</li>
+<li>descripción;</li>
+<li>identificador;</li>
+<li>tipo de entidad.</li>
+</ul>
+<h2 id="paso-5-evaluar-la-evidencia">Paso 5. Evaluar la evidencia</h2>
+<p>Preguntar:</p>
+<ul>
+<li>¿es experimental o predicha?</li>
+<li>¿está revisada?</li>
+<li>¿de dónde procede?</li>
+<li>¿qué publicaciones la respaldan?</li>
+</ul>
+<h2 id="paso-6-registrar-la-procedencia">Paso 6. Registrar la procedencia</h2>
+<p>Anotar:</p>
+<ul>
+<li>recurso;</li>
+<li>identificador;</li>
+<li>versión si procede;</li>
+<li>fecha de consulta;</li>
+<li>y cualquier información relevante para reproducir la búsqueda.</li>
+</ul>
+<hr />
+<h1 id="27-errores-frecuentes">2.7. Errores frecuentes</h1>
+<h2 id="confundir-nombre-con-identificador">Confundir nombre con identificador</h2>
+<p>Los nombres pueden presentar sinónimos o variar entre organismos.</p>
+<p>El identificador suele ser una referencia más precisa.</p>
+<h2 id="elegir-el-primer-resultado">Elegir el primer resultado</h2>
+<p>El primer registro mostrado no tiene por qué corresponder al organismo o entidad buscada.</p>
+<h2 id="ignorar-el-organismo">Ignorar el organismo</h2>
+<p>Genes y proteínas con nombres similares pueden existir en especies diferentes.</p>
+<h2 id="no-comprobar-el-estado-de-revision">No comprobar el estado de revisión</h2>
+<p>Dos registros pueden contener información con diferentes niveles de curación.</p>
+<h2 id="confundir-prediccion-con-evidencia-experimental">Confundir predicción con evidencia experimental</h2>
+<p>Un dato computacional puede ser muy útil, pero debe interpretarse como tal.</p>
+<h2 id="copiar-informacion-sin-registrar-la-fuente">Copiar información sin registrar la fuente</h2>
+<p>La trazabilidad es esencial.</p>
+<h2 id="buscar-unicamente-por-texto-libre">Buscar únicamente por texto libre</h2>
+<p>Cuando sea posible, conviene utilizar campos e identificadores.</p>
+<hr />
+<h1 id="28-cuestiones-guia">2.8. Cuestiones guía</h1>
+<ol>
+<li>¿Qué diferencia conceptual existe entre una base de datos primaria y una secundaria?</li>
+<li>¿Por qué esta distinción no siempre es completamente rígida?</li>
+<li>¿Qué papel desempeña la curación en una base de datos biológica?</li>
+<li>¿Por qué un identificador suele ser más fiable que un nombre?</li>
+<li>¿Qué ventajas ofrecen las referencias cruzadas?</li>
+<li>¿Qué diferencia existe entre localizar un registro e interpretarlo correctamente?</li>
+<li>¿Qué recurso utilizarías para buscar una proteína y su función?</li>
+<li>¿Qué recurso utilizarías para localizar una estructura tridimensional?</li>
+<li>¿Por qué es importante distinguir información experimental de información predicha?</li>
+<li>¿Qué datos deberíamos registrar para poder repetir una búsqueda bioinformática?</li>
+</ol>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>Las bases de datos biológicas organizan datos mediante registros, campos, identificadores y relaciones.</li>
+<li>Las bases de datos primarias almacenan fundamentalmente datos depositados o experimentales; las secundarias añaden análisis, integración o anotación.</li>
+<li>La separación entre bases primarias y secundarias no siempre es absoluta.</li>
+<li>La curación y el nivel de evidencia son elementos esenciales para interpretar un registro.</li>
+<li>Los identificadores permiten localizar entidades de forma más precisa que los nombres.</li>
+<li>Las referencias cruzadas conectan diferentes capas del ecosistema bioinformático.</li>
+<li>NCBI y EMBL-EBI son grandes infraestructuras que integran numerosos recursos.</li>
+<li>UniProt está especializado en información sobre proteínas.</li>
+<li>PDB almacena información estructural tridimensional de macromoléculas.</li>
+<li>Recuperar información no significa simplemente encontrar un resultado: hay que identificar, interpretar y validar el registro.</li>
+</ul>
+<hr />
+<h1 id="conexion-con-el-tema-3">Conexión con el Tema 3</h1>
+<p>En este tema hemos estudiado <strong>dónde se almacena la información y cómo se organiza dentro de los recursos bioinformáticos</strong>.</p>
+<p>El siguiente tema se centrará en <strong>cómo se representa esa información de forma computacional</strong>.</p>
+<p>Estudiaremos:</p>
+<ul>
+<li>formatos como FASTA, GenBank y PDB;</li>
+<li>metadatos y anotación;</li>
+<li>calidad;</li>
+<li>interoperabilidad;</li>
+<li>y reutilización de datos.</li>
+</ul>
+<p>La secuencia del bloque puede resumirse así:</p>
+<p><strong>ecosistema bioinformático → bases de datos → representación de datos</strong></p>
+<hr />
+<h1 id="recursos-oficiales">Recursos oficiales</h1>
+<ul>
+<li>NCBI: https://www.ncbi.nlm.nih.gov/</li>
+<li>EMBL-EBI: https://www.ebi.ac.uk/</li>
+<li>UniProt: https://www.uniprot.org/</li>
+<li>RCSB PDB: https://www.rcsb.org/</li>
+</ul>
+<hr />
+<h1 id="bibliografia-del-bloque">Bibliografía del bloque</h1>
+<p>Según el proyecto docente, para el Bloque I se recomienda la siguiente bibliografía:</p>
+<ul>
+<li>Lesk, A. M. <em>Introduction to Bioinformatics</em>.</li>
+<li>Pevsner, J. <em>Bioinformatics and Functional Genomics</em>.</li>
+<li>Buffalo, V. <em>Bioinformatics Data Skills</em>.</li>
+<li>Zvelebil, M. J. y Baum, J. O. <em>Understanding Bioinformatics</em>.</li>
+</ul>
 
 
 

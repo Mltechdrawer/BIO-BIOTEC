@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-5" class="md-skip">
+        <a href="#practica-de-laboratorio-15-mini-flujo-bioinformatico-reproducible" class="md-skip">
           Skip to content
         </a>
       
@@ -761,36 +761,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2428,36 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivo-practico" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivo práctico
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
+  <a href="#objetivos" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tareas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tareas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resultado-esperado" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resultado esperado
+      Objetivos
     </span>
   </a>
   
@@ -2479,15 +2443,193 @@
 
 
 
-<h1 id="practica-1-recursos-bioinformaticos-y-bases-de-datos-biologicas-sesion-5">Práctica 1. Recursos bioinformáticos y bases de datos biológicas. Sesión 5</h1>
-<h2 id="objetivo-practico">Objetivo práctico</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="herramientas">Herramientas</h2>
-<p>Pendiente de definir.</p>
-<h2 id="tareas">Tareas</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="resultado-esperado">Resultado esperado</h2>
-<p>Pendiente de definir.</p>
+<h1 id="practica-de-laboratorio-15-mini-flujo-bioinformatico-reproducible">Práctica de Laboratorio 1.5. Mini flujo bioinformático reproducible</h1>
+<h2 id="duracion">Duración</h2>
+<p><strong>1 hora</strong></p>
+<p>Esta sesión integra las cuatro anteriores y cierra la práctica de laboratorio del Bloque I.</p>
+<hr />
+<h2 id="objetivos">Objetivos</h2>
+<p>Al finalizar la sesión, el estudiante será capaz de:</p>
+<ul>
+<li>Resolver un pequeño problema bioinformático de principio a fin.</li>
+<li>Recuperar datos reales.</li>
+<li>Procesarlos mediante Python.</li>
+<li>Organizar datos, código y documentación.</li>
+<li>Registrar identificadores y versiones.</li>
+<li>Generar un resultado reproducible.</li>
+<li>Comprender el concepto de flujo de trabajo bioinformático.</li>
+</ul>
+<hr />
+<h1 id="1-el-flujo-de-trabajo">1. El flujo de trabajo</h1>
+<p>Un análisis bioinformático puede representarse como:</p>
+<p><strong>pregunta → datos → procesamiento → resultado → documentación</strong></p>
+<p>En esta práctica se implementará una versión muy sencilla de ese ciclo.</p>
+<hr />
+<h1 id="2-caso-practico">2. Caso práctico</h1>
+<p>El profesorado asignará una entidad biológica.</p>
+<p>El estudiante deberá:</p>
+<ol>
+<li>localizarla en un recurso bioinformático;</li>
+<li>verificar el registro;</li>
+<li>descargar la secuencia;</li>
+<li>procesarla;</li>
+<li>generar un resumen;</li>
+<li>documentar el procedimiento.</li>
+</ol>
+<hr />
+<h1 id="3-paso-1-pregunta">3. Paso 1. Pregunta</h1>
+<p>Formula una pregunta sencilla.</p>
+<p>Ejemplo:</p>
+<blockquote>
+<p>¿Cuál es la longitud y composición de la secuencia asignada y de qué recurso procede?</p>
+</blockquote>
+<p>Escribe:</p>
+<pre><code class="language-text">Pregunta:
+</code></pre>
+<hr />
+<h1 id="4-paso-2-datos">4. Paso 2. Datos</h1>
+<p>Registra:</p>
+<pre><code class="language-text">Recurso:
+Identificador:
+Organismo:
+Versión:
+Fecha:
+Formato:
+</code></pre>
+<p>Descarga la secuencia.</p>
+<hr />
+<h1 id="5-paso-3-procesamiento">5. Paso 3. Procesamiento</h1>
+<p>El script debe:</p>
+<ul>
+<li>leer el FASTA;</li>
+<li>identificar el registro;</li>
+<li>calcular longitud;</li>
+<li>validar la secuencia;</li>
+<li>calcular composición;</li>
+<li>calcular GC% si corresponde.</li>
+</ul>
+<p>Ejemplo de estructura:</p>
+<pre><code class="language-python">def read_fasta(filename):
+    ...
+
+def is_valid_dna(sequence):
+    ...
+
+def gc_content(sequence):
+    ...
+
+def sequence_summary(sequence):
+    ...
+</code></pre>
+<hr />
+<h1 id="6-paso-4-resultado">6. Paso 4. Resultado</h1>
+<p>Genera un fichero:</p>
+<pre><code class="language-text">resultado.txt
+</code></pre>
+<p>con una salida semejante a:</p>
+<pre><code class="language-text">Identificador: XXXXX
+Organismo: XXXXX
+Longitud: 1250
+GC%: 47.8
+Secuencia válida: Sí
+</code></pre>
+<hr />
+<h1 id="7-paso-5-organizacion">7. Paso 5. Organización</h1>
+<p>Organiza el trabajo así:</p>
+<pre><code class="language-text">practica/
+│
+├── data/
+│   └── sequence.fasta
+│
+├── src/
+│   └── analysis.py
+│
+├── results/
+│   └── result.txt
+│
+└── README.md
+</code></pre>
+<p>Esta estructura separa:</p>
+<ul>
+<li>datos;</li>
+<li>código;</li>
+<li>resultados;</li>
+<li>documentación.</li>
+</ul>
+<hr />
+<h1 id="8-paso-6-readme">8. Paso 6. README</h1>
+<p>El fichero <code>README.md</code> debe incluir:</p>
+<h2 id="objetivo">Objetivo</h2>
+<p>Qué se pretende analizar.</p>
+<h2 id="datos">Datos</h2>
+<ul>
+<li>recurso;</li>
+<li>identificador;</li>
+<li>organismo;</li>
+<li>fecha;</li>
+<li>formato.</li>
+</ul>
+<h2 id="ejecucion">Ejecución</h2>
+<p>Cómo ejecutar:</p>
+<pre><code class="language-bash">python analysis.py
+</code></pre>
+<h2 id="resultado">Resultado</h2>
+<p>Qué produce el programa.</p>
+<h2 id="limitaciones">Limitaciones</h2>
+<p>Qué información no se ha analizado.</p>
+<hr />
+<h1 id="9-reproducibilidad">9. Reproducibilidad</h1>
+<p>Otra persona debería poder:</p>
+<ol>
+<li>identificar los datos;</li>
+<li>recuperar la misma secuencia;</li>
+<li>ejecutar el código;</li>
+<li>obtener el mismo resultado.</li>
+</ol>
+<p>Para comprobarlo, intercambia el trabajo con otra persona.</p>
+<p>La otra persona debe intentar seguir únicamente el <code>README.md</code>.</p>
+<hr />
+<h1 id="10-actividad-de-revision-cruzada">10. Actividad de revisión cruzada</h1>
+<p>Comprueba el trabajo de otro estudiante o pareja.</p>
+<p>Responde:</p>
+<ul>
+<li>¿puedo identificar el dato utilizado?</li>
+<li>¿sé de dónde procede?</li>
+<li>¿puedo ejecutar el script?</li>
+<li>¿comprendo el resultado?</li>
+<li>¿falta alguna información?</li>
+<li>¿obtengo el mismo resultado?</li>
+</ul>
+<hr />
+<h1 id="11-entregable">11. Entregable</h1>
+<p>Entrega la carpeta completa con:</p>
+<ul>
+<li>datos;</li>
+<li>código;</li>
+<li>resultado;</li>
+<li>README.</li>
+</ul>
+<p>Además, responde brevemente:</p>
+<ol>
+<li>¿Qué parte del flujo resultó más difícil?</li>
+<li>¿Qué elemento consideras imprescindible para que el trabajo sea reproducible?</li>
+<li>¿Qué cambiarías si tuvieras que analizar cientos de secuencias?</li>
+</ol>
+<hr />
+<h1 id="12-cierre-de-la-practica-de-laboratorio-del-bloque-i">12. Cierre de la práctica de laboratorio del Bloque I</h1>
+<p>Las cinco sesiones han seguido la progresión:</p>
+<ol>
+<li>algoritmia y Python;</li>
+<li>secuencias como datos;</li>
+<li>lectura de FASTA;</li>
+<li>recuperación de datos reales;</li>
+<li>mini flujo reproducible.</li>
+</ol>
+<p>La lógica global es:</p>
+<blockquote>
+<p><strong>comprender → programar → leer → recuperar → procesar → documentar</strong></p>
+</blockquote>
+<p>A partir del Bloque II, estas competencias servirán de apoyo para trabajar con comparación y análisis de secuencias.</p>
 
 
 
