@@ -658,6 +658,10 @@ La competencia importante no consiste en memorizar qué botón utilizar, sino en
 > **qué representa cada registro y qué nivel de evidencia contiene.**
 
 ---
+[Práctica en aula: Tipos de bases de datos y estructura de los registros biológicos](../aula/aula1_03.md)
+
+---
+
 
 # 2.5. Ejemplo de recorrido de información
 
@@ -828,6 +832,10 @@ Cuando sea posible, conviene utilizar campos e identificadores.
 - UniProt está especializado en información sobre proteínas.
 - PDB almacena información estructural tridimensional de macromoléculas.
 - Recuperar información no significa simplemente encontrar un resultado: hay que identificar, interpretar y validar el registro.
+
+
+---
+[Práctica en aula: Tipos de bases de datos y estructura de los registros biológicos](../aula/aula1_04.md)
 
 ---
 
