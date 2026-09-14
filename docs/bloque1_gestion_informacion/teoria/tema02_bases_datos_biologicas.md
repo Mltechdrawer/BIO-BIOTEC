@@ -38,13 +38,45 @@ El siguiente paso consiste en comprender cómo funciona ese ecosistema desde el 
 Una parte importante del trabajo bioinformático comienza con preguntas aparentemente sencillas:
 
 - ¿se conoce ya la secuencia de este gen?
+<details>
+  <summary>💡 Ejemplo</summary>
+Sí. La secuencia de BRCA1 está registrada en bases de datos de referencia y puede recuperarse, por ejemplo, desde NCBI.
+</details>
 - ¿qué proteína codifica?
+<details>
+  <summary>💡 Ejemplo</summary>
+Codifica la proteína BRCA1, implicada en procesos celulares relacionados con la reparación del ADN.
+</details>
 - ¿qué función se le atribuye?
+<details>
+  <summary>💡 Ejemplo</summary>
+Participa en el mantenimiento de la estabilidad genómica, especialmente en mecanismos de reparación del ADN.
+</details>
 - ¿qué variantes se han descrito?
+<details>
+  <summary>💡 Ejemplo</summary>
+Se han descrito muchas variantes. Algunas son benignas, otras de significado incierto y otras están asociadas a un mayor riesgo de determinados cánceres.
+</details>
 - ¿existe una estructura tridimensional?
+<details>
+  <summary>💡 Ejemplo</summary>
+Existen estructuras tridimensionales experimentales de regiones o complejos en los que participa BRCA1, aunque no siempre se dispone de una estructura completa de toda la proteína.
+</details>
 - ¿qué publicaciones están asociadas?
+<details>
+  <summary>💡 Ejemplo</summary>
+Hay miles de publicaciones relacionadas con BRCA1, desde su caracterización inicial hasta estudios sobre variantes, función, riesgo de cáncer y mecanismos moleculares.
+</details>
 - ¿qué información está experimentalmente comprobada y qué información ha sido predicha?
+<details>
+  <summary>💡 Ejemplo</summary>
+Algunas funciones y variantes se han estudiado experimentalmente. Otras anotaciones pueden proceder de inferencias computacionales, predicciones estructurales o similitud con otras proteínas.
+</details>
 - ¿qué identificador debo utilizar para recuperar el mismo registro más adelante?
+<details>
+  <summary>💡 Ejemplo</summary>
+Conviene utilizar un identificador estable, por ejemplo un identificador de NCBI Gene, RefSeq o UniProt, en lugar de confiar únicamente en el nombre “BRCA1”
+</details>
 
 Responder correctamente requiere saber **dónde buscar**, pero también entender **qué tipo de información almacena cada recurso y cómo está organizada**.
 
