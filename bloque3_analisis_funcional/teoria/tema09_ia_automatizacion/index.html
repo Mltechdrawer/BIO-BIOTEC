@@ -1449,27 +1449,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2419,27 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2462,16 +2444,496 @@
 
 
 <h1 id="tema-9-inteligencia-artificial-y-automatizacion-en-bioinformatica">Tema 9. Inteligencia artificial y automatización en Bioinformática</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="duracion">Duración</h2>
+<p><strong>2 horas de teoría</strong></p>
+<p>Este tema cierra el <strong>Bloque III. Análisis funcional y minería de datos biológicos</strong>.</p>
+<p>De acuerdo con la guía docente, se estructura en tres apartados:</p>
 <ul>
-<li>9.1 Automatización de tareas bioinformáticas.</li>
-<li>9.2 IA generativa aplicada al análisis biológico.</li>
-<li>9.3 Reproducibilidad y validación de resultados.</li>
+<li><strong>9.1. Automatización de tareas bioinformáticas.</strong></li>
+<li><strong>9.2. IA generativa aplicada al análisis biológico.</strong></li>
+<li><strong>9.3. Reproducibilidad y validación de resultados.</strong></li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<hr />
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Explicar por qué la automatización es necesaria en Bioinformática.</li>
+<li>Diferenciar entre una tarea manual, un script y un flujo de trabajo automatizado.</li>
+<li>Reconocer las ventajas de organizar análisis como procesos reproducibles.</li>
+<li>Identificar usos razonables de la IA generativa como herramienta de apoyo.</li>
+<li>Reconocer limitaciones de los sistemas generativos y la necesidad de verificar sus resultados.</li>
+<li>Distinguir entre generación de una propuesta y validación de una conclusión biológica.</li>
+<li>Comprender la importancia de registrar datos, parámetros, versiones y herramientas.</li>
+<li>Aplicar principios básicos de reproducibilidad y validación a un flujo bioinformático.</li>
+</ul>
+<hr />
+<h1 id="introduccion">Introducción</h1>
+<p>La Bioinformática trabaja con grandes cantidades de datos y con procesos formados por muchas etapas.</p>
+<p>Un análisis puede requerir:</p>
+<pre><code class="language-text">descargar datos
+    ↓
+convertir formatos
+    ↓
+filtrar
+    ↓
+comparar
+    ↓
+anotar
+    ↓
+integrar
+    ↓
+interpretar
+</code></pre>
+<p>Si cada paso se realiza manualmente, aparecen problemas:</p>
+<ul>
+<li>se consume mucho tiempo;</li>
+<li>aumenta el riesgo de error;</li>
+<li>es difícil repetir el proceso;</li>
+<li>resulta complicado saber exactamente qué se hizo.</li>
+</ul>
+<p>Por ello, la automatización es una parte esencial de la Bioinformática.</p>
+<p>Además, en los últimos años se han incorporado herramientas de inteligencia artificial capaces de:</p>
+<ul>
+<li>generar código;</li>
+<li>explicar resultados;</li>
+<li>resumir información;</li>
+<li>ayudar a explorar hipótesis;</li>
+<li>asistir en tareas documentales.</li>
+</ul>
+<p>Estas herramientas pueden ser útiles, pero no sustituyen la validación científica.</p>
+<hr />
+<h1 id="91-automatizacion-de-tareas-bioinformaticas">9.1. Automatización de tareas bioinformáticas</h1>
+<h2 id="911-que-significa-automatizar">9.1.1. Qué significa automatizar</h2>
+<p>Automatizar consiste en definir un procedimiento que pueda ejecutarse de forma repetida con mínima intervención manual.</p>
+<p>Por ejemplo, si tenemos 500 secuencias, no queremos:</p>
+<ol>
+<li>abrir cada fichero;</li>
+<li>calcular manualmente la longitud;</li>
+<li>copiar el resultado;</li>
+<li>repetir el proceso 500 veces.</li>
+</ol>
+<p>Preferimos escribir un procedimiento que procese automáticamente todas las secuencias.</p>
+<hr />
+<h2 id="912-de-la-tarea-al-algoritmo">9.1.2. De la tarea al algoritmo</h2>
+<p>Una tarea manual:</p>
+<pre><code class="language-text">abrir fichero
+leer secuencia
+calcular longitud
+guardar resultado
+</code></pre>
+<p>puede expresarse como un algoritmo.</p>
+<p>Posteriormente puede implementarse mediante:</p>
+<ul>
+<li>un script;</li>
+<li>una herramienta;</li>
+<li>un pipeline;</li>
+<li>un gestor de flujos de trabajo.</li>
+</ul>
+<hr />
+<h2 id="913-scripts">9.1.3. Scripts</h2>
+<p>Un script es un programa pequeño diseñado para realizar una tarea concreta.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>renombrar ficheros;</li>
+<li>leer FASTA;</li>
+<li>extraer identificadores;</li>
+<li>filtrar resultados;</li>
+<li>combinar tablas;</li>
+<li>ejecutar una herramienta sobre múltiples archivos.</li>
+</ul>
+<p>Python es una de las opciones habituales para este tipo de automatización.</p>
+<hr />
+<h2 id="914-procesamiento-por-lotes">9.1.4. Procesamiento por lotes</h2>
+<p>Una ventaja clave es el procesamiento de muchos datos de forma consistente.</p>
+<p>En lugar de:</p>
+<pre><code class="language-text">archivo1 → análisis manual
+archivo2 → análisis manual
+archivo3 → análisis manual
+</code></pre>
+<p>podemos definir:</p>
+<pre><code class="language-text">todos los archivos
+       ↓
+mismo procedimiento
+       ↓
+tabla de resultados
+</code></pre>
+<p>Esto reduce diferencias introducidas accidentalmente por el usuario.</p>
+<hr />
+<h2 id="915-pipelines">9.1.5. Pipelines</h2>
+<p>Un <strong>pipeline</strong> conecta varias tareas en una secuencia definida.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-text">FASTA
+  ↓
+control de calidad
+  ↓
+búsqueda de similitud
+  ↓
+anotación funcional
+  ↓
+tabla final
+</code></pre>
+<p>Cada etapa recibe la salida de la anterior.</p>
+<hr />
+<h2 id="916-ventajas-de-un-pipeline">9.1.6. Ventajas de un pipeline</h2>
+<p>Un flujo automatizado puede mejorar:</p>
+<ul>
+<li>velocidad;</li>
+<li>consistencia;</li>
+<li>escalabilidad;</li>
+<li>trazabilidad;</li>
+<li>reproducibilidad.</li>
+</ul>
+<p>Pero automatizar no garantiza que el análisis sea correcto.</p>
+<p>Un error en el procedimiento puede repetirse automáticamente cientos de veces.</p>
+<hr />
+<h2 id="917-automatizacion-y-control">9.1.7. Automatización y control</h2>
+<p>Todo proceso automatizado debería incluir controles.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>comprobar que existen los archivos;</li>
+<li>verificar formatos;</li>
+<li>detectar valores inesperados;</li>
+<li>registrar errores;</li>
+<li>conservar logs;</li>
+<li>revisar resultados intermedios.</li>
+</ul>
+<p>Automatizar no significa eliminar la supervisión.</p>
+<hr />
+<h2 id="918-flujos-de-trabajo-reproducibles">9.1.8. Flujos de trabajo reproducibles</h2>
+<p>En proyectos más complejos pueden utilizarse gestores de workflows.</p>
+<p>Estos sistemas permiten definir:</p>
+<ul>
+<li>entradas;</li>
+<li>pasos;</li>
+<li>dependencias;</li>
+<li>parámetros;</li>
+<li>salidas.</li>
+</ul>
+<p>El objetivo es que el análisis pueda ejecutarse nuevamente de forma controlada.</p>
+<p>En este curso nos interesa principalmente el concepto, no aprender un gestor concreto.</p>
+<hr />
+<h1 id="92-ia-generativa-aplicada-al-analisis-biologico">9.2. IA generativa aplicada al análisis biológico</h1>
+<h2 id="921-que-entendemos-por-ia-generativa">9.2.1. Qué entendemos por IA generativa</h2>
+<p>La IA generativa puede producir contenido nuevo a partir de instrucciones y contexto.</p>
+<p>Puede generar:</p>
+<ul>
+<li>texto;</li>
+<li>código;</li>
+<li>resúmenes;</li>
+<li>explicaciones;</li>
+<li>estructuras de datos;</li>
+<li>propuestas de análisis.</li>
+</ul>
+<p>En Bioinformática puede utilizarse como herramienta de apoyo.</p>
+<hr />
+<h2 id="922-apoyo-a-la-programacion">9.2.2. Apoyo a la programación</h2>
+<p>Un sistema generativo puede ayudar a:</p>
+<ul>
+<li>explicar código;</li>
+<li>generar funciones sencillas;</li>
+<li>detectar errores;</li>
+<li>convertir pseudocódigo en Python;</li>
+<li>documentar scripts.</li>
+</ul>
+<p>Ejemplo de tarea:</p>
+<blockquote>
+<p>“Escribe una función en Python que lea un FASTA y calcule la longitud de cada secuencia.”</p>
+</blockquote>
+<p>El resultado puede ahorrar tiempo.</p>
+<p>Pero el código generado debe:</p>
+<ul>
+<li>revisarse;</li>
+<li>ejecutarse;</li>
+<li>probarse;</li>
+<li>validarse con datos conocidos.</li>
+</ul>
+<hr />
+<h2 id="923-apoyo-a-la-interpretacion">9.2.3. Apoyo a la interpretación</h2>
+<p>La IA también puede ayudar a:</p>
+<ul>
+<li>resumir resultados;</li>
+<li>organizar observaciones;</li>
+<li>explicar términos;</li>
+<li>sugerir preguntas;</li>
+<li>comparar interpretaciones.</li>
+</ul>
+<p>Sin embargo, una explicación generada no constituye evidencia científica.</p>
+<hr />
+<h2 id="924-apoyo-a-la-busqueda-y-documentacion">9.2.4. Apoyo a la búsqueda y documentación</h2>
+<p>Puede ser útil para:</p>
+<ul>
+<li>reformular consultas;</li>
+<li>generar palabras clave;</li>
+<li>resumir documentación;</li>
+<li>estructurar un informe;</li>
+<li>preparar descripciones de métodos.</li>
+</ul>
+<p>Pero los identificadores, referencias, funciones y resultados deben comprobarse en las fuentes originales.</p>
+<hr />
+<h2 id="925-alucinaciones-y-errores">9.2.5. Alucinaciones y errores</h2>
+<p>Los sistemas generativos pueden producir información:</p>
+<ul>
+<li>incorrecta;</li>
+<li>inexistente;</li>
+<li>desactualizada;</li>
+<li>aparentemente convincente.</li>
+</ul>
+<p>Por ejemplo, pueden inventar:</p>
+<ul>
+<li>referencias;</li>
+<li>identificadores;</li>
+<li>nombres de herramientas;</li>
+<li>funciones;</li>
+<li>relaciones biológicas.</li>
+</ul>
+<p>Por ello, el principio básico es:</p>
+<blockquote>
+<p><strong>generar no significa verificar</strong></p>
+</blockquote>
+<hr />
+<h2 id="926-ia-generativa-como-asistente-no-como-fuente-primaria">9.2.6. IA generativa como asistente, no como fuente primaria</h2>
+<p>Una estrategia adecuada es utilizarla para:</p>
+<pre><code class="language-text">proponer
+organizar
+explicar
+programar
+resumir
+</code></pre>
+<p>y utilizar fuentes bioinformáticas y científicas para:</p>
+<pre><code class="language-text">verificar
+validar
+documentar
+concluir
+</code></pre>
+<hr />
+<h2 id="927-ejemplo-de-uso-adecuado">9.2.7. Ejemplo de uso adecuado</h2>
+<p>Supongamos que tenemos una tabla de genes y queremos preparar un análisis funcional.</p>
+<p>Podemos pedir a una IA:</p>
+<blockquote>
+<p>“Ayúdame a organizar los pasos necesarios para realizar un análisis de enriquecimiento.”</p>
+</blockquote>
+<p>La IA puede proponer un flujo.</p>
+<p>Después debemos comprobar:</p>
+<ul>
+<li>identificadores;</li>
+<li>herramienta;</li>
+<li>background;</li>
+<li>parámetros;</li>
+<li>resultados;</li>
+<li>significación;</li>
+<li>interpretación.</li>
+</ul>
+<hr />
+<h2 id="928-ejemplo-de-uso-inadecuado">9.2.8. Ejemplo de uso inadecuado</h2>
+<p>Una consulta como:</p>
+<blockquote>
+<p>“¿Qué función tiene esta proteína desconocida?”</p>
+</blockquote>
+<p>puede producir una respuesta plausible pero no validada.</p>
+<p>Sin análisis de secuencia, dominios, homología y fuentes funcionales, la respuesta no debería aceptarse como anotación.</p>
+<hr />
+<h1 id="93-reproducibilidad-y-validacion-de-resultados">9.3. Reproducibilidad y validación de resultados</h1>
+<h2 id="931-que-significa-reproducibilidad">9.3.1. Qué significa reproducibilidad</h2>
+<p>Un análisis reproducible permite que otra persona pueda:</p>
+<ul>
+<li>conocer los datos utilizados;</li>
+<li>conocer el procedimiento;</li>
+<li>ejecutar el análisis;</li>
+<li>obtener resultados equivalentes.</li>
+</ul>
+<p>Para ello debemos conservar suficiente información.</p>
+<hr />
+<h2 id="932-que-debemos-registrar">9.3.2. Qué debemos registrar</h2>
+<p>Como mínimo:</p>
+<ul>
+<li>datos de entrada;</li>
+<li>identificadores;</li>
+<li>versiones;</li>
+<li>fecha;</li>
+<li>herramientas;</li>
+<li>versiones de software;</li>
+<li>parámetros;</li>
+<li>scripts;</li>
+<li>resultados;</li>
+<li>decisiones manuales.</li>
+</ul>
+<hr />
+<h2 id="933-organizacion-del-proyecto">9.3.3. Organización del proyecto</h2>
+<p>Una estructura sencilla puede separar:</p>
+<pre><code class="language-text">project/
+│
+├── data/
+├── scripts/
+├── results/
+├── docs/
+└── README.md
+</code></pre>
+<p>Esto ayuda a distinguir:</p>
+<ul>
+<li>datos originales;</li>
+<li>código;</li>
+<li>resultados;</li>
+<li>documentación.</li>
+</ul>
+<hr />
+<h2 id="934-datos-originales-y-datos-procesados">9.3.4. Datos originales y datos procesados</h2>
+<p>Es recomendable no sobrescribir los datos originales.</p>
+<p>Podemos mantener:</p>
+<pre><code class="language-text">data/raw/
+data/processed/
+</code></pre>
+<p>Así podemos volver al punto de partida.</p>
+<hr />
+<h2 id="935-registro-de-parametros">9.3.5. Registro de parámetros</h2>
+<p>Dos ejecuciones de una misma herramienta pueden producir resultados distintos si cambian:</p>
+<ul>
+<li>parámetros;</li>
+<li>bases de datos;</li>
+<li>versiones;</li>
+<li>filtros.</li>
+</ul>
+<p>Por ello, registrar únicamente el nombre de la herramienta es insuficiente.</p>
+<hr />
+<h2 id="936-validacion-de-resultados">9.3.6. Validación de resultados</h2>
+<p>Validar significa comprobar que un resultado es coherente y fiable.</p>
+<p>Puede implicar:</p>
+<ul>
+<li>utilizar datos de control;</li>
+<li>comparar con resultados conocidos;</li>
+<li>revisar manualmente una muestra;</li>
+<li>contrastar con otra herramienta;</li>
+<li>consultar literatura;</li>
+<li>comprobar consistencia biológica.</li>
+</ul>
+<hr />
+<h2 id="937-validar-codigo-generado-por-ia">9.3.7. Validar código generado por IA</h2>
+<p>Si una IA genera un script:</p>
+<ol>
+<li>debemos leerlo;</li>
+<li>comprender qué hace;</li>
+<li>probarlo con datos pequeños;</li>
+<li>utilizar casos con resultado conocido;</li>
+<li>comprobar errores;</li>
+<li>documentar modificaciones.</li>
+</ol>
+<p>Ejecutar código sin comprenderlo puede introducir errores difíciles de detectar.</p>
+<hr />
+<h2 id="938-validar-interpretaciones-generadas-por-ia">9.3.8. Validar interpretaciones generadas por IA</h2>
+<p>Una interpretación debe verificarse utilizando:</p>
+<ul>
+<li>bases de datos;</li>
+<li>anotaciones revisadas;</li>
+<li>publicaciones;</li>
+<li>evidencia experimental;</li>
+<li>resultados reproducibles.</li>
+</ul>
+<p>La IA puede ayudar a formular una explicación, pero la evidencia debe proceder de fuentes verificables.</p>
+<hr />
+<h2 id="939-trazabilidad-del-uso-de-ia">9.3.9. Trazabilidad del uso de IA</h2>
+<p>Cuando una herramienta de IA interviene en un análisis conviene registrar:</p>
+<ul>
+<li>herramienta utilizada;</li>
+<li>finalidad;</li>
+<li>información proporcionada;</li>
+<li>resultado utilizado;</li>
+<li>verificaciones realizadas;</li>
+<li>modificaciones posteriores.</li>
+</ul>
+<p>Además, cuando la normativa académica o científica lo requiera, su utilización debe declararse explícitamente.</p>
+<hr />
+<h1 id="94-automatizacion-responsable">9.4. Automatización responsable</h1>
+<p>Un flujo automatizado adecuado combina:</p>
+<pre><code class="language-text">automatización
+     +
+controles
+     +
+documentación
+     +
+validación
+</code></pre>
+<p>La velocidad sin control puede multiplicar errores.</p>
+<p>La IA sin verificación puede producir interpretaciones convincentes pero incorrectas.</p>
+<p>Por ello, la automatización responsable requiere supervisión.</p>
+<hr />
+<h1 id="95-ejemplo-integrado">9.5. Ejemplo integrado</h1>
+<p>Supongamos que recibimos 100 secuencias de proteínas.</p>
+<p>Queremos obtener una primera caracterización funcional.</p>
+<p>Un flujo podría ser:</p>
+<pre><code class="language-text">1. Validar los ficheros
+        ↓
+2. Procesar las secuencias automáticamente
+        ↓
+3. Buscar similitud
+        ↓
+4. Identificar dominios
+        ↓
+5. Integrar anotaciones
+        ↓
+6. Generar una tabla
+        ↓
+7. Utilizar IA para ayudar a resumir patrones
+        ↓
+8. Verificar el resumen con las fuentes
+        ↓
+9. Documentar el proceso
+</code></pre>
+<p>La IA aparece como una etapa de apoyo, no como sustituto de las herramientas bioinformáticas ni de la validación.</p>
+<hr />
+<h1 id="96-errores-frecuentes">9.6. Errores frecuentes</h1>
+<h2 id="automatizar-antes-de-entender-el-procedimiento">Automatizar antes de entender el procedimiento</h2>
+<p>Un proceso mal diseñado puede producir errores a gran escala.</p>
+<h2 id="no-conservar-los-datos-originales">No conservar los datos originales</h2>
+<p>Impide reconstruir el análisis.</p>
+<h2 id="no-registrar-versiones-o-parametros">No registrar versiones o parámetros</h2>
+<p>Dificulta la reproducción del resultado.</p>
+<h2 id="ejecutar-codigo-generado-por-ia-sin-revisarlo">Ejecutar código generado por IA sin revisarlo</h2>
+<p>Puede producir resultados incorrectos o inseguros.</p>
+<h2 id="utilizar-una-respuesta-generada-como-evidencia">Utilizar una respuesta generada como evidencia</h2>
+<p>La evidencia debe proceder de fuentes científicas o resultados validados.</p>
+<h2 id="no-declarar-el-uso-de-ia-cuando-sea-necesario">No declarar el uso de IA cuando sea necesario</h2>
+<p>La transparencia forma parte de la trazabilidad.</p>
+<hr />
+<h1 id="97-cuestiones-guia">9.7. Cuestiones guía</h1>
+<ol>
+<li>¿Qué ventajas aporta automatizar un análisis bioinformático?</li>
+<li>¿Qué diferencia existe entre un script y un pipeline?</li>
+<li>¿Por qué automatizar no garantiza un resultado correcto?</li>
+<li>¿Qué tareas puede apoyar razonablemente una IA generativa?</li>
+<li>¿Qué significa que un modelo pueda alucinar?</li>
+<li>¿Por qué un código generado debe validarse?</li>
+<li>¿Qué información mínima debemos conservar para reproducir un análisis?</li>
+<li>¿Por qué no debemos sobrescribir los datos originales?</li>
+<li>¿Cómo puede verificarse una interpretación generada por IA?</li>
+<li>¿Por qué es importante registrar el uso de herramientas de IA?</li>
+<li>¿Qué diferencia existe entre generar una hipótesis y validarla?</li>
+<li>¿Qué elementos forman un flujo automatizado responsable?</li>
+</ol>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>La automatización permite procesar datos de forma repetible y escalable.</li>
+<li>Los scripts resuelven tareas; los pipelines conectan varias tareas.</li>
+<li>Automatizar no elimina la necesidad de supervisión.</li>
+<li>La IA generativa puede apoyar programación, documentación e interpretación.</li>
+<li>Una salida generada no constituye evidencia científica.</li>
+<li>Los resultados y el código deben verificarse.</li>
+<li>La reproducibilidad exige conservar datos, herramientas, versiones y parámetros.</li>
+<li>Los datos originales no deberían sobrescribirse.</li>
+<li>La validación debe combinar controles computacionales y contexto biológico.</li>
+<li>El uso de IA debe ser transparente y trazable.</li>
+</ul>
+<hr />
+<h1 id="cierre-del-bloque-iii">Cierre del Bloque III</h1>
+<p>Este tema completa el <strong>Bloque III. Análisis funcional y minería de datos biológicos</strong>.</p>
+<p>La progresión del bloque ha sido:</p>
+<p><strong>Tema 7 → anotar genes y proteínas</strong></p>
+<p><strong>Tema 8 → integrar y explotar información funcional</strong></p>
+<p><strong>Tema 9 → automatizar análisis y utilizar IA de forma verificable</strong></p>
+<p>La lógica global puede resumirse así:</p>
+<blockquote>
+<p><strong>anotar → integrar → interpretar → automatizar → validar</strong></p>
+</blockquote>
+<p>En el <strong>Bloque IV. Bioinformática estructural y modelado computacional</strong> cambiaremos el nivel de análisis y trabajaremos con la representación tridimensional de biomoléculas, su visualización y los métodos actuales de predicción estructural.</p>
 
 
 

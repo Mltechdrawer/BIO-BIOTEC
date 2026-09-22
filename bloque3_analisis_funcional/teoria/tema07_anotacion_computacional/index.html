@@ -1403,27 +1403,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2419,27 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2462,16 +2444,410 @@
 
 
 <h1 id="tema-7-anotacion-computacional-de-genes-y-proteinas">Tema 7. Anotación computacional de genes y proteínas</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="duracion">Duración</h2>
+<p><strong>1 hora de teoría</strong></p>
+<p>Este tema abre el <strong>Bloque III. Análisis funcional y minería de datos biológicos</strong>.</p>
+<p>De acuerdo con la guía docente, se estructura en tres apartados:</p>
 <ul>
-<li>7.1 Concepto de anotación.</li>
-<li>7.2 Fuentes de información funcional.</li>
-<li>7.3 Flujo de anotación bioinformática.</li>
+<li><strong>7.1. Concepto de anotación.</strong></li>
+<li><strong>7.2. Fuentes de información funcional.</strong></li>
+<li><strong>7.3. Flujo de anotación bioinformática.</strong></li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<hr />
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Explicar qué significa anotar un gen o una proteína.</li>
+<li>Diferenciar entre anotación estructural y anotación funcional.</li>
+<li>Reconocer que una anotación puede proceder de evidencia experimental, inferencia computacional o integración de múltiples fuentes.</li>
+<li>Identificar fuentes de información funcional utilizadas habitualmente en Bioinformática.</li>
+<li>Comprender el papel de dominios, familias, motivos y referencias bibliográficas en la anotación.</li>
+<li>Describir un flujo básico de anotación bioinformática.</li>
+<li>Valorar la calidad de una anotación atendiendo a su procedencia y nivel de evidencia.</li>
+<li>Comprender que la anotación es un proceso dinámico y revisable.</li>
+</ul>
+<hr />
+<h1 id="introduccion">Introducción</h1>
+<p>En los bloques anteriores hemos aprendido a localizar información biológica, recuperar secuencias y compararlas.</p>
+<p>Ahora damos un paso diferente.</p>
+<p>Ya no nos preguntamos únicamente:</p>
+<blockquote>
+<p><strong>¿qué secuencia es esta?</strong></p>
+</blockquote>
+<p>sino:</p>
+<blockquote>
+<p><strong>¿qué significa biológicamente esta secuencia?</strong></p>
+</blockquote>
+<p>Podemos disponer de una secuencia completa y correcta y, sin embargo, saber muy poco sobre ella.</p>
+<p>Por ejemplo, una proteína puede tener cientos de aminoácidos, pero necesitamos responder preguntas como:</p>
+<ul>
+<li>¿qué función realiza?</li>
+<li>¿en qué proceso participa?</li>
+<li>¿qué dominio contiene?</li>
+<li>¿en qué parte de la célula actúa?</li>
+<li>¿qué genes o proteínas están relacionados con ella?</li>
+<li>¿existe evidencia experimental?</li>
+<li>¿qué parte de la información es una predicción?</li>
+</ul>
+<p>La <strong>anotación</strong> intenta responder a estas preguntas.</p>
+<p>En Bioinformática, anotar consiste en asociar información biológica interpretable a una secuencia o entidad molecular.</p>
+<hr />
+<h1 id="71-concepto-de-anotacion">7.1. Concepto de anotación</h1>
+<h2 id="711-del-dato-a-la-interpretacion">7.1.1. Del dato a la interpretación</h2>
+<p>Consideremos una secuencia:</p>
+<pre><code class="language-text">MKWVTFISLLFLFSSAYSR...
+</code></pre>
+<p>Por sí sola contiene información molecular, pero no nos indica directamente:</p>
+<ul>
+<li>qué proteína es;</li>
+<li>qué función desempeña;</li>
+<li>dónde se localiza;</li>
+<li>qué dominios contiene;</li>
+<li>o en qué procesos participa.</li>
+</ul>
+<p>Cuando añadimos información como:</p>
+<pre><code class="language-text">Proteína: ...
+Función: ...
+Localización: ...
+Dominio: ...
+Proceso biológico: ...
+</code></pre>
+<p>estamos anotando la secuencia.</p>
+<p>La anotación transforma un dato molecular en información interpretable.</p>
+<hr />
+<h2 id="712-anotacion-estructural-y-funcional">7.1.2. Anotación estructural y funcional</h2>
+<p>Podemos distinguir, de forma general, dos niveles.</p>
+<h3 id="anotacion-estructural">Anotación estructural</h3>
+<p>Describe <strong>qué elementos existen y dónde se encuentran</strong>.</p>
+<p>En una secuencia genómica puede incluir:</p>
+<ul>
+<li>genes;</li>
+<li>exones;</li>
+<li>intrones;</li>
+<li>regiones codificantes;</li>
+<li>sitios de inicio y terminación.</li>
+</ul>
+<h3 id="anotacion-funcional">Anotación funcional</h3>
+<p>Describe <strong>qué función puede desempeñar el elemento identificado</strong>.</p>
+<p>Puede incluir:</p>
+<ul>
+<li>función molecular;</li>
+<li>proceso biológico;</li>
+<li>localización celular;</li>
+<li>dominios;</li>
+<li>familias;</li>
+<li>rutas metabólicas;</li>
+<li>interacciones.</li>
+</ul>
+<p>En este bloque nos centraremos principalmente en la anotación funcional.</p>
+<hr />
+<h2 id="713-anotacion-manual-y-automatica">7.1.3. Anotación manual y automática</h2>
+<h3 id="anotacion-manual">Anotación manual</h3>
+<p>Es revisada por expertos.</p>
+<p>Puede incorporar:</p>
+<ul>
+<li>resultados experimentales;</li>
+<li>literatura científica;</li>
+<li>conocimiento especializado;</li>
+<li>revisión crítica de evidencias.</li>
+</ul>
+<p>Suele ofrecer información de alta calidad, aunque no es viable revisar manualmente millones de secuencias.</p>
+<h3 id="anotacion-automatica">Anotación automática</h3>
+<p>Se genera mediante herramientas computacionales.</p>
+<p>Puede basarse en:</p>
+<ul>
+<li>similitud de secuencia;</li>
+<li>presencia de dominios;</li>
+<li>motivos;</li>
+<li>perfiles;</li>
+<li>reglas;</li>
+<li>modelos predictivos.</li>
+</ul>
+<p>Permite trabajar a gran escala, pero necesita ser interpretada con cautela.</p>
+<hr />
+<h2 id="714-evidencia-experimental-e-inferencia">7.1.4. Evidencia experimental e inferencia</h2>
+<p>Una anotación puede estar apoyada por distintos niveles de evidencia.</p>
+<h3 id="evidencia-experimental">Evidencia experimental</h3>
+<p>Existe un experimento que respalda directamente la función.</p>
+<h3 id="inferencia-computacional">Inferencia computacional</h3>
+<p>La función se propone a partir de información como:</p>
+<ul>
+<li>similitud con proteínas conocidas;</li>
+<li>pertenencia a una familia;</li>
+<li>presencia de un dominio;</li>
+<li>conservación evolutiva.</li>
+</ul>
+<h3 id="integracion-de-evidencias">Integración de evidencias</h3>
+<p>En muchos casos, la anotación final combina varios tipos de información.</p>
+<p>Por ello, una pregunta importante es:</p>
+<blockquote>
+<p><strong>¿qué evidencia respalda esta anotación?</strong></p>
+</blockquote>
+<hr />
+<h2 id="715-transferencia-de-anotacion-por-similitud">7.1.5. Transferencia de anotación por similitud</h2>
+<p>Una estrategia frecuente consiste en comparar una secuencia desconocida con otra ya caracterizada.</p>
+<p>Si existe una relación suficientemente fuerte, podemos utilizar la información conocida como apoyo para proponer una función.</p>
+<p>Pero esta transferencia tiene riesgos.</p>
+<p>Dos secuencias similares pueden:</p>
+<ul>
+<li>tener funciones parecidas;</li>
+<li>haber divergido funcionalmente;</li>
+<li>compartir solo un dominio;</li>
+<li>pertenecer a miembros diferentes de una familia.</li>
+</ul>
+<p>Por ello:</p>
+<blockquote>
+<p><strong>similitud de secuencia no equivale automáticamente a identidad funcional</strong></p>
+</blockquote>
+<hr />
+<h2 id="716-dominios-y-motivos">7.1.6. Dominios y motivos</h2>
+<p>Una proteína puede contener regiones con funciones concretas.</p>
+<h3 id="dominio">Dominio</h3>
+<p>Es una región que puede presentar:</p>
+<ul>
+<li>estructura propia;</li>
+<li>función característica;</li>
+<li>conservación evolutiva.</li>
+</ul>
+<p>Una misma proteína puede contener varios dominios.</p>
+<h3 id="motivo">Motivo</h3>
+<p>Es una secuencia corta conservada asociada con una característica funcional o estructural.</p>
+<p>La detección de dominios y motivos ayuda a interpretar proteínas incluso cuando la función completa no está bien caracterizada.</p>
+<hr />
+<h2 id="717-familias-de-proteinas">7.1.7. Familias de proteínas</h2>
+<p>Las proteínas relacionadas pueden agruparse en familias.</p>
+<p>Los miembros de una familia pueden compartir:</p>
+<ul>
+<li>origen evolutivo;</li>
+<li>dominios;</li>
+<li>motivos;</li>
+<li>estructura;</li>
+<li>funciones relacionadas.</li>
+</ul>
+<p>La pertenencia a una familia aporta información útil para la anotación, pero no debe utilizarse sin considerar diferencias entre miembros.</p>
+<hr />
+<h1 id="72-fuentes-de-informacion-funcional">7.2. Fuentes de información funcional</h1>
+<h2 id="721-uniprot">7.2.1. UniProt</h2>
+<p><strong>UniProt</strong> es uno de los principales recursos para información funcional sobre proteínas.</p>
+<p>Un registro puede incluir:</p>
+<ul>
+<li>nombre y función;</li>
+<li>organismo;</li>
+<li>secuencia;</li>
+<li>localización celular;</li>
+<li>dominios y regiones;</li>
+<li>modificaciones;</li>
+<li>variantes;</li>
+<li>referencias bibliográficas;</li>
+<li>evidencias;</li>
+<li>enlaces a otros recursos.</li>
+</ul>
+<p>Es especialmente importante distinguir entre información revisada y anotaciones generadas automáticamente.</p>
+<p>Recurso: https://www.uniprot.org/</p>
+<hr />
+<h2 id="722-interpro">7.2.2. InterPro</h2>
+<p><strong>InterPro</strong> integra información procedente de diferentes recursos especializados para identificar:</p>
+<ul>
+<li>familias;</li>
+<li>dominios;</li>
+<li>sitios funcionales;</li>
+<li>regiones conservadas.</li>
+</ul>
+<p>Permite analizar una proteína y observar qué firmas funcionales aparecen en su secuencia.</p>
+<p>Recurso: https://www.ebi.ac.uk/interpro/</p>
+<hr />
+<h2 id="723-pfam">7.2.3. Pfam</h2>
+<p><strong>Pfam</strong> se ha utilizado ampliamente para identificar familias y dominios proteicos mediante modelos construidos a partir de alineamientos de secuencias.</p>
+<p>Su información está actualmente integrada y accesible a través de recursos como InterPro.</p>
+<p>La idea fundamental es que un dominio conservado puede detectarse aunque la proteína completa haya divergido.</p>
+<hr />
+<h2 id="724-gene-ontology">7.2.4. Gene Ontology</h2>
+<p><strong>Gene Ontology (GO)</strong> proporciona un vocabulario estructurado para describir funciones de genes y proteínas.</p>
+<p>Organiza términos en tres grandes categorías:</p>
+<ul>
+<li><strong>Molecular Function</strong>: qué actividad realiza.</li>
+<li><strong>Biological Process</strong>: en qué proceso participa.</li>
+<li><strong>Cellular Component</strong>: dónde actúa.</li>
+</ul>
+<p>GO será desarrollado con mayor detalle en el Tema 8.</p>
+<p>Recurso: https://geneontology.org/</p>
+<hr />
+<h2 id="725-rutas-y-procesos">7.2.5. Rutas y procesos</h2>
+<p>Existen recursos que relacionan genes y proteínas con rutas y procesos biológicos.</p>
+<p>Entre ellos:</p>
+<ul>
+<li>Reactome;</li>
+<li>KEGG;</li>
+<li>otros recursos especializados.</li>
+</ul>
+<p>Estos recursos permiten pasar de la función de una proteína individual a una visión más amplia del sistema biológico.</p>
+<p>Reactome: https://reactome.org/</p>
+<hr />
+<h2 id="726-literatura-cientifica">7.2.6. Literatura científica</h2>
+<p>La literatura sigue siendo una fuente esencial.</p>
+<p>Una anotación puede estar respaldada por:</p>
+<ul>
+<li>estudios bioquímicos;</li>
+<li>experimentos de expresión;</li>
+<li>análisis genéticos;</li>
+<li>caracterización estructural;</li>
+<li>estudios de interacción.</li>
+</ul>
+<p>Por ello, una buena anotación debería permitir rastrear la información hasta su evidencia original cuando sea posible.</p>
+<hr />
+<h1 id="73-flujo-de-anotacion-bioinformatica">7.3. Flujo de anotación bioinformática</h1>
+<h2 id="731-el-punto-de-partida">7.3.1. El punto de partida</h2>
+<p>Un flujo de anotación puede comenzar con:</p>
+<ul>
+<li>una secuencia de ADN;</li>
+<li>una secuencia codificante;</li>
+<li>una proteína;</li>
+<li>un conjunto de genes;</li>
+<li>un genoma completo.</li>
+</ul>
+<p>En este tema utilizaremos como ejemplo una proteína.</p>
+<hr />
+<h2 id="732-paso-1-verificar-la-secuencia">7.3.2. Paso 1. Verificar la secuencia</h2>
+<p>Antes de anotar conviene comprobar:</p>
+<ul>
+<li>identificador;</li>
+<li>organismo;</li>
+<li>longitud;</li>
+<li>integridad;</li>
+<li>procedencia.</li>
+</ul>
+<p>Una secuencia incorrecta puede generar anotaciones incorrectas.</p>
+<hr />
+<h2 id="733-paso-2-buscar-secuencias-relacionadas">7.3.3. Paso 2. Buscar secuencias relacionadas</h2>
+<p>Podemos utilizar herramientas de comparación como BLAST.</p>
+<p>El objetivo es identificar:</p>
+<ul>
+<li>proteínas similares;</li>
+<li>proteínas caracterizadas;</li>
+<li>posibles homólogos.</li>
+</ul>
+<p>Aquí se reutilizan directamente los conocimientos del Bloque II.</p>
+<hr />
+<h2 id="734-paso-3-analizar-dominios-y-firmas">7.3.4. Paso 3. Analizar dominios y firmas</h2>
+<p>La secuencia puede analizarse con recursos como InterPro para detectar:</p>
+<ul>
+<li>dominios;</li>
+<li>familias;</li>
+<li>sitios funcionales;</li>
+<li>regiones conservadas.</li>
+</ul>
+<p>Esto permite obtener información independiente de la similitud global.</p>
+<hr />
+<h2 id="735-paso-4-consultar-registros-funcionales">7.3.5. Paso 4. Consultar registros funcionales</h2>
+<p>A continuación podemos consultar:</p>
+<ul>
+<li>UniProt;</li>
+<li>Gene Ontology;</li>
+<li>Reactome;</li>
+<li>literatura científica;</li>
+<li>bases de conocimiento especializadas.</li>
+</ul>
+<p>La información de varias fuentes puede complementar la interpretación.</p>
+<hr />
+<h2 id="736-paso-5-evaluar-la-evidencia">7.3.6. Paso 5. Evaluar la evidencia</h2>
+<p>No todas las anotaciones tienen el mismo nivel de confianza.</p>
+<p>Debemos distinguir:</p>
+<ul>
+<li>evidencia experimental;</li>
+<li>inferencia por homología;</li>
+<li>predicción automática;</li>
+<li>información revisada;</li>
+<li>información no revisada.</li>
+</ul>
+<hr />
+<h2 id="737-paso-6-formular-una-anotacion">7.3.7. Paso 6. Formular una anotación</h2>
+<p>Una anotación responsable debe evitar afirmar más de lo que permiten los datos.</p>
+<p>Es preferible escribir:</p>
+<blockquote>
+<p>“Proteína con un dominio compatible con…”</p>
+</blockquote>
+<p>que afirmar una función concreta cuando la evidencia es insuficiente.</p>
+<hr />
+<h2 id="738-paso-7-documentar">7.3.8. Paso 7. Documentar</h2>
+<p>Debemos conservar:</p>
+<ul>
+<li>identificadores;</li>
+<li>recursos consultados;</li>
+<li>fecha;</li>
+<li>versiones cuando estén disponibles;</li>
+<li>herramientas;</li>
+<li>parámetros;</li>
+<li>evidencias utilizadas.</li>
+</ul>
+<p>Esto permite revisar y reproducir la anotación.</p>
+<hr />
+<h1 id="74-un-flujo-resumido">7.4. Un flujo resumido</h1>
+<pre><code class="language-text">secuencia
+   ↓
+verificación
+   ↓
+búsqueda de homólogos
+   ↓
+dominios y familias
+   ↓
+fuentes funcionales
+   ↓
+evaluación de evidencias
+   ↓
+anotación
+   ↓
+documentación
+</code></pre>
+<hr />
+<h1 id="75-errores-frecuentes">7.5. Errores frecuentes</h1>
+<h2 id="transferir-automaticamente-una-funcion">Transferir automáticamente una función</h2>
+<p>Una secuencia parecida no garantiza función idéntica.</p>
+<h2 id="ignorar-el-nivel-de-evidencia">Ignorar el nivel de evidencia</h2>
+<p>Una predicción no debe presentarse como si fuera un resultado experimental.</p>
+<h2 id="analizar-unicamente-la-proteina-completa">Analizar únicamente la proteína completa</h2>
+<p>Puede existir un dominio conservado dentro de una proteína muy diferente.</p>
+<h2 id="utilizar-una-sola-fuente">Utilizar una sola fuente</h2>
+<p>La integración de varias fuentes suele mejorar la interpretación.</p>
+<h2 id="no-registrar-la-procedencia">No registrar la procedencia</h2>
+<p>Una anotación sin trazabilidad es difícil de revisar.</p>
+<h2 id="confundir-anotacion-con-certeza">Confundir anotación con certeza</h2>
+<p>Una anotación puede cambiar cuando aparece nueva evidencia.</p>
+<hr />
+<h1 id="76-cuestiones-guia">7.6. Cuestiones guía</h1>
+<ol>
+<li>¿Qué diferencia existe entre anotación estructural y anotación funcional?</li>
+<li>¿Qué ventajas y limitaciones presenta la anotación automática?</li>
+<li>¿Por qué una alta similitud de secuencia no garantiza función idéntica?</li>
+<li>¿Qué información aporta un dominio proteico?</li>
+<li>¿Qué diferencia existe entre una familia y un motivo?</li>
+<li>¿Qué tipo de información podemos obtener de UniProt?</li>
+<li>¿Qué aporta InterPro?</li>
+<li>¿Por qué es importante conocer la evidencia de una anotación?</li>
+<li>¿Por qué conviene integrar varias fuentes?</li>
+<li>¿Qué información debería conservarse para que una anotación sea trazable?</li>
+</ol>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>Anotar significa asociar significado biológico a datos moleculares.</li>
+<li>La anotación puede ser estructural o funcional.</li>
+<li>Puede basarse en evidencia experimental o inferencia computacional.</li>
+<li>La similitud de secuencia es una fuente de evidencia, no una garantía funcional.</li>
+<li>Dominios, motivos y familias ayudan a interpretar proteínas.</li>
+<li>UniProt, InterPro, Gene Ontology y recursos de rutas aportan información complementaria.</li>
+<li>Una buena anotación integra evidencias.</li>
+<li>La procedencia y el nivel de evidencia deben conservarse.</li>
+<li>La anotación es un proceso revisable y dinámico.</li>
+</ul>
+<hr />
+<h1 id="conexion-con-el-siguiente-tema">Conexión con el siguiente tema</h1>
+<p>En este tema hemos trabajado la interpretación funcional de genes y proteínas individuales.</p>
+<p>En el <strong>Tema 8. Integración y explotación de información biológica</strong> ampliaremos la escala y estudiaremos cómo organizar e integrar funciones mediante:</p>
+<ul>
+<li>ontologías biológicas;</li>
+<li>bases de conocimiento;</li>
+<li>análisis de enriquecimiento funcional.</li>
+</ul>
 
 
 

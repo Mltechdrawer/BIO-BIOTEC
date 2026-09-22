@@ -898,27 +898,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2419,27 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2462,15 +2444,257 @@
 
 
 <h1 id="tema-4-fundamentos-computacionales-de-la-comparacion-de-secuencias">Tema 4. Fundamentos computacionales de la comparación de secuencias</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="duracion">Duración</h2>
+<p><strong>1 hora de teoría</strong></p>
+<p>Este tema abre el <strong>Bloque II. Métodos computacionales para el análisis de secuencias</strong>.</p>
+<p>De acuerdo con la guía docente, se trabajan dos apartados:</p>
 <ul>
-<li>4.1 Similitud, identidad y homología.</li>
-<li>4.2 Principios algorítmicos básicos.</li>
+<li><strong>4.1. Similitud, identidad y homología.</strong></li>
+<li><strong>4.2. Principios algorítmicos básicos.</strong></li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Explicar por qué la comparación de secuencias es una tarea central en Bioinformática.</li>
+<li>Diferenciar correctamente identidad, similitud y homología.</li>
+<li>Comprender qué significa alinear dos secuencias.</li>
+<li>Reconocer coincidencias, sustituciones e inserciones/deleciones.</li>
+<li>Comprender el papel de los sistemas de puntuación.</li>
+<li>Distinguir conceptualmente entre estrategias exactas y heurísticas.</li>
+<li>Interpretar un resultado computacional como evidencia que necesita contexto biológico.</li>
+</ul>
+<h1 id="introduccion">Introducción</h1>
+<p>Una de las preguntas más frecuentes en Bioinformática es aparentemente sencilla:</p>
+<blockquote>
+<p><strong>¿Se parecen estas dos secuencias?</strong></p>
+</blockquote>
+<p>Responder correctamente no es tan trivial como parece.</p>
+<p>Dos secuencias pueden parecerse porque pertenecen al mismo gen en especies diferentes, codifican proteínas relacionadas, comparten un dominio funcional, proceden de un ancestro común o simplemente contienen algunas regiones parecidas por azar.</p>
+<p>Por ello, comparar secuencias no consiste únicamente en observarlas visualmente. Es necesario definir qué significa que dos posiciones coincidan, cómo se tratan las diferencias, qué regiones se comparan y cómo se cuantifica el resultado.</p>
+<p>La comparación de secuencias constituye la base de muchas tareas posteriores: identificación de genes y proteínas, búsqueda en bases de datos, inferencia funcional, detección de variantes, alineamiento y análisis filogenético.</p>
+<h1 id="41-similitud-identidad-y-homologia">4.1. Similitud, identidad y homología</h1>
+<h2 id="411-comparar-secuencias">4.1.1. Comparar secuencias</h2>
+<p>Consideremos dos secuencias de ADN:</p>
+<pre><code class="language-text">Secuencia 1: ATGCTAGC
+Secuencia 2: ATGTTAGC
+</code></pre>
+<p>A simple vista observamos que son muy parecidas.</p>
+<p>Solo existe una diferencia:</p>
+<pre><code class="language-text">ATGCTAGC
+ATGTTAGC
+   ^
+</code></pre>
+<p>Pero para describir esa relación necesitamos utilizar términos precisos: <strong>identidad</strong>, <strong>similitud</strong> y <strong>homología</strong>.</p>
+<h2 id="412-identidad">4.1.2. Identidad</h2>
+<p>La <strong>identidad</strong> describe posiciones en las que dos secuencias presentan exactamente el mismo símbolo.</p>
+<p>En ADN, una posición es idéntica cuando contiene el mismo nucleótido. En proteínas ocurre lo mismo: existe identidad cuando aparece exactamente el mismo aminoácido en la misma posición del alineamiento.</p>
+<p>La identidad puede expresarse como porcentaje.</p>
+<blockquote>
+<p><strong>Porcentaje de identidad = proporción de posiciones exactamente iguales en el alineamiento.</strong></p>
+</blockquote>
+<p>No basta con contar coincidencias: también debemos saber sobre qué longitud se está calculando.</p>
+<p>Una identidad elevada no implica automáticamente que dos secuencias tengan exactamente la misma función. Es una medida descriptiva de la comparación.</p>
+<h2 id="413-similitud">4.1.3. Similitud</h2>
+<p>La <strong>similitud</strong> es un concepto más amplio.</p>
+<p>En secuencias de proteínas, dos aminoácidos diferentes pueden considerarse similares si poseen propiedades físico-químicas parecidas. Una sustitución entre aminoácidos de tamaño, carga o comportamiento químico semejante puede afectar menos a la estructura o función de una proteína que una sustitución radical.</p>
+<p>Por ello, una comparación de proteínas puede distinguir entre:</p>
+<ul>
+<li>aminoácidos idénticos;</li>
+<li>aminoácidos diferentes pero similares;</li>
+<li>aminoácidos claramente diferentes.</li>
+</ul>
+<p>La similitud depende del criterio utilizado para valorar las sustituciones.</p>
+<h2 id="414-homologia">4.1.4. Homología</h2>
+<p>La <strong>homología</strong> tiene un significado diferente.</p>
+<p>Dos secuencias son homólogas cuando comparten un <strong>origen evolutivo común</strong>.</p>
+<p>La homología expresa una relación histórica. Conceptualmente:</p>
+<blockquote>
+<p><strong>dos secuencias son homólogas o no lo son</strong></p>
+</blockquote>
+<p>Por ello, no es correcto hablar estrictamente de “70 % de homología”. Lo correcto sería indicar, por ejemplo, “70 % de identidad” y, a partir del conjunto de evidencias disponibles, considerar que las secuencias pueden ser homólogas.</p>
+<p>La diferencia esencial es:</p>
+<p><strong>Identidad</strong> → describe lo que observamos al comparar secuencias.</p>
+<p><strong>Homología</strong> → describe una hipótesis sobre su historia evolutiva.</p>
+<h2 id="415-ortologos-y-paralogos">4.1.5. Ortólogos y parálogos</h2>
+<p>Dentro de las secuencias homólogas pueden distinguirse diferentes situaciones.</p>
+<h3 id="ortologos">Ortólogos</h3>
+<p>Son secuencias relacionadas por un proceso de especiación.</p>
+<p>Por ejemplo, un mismo gen presente en humano y ratón puede tener genes ortólogos.</p>
+<h3 id="paralogos">Parálogos</h3>
+<p>Son secuencias relacionadas por un proceso de duplicación génica.</p>
+<p>Una duplicación puede generar dos copias de un gen dentro de un genoma. Con el tiempo, ambas copias pueden divergir y adquirir funciones diferentes.</p>
+<h1 id="42-principios-algoritmicos-basicos">4.2. Principios algorítmicos básicos</h1>
+<h2 id="421-el-problema-computacional">4.2.1. El problema computacional</h2>
+<p>Para una persona es fácil comparar visualmente dos secuencias cortas:</p>
+<pre><code class="language-text">ATGCTA
+ATGATA
+</code></pre>
+<p>Pero las secuencias reales pueden contener cientos, miles o millones de símbolos, y las bases de datos contienen millones de secuencias.</p>
+<p>Por tanto, necesitamos algoritmos que automaticen la comparación.</p>
+<h2 id="422-coincidencias-y-sustituciones">4.2.2. Coincidencias y sustituciones</h2>
+<p>La estrategia más sencilla consiste en colocar dos secuencias una debajo de otra y recorrerlas posición a posición.</p>
+<p>En cada posición podemos encontrar una coincidencia:</p>
+<pre><code class="language-text">A
+A
+</code></pre>
+<p>o una sustitución:</p>
+<pre><code class="language-text">C
+T
+</code></pre>
+<p>Esta estrategia funciona únicamente si ambas secuencias pueden compararse directamente en las mismas posiciones.</p>
+<h2 id="423-inserciones-deleciones-y-gaps">4.2.3. Inserciones, deleciones y gaps</h2>
+<p>Consideremos:</p>
+<pre><code class="language-text">Secuencia 1: ATGCTAGC
+Secuencia 2: ATGCTTAGC
+</code></pre>
+<p>La segunda secuencia contiene un nucleótido adicional.</p>
+<p>Si introducimos un espacio:</p>
+<pre><code class="language-text">ATGCT-AGC
+ATGCTTAGC
+</code></pre>
+<p>observamos que las secuencias son mucho más parecidas.</p>
+<p>Ese espacio se denomina <strong>gap</strong> y puede representar un acontecimiento de inserción o deleción. Estos eventos se denominan frecuentemente <strong>indels</strong>.</p>
+<h2 id="424-que-es-un-alineamiento">4.2.4. Qué es un alineamiento</h2>
+<p>Un <strong>alineamiento</strong> es una forma de disponer dos o más secuencias para establecer correspondencias entre sus posiciones.</p>
+<p>El objetivo es representar de forma razonable:</p>
+<ul>
+<li>coincidencias;</li>
+<li>sustituciones;</li>
+<li>inserciones;</li>
+<li>deleciones.</li>
+</ul>
+<p>La comparación de secuencias está, por tanto, estrechamente relacionada con el problema del alineamiento.</p>
+<h2 id="425-no-existe-una-unica-forma-de-alinear">4.2.5. No existe una única forma de alinear</h2>
+<p>Dos secuencias pueden admitir distintos alineamientos posibles.</p>
+<p>Un programa necesita decidir cuál representa mejor la relación entre ellas.</p>
+<p>Para ello se utiliza un sistema de <strong>puntuación</strong>.</p>
+<p>Conceptualmente podemos asignar:</p>
+<ul>
+<li>una recompensa a las coincidencias;</li>
+<li>una penalización a las sustituciones;</li>
+<li>una penalización a los gaps.</li>
+</ul>
+<p>El algoritmo busca entonces un alineamiento con una puntuación favorable.</p>
+<h2 id="426-matrices-de-sustitucion">4.2.6. Matrices de sustitución</h2>
+<p>En proteínas no todas las sustituciones tienen el mismo significado.</p>
+<p>Por ello, los algoritmos pueden utilizar <strong>matrices de sustitución</strong>.</p>
+<p>Dos familias conocidas son:</p>
+<ul>
+<li><strong>PAM</strong></li>
+<li><strong>BLOSUM</strong></li>
+</ul>
+<p>No es necesario memorizar sus valores. Lo importante es comprender que asignan puntuaciones diferentes según qué aminoácidos se sustituyan.</p>
+<h2 id="427-penalizacion-de-gaps">4.2.7. Penalización de gaps</h2>
+<p>Introducir un gap puede mejorar un alineamiento, pero no debería hacerse sin coste.</p>
+<p>Si introducir espacios fuera gratuito, podríamos crear alineamientos artificialmente buenos añadiendo muchos gaps.</p>
+<p>Por ello, los algoritmos aplican una penalización. Habitualmente se distingue entre:</p>
+<ul>
+<li>abrir un nuevo gap;</li>
+<li>prolongar uno ya existente.</li>
+</ul>
+<h2 id="428-el-espacio-de-soluciones">4.2.8. El espacio de soluciones</h2>
+<p>A medida que aumenta la longitud de las secuencias, el número de alineamientos posibles crece enormemente.</p>
+<p>El problema computacional consiste en encontrar una buena solución sin probar ingenuamente todas las combinaciones posibles.</p>
+<p>Aquí aparece la importancia de los algoritmos.</p>
+<h2 id="429-estrategias-exactas-y-heuristicas">4.2.9. Estrategias exactas y heurísticas</h2>
+<p>Las herramientas bioinformáticas pueden seguir estrategias diferentes.</p>
+<h3 id="metodos-exactos">Métodos exactos</h3>
+<p>Buscan sistemáticamente una solución óptima de acuerdo con un determinado sistema de puntuación.</p>
+<h3 id="metodos-heuristicos">Métodos heurísticos</h3>
+<p>Buscan soluciones muy buenas reduciendo considerablemente el número de posibilidades que deben evaluarse.</p>
+<p>Son especialmente útiles cuando necesitamos comparar una secuencia contra bases de datos enormes.</p>
+<p>BLAST, que estudiaremos en el siguiente tema, utiliza una estrategia heurística.</p>
+<h2 id="4210-precision-y-coste-computacional">4.2.10. Precisión y coste computacional</h2>
+<p>Existe una idea general importante:</p>
+<blockquote>
+<p><strong>cuanto más exhaustiva es una búsqueda, mayor puede ser su coste computacional</strong></p>
+</blockquote>
+<p>En Bioinformática es frecuente buscar un equilibrio entre:</p>
+<ul>
+<li>precisión;</li>
+<li>tiempo;</li>
+<li>memoria;</li>
+<li>tamaño de los datos.</li>
+</ul>
+<p>La mejor estrategia depende del problema.</p>
+<h1 id="43-del-problema-biologico-al-problema-computacional">4.3. Del problema biológico al problema computacional</h1>
+<p>Cuando planteamos:</p>
+<blockquote>
+<p>¿Está esta secuencia relacionada con otra?</p>
+</blockquote>
+<p>un programa no puede responder directamente a esa pregunta biológica.</p>
+<p>Primero la transforma en tareas computacionales:</p>
+<ol>
+<li>representar las secuencias;</li>
+<li>compararlas;</li>
+<li>establecer correspondencias;</li>
+<li>asignar puntuaciones;</li>
+<li>seleccionar una solución;</li>
+<li>calcular medidas;</li>
+<li>devolver resultados.</li>
+</ol>
+<p>Después corresponde al investigador interpretar esos resultados.</p>
+<blockquote>
+<p><strong>El algoritmo calcula; la interpretación biológica requiere contexto.</strong></p>
+</blockquote>
+<h1 id="44-ejemplo-integrado">4.4. Ejemplo integrado</h1>
+<p>Supongamos que disponemos de una secuencia desconocida y queremos saber si está relacionada con una secuencia conocida.</p>
+<p>El proceso conceptual sería:</p>
+<ol>
+<li>Obtener ambas secuencias.</li>
+<li>Buscar una correspondencia entre ellas.</li>
+<li>Identificar coincidencias, sustituciones y gaps.</li>
+<li>Calcular una puntuación.</li>
+<li>Obtener medidas como identidad o longitud del alineamiento.</li>
+<li>Interpretar biológicamente el resultado.</li>
+</ol>
+<h1 id="45-errores-conceptuales-frecuentes">4.5. Errores conceptuales frecuentes</h1>
+<h2 id="hablar-de-porcentaje-de-homologia">Hablar de “porcentaje de homología”</h2>
+<p>La homología no es un porcentaje. Debe hablarse de porcentaje de identidad o similitud.</p>
+<h2 id="considerar-identidad-y-similitud-como-sinonimos">Considerar identidad y similitud como sinónimos</h2>
+<p>En proteínas, dos aminoácidos pueden ser diferentes pero similares en sus propiedades.</p>
+<h2 id="suponer-que-alta-identidad-implica-automaticamente-misma-funcion">Suponer que alta identidad implica automáticamente misma función</h2>
+<p>La identidad es una evidencia importante, pero la función debe interpretarse con información adicional.</p>
+<h2 id="comparar-secuencias-sin-considerar-inserciones-o-deleciones">Comparar secuencias sin considerar inserciones o deleciones</h2>
+<p>Los gaps son necesarios para representar correctamente muchos cambios evolutivos.</p>
+<h2 id="interpretar-el-resultado-de-un-algoritmo-como-una-conclusion-biologica-definitiva">Interpretar el resultado de un algoritmo como una conclusión biológica definitiva</h2>
+<p>El resultado computacional necesita contexto y evaluación biológica.</p>
+<h1 id="46-cuestiones-guia">4.6. Cuestiones guía</h1>
+<ol>
+<li>¿Qué diferencia existe entre identidad y similitud?</li>
+<li>¿Por qué no es correcto hablar de “80 % de homología”?</li>
+<li>¿Qué información expresa realmente la homología?</li>
+<li>¿Qué diferencia existe entre ortólogos y parálogos?</li>
+<li>¿Por qué puede ser necesario introducir gaps al comparar secuencias?</li>
+<li>¿Por qué no todos los cambios de aminoácido deberían valorarse igual?</li>
+<li>¿Qué función cumple un sistema de puntuación?</li>
+<li>¿Por qué una búsqueda exhaustiva puede resultar costosa?</li>
+<li>¿Qué diferencia conceptual existe entre un método exacto y uno heurístico?</li>
+<li>¿Por qué el resultado de un algoritmo necesita interpretación biológica?</li>
+</ol>
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>Comparar secuencias es una tarea fundamental de la Bioinformática.</li>
+<li>La identidad mide coincidencias exactas.</li>
+<li>La similitud puede considerar sustituciones biológicamente compatibles.</li>
+<li>La homología describe un origen evolutivo común.</li>
+<li>La homología no se expresa como porcentaje.</li>
+<li>Un alineamiento establece correspondencias entre posiciones de las secuencias.</li>
+<li>Los gaps permiten representar inserciones y deleciones.</li>
+<li>Los algoritmos utilizan sistemas de puntuación para valorar alineamientos.</li>
+<li>Las matrices de sustitución ayudan a valorar cambios entre aminoácidos.</li>
+<li>Los métodos exactos y heurísticos responden a necesidades computacionales diferentes.</li>
+<li>El algoritmo produce un resultado computacional; la interpretación final es biológica.</li>
+</ul>
+<h1 id="conexion-con-el-siguiente-tema">Conexión con el siguiente tema</h1>
+<p>En el <strong>Tema 5. Búsqueda y alineamiento de secuencias</strong> se estudiarán:</p>
+<ul>
+<li>alineamiento global;</li>
+<li>alineamiento local;</li>
+<li>BLAST;</li>
+<li>y las métricas utilizadas para interpretar los resultados.</li>
+</ul>
+<p>Pasaremos así de comprender <strong>qué significa comparar secuencias</strong> a estudiar <strong>cómo se realiza esa comparación con herramientas bioinformáticas</strong>.</p>
 
 
 

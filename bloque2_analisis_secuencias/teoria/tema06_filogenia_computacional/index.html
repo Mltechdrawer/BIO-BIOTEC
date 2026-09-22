@@ -944,27 +944,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2419,27 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2462,16 +2444,507 @@
 
 
 <h1 id="tema-6-analisis-filogenetico-asistido-por-ordenador">Tema 6. Análisis filogenético asistido por ordenador</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="duracion">Duración</h2>
+<p><strong>2 horas de teoría</strong></p>
+<p>Este tema cierra el <strong>Bloque II. Métodos computacionales para el análisis de secuencias</strong>.</p>
+<p>De acuerdo con la guía docente, se estructura en tres apartados:</p>
 <ul>
-<li>6.1 Alineamiento múltiple.</li>
-<li>6.2 Construcción computacional de árboles.</li>
-<li>6.3 Interpretación de relaciones evolutivas.</li>
+<li><strong>6.1. Alineamiento múltiple.</strong></li>
+<li><strong>6.2. Construcción computacional de árboles.</strong></li>
+<li><strong>6.3. Interpretación de relaciones evolutivas.</strong></li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<hr />
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Explicar qué es un alineamiento múltiple de secuencias.</li>
+<li>Comprender por qué el alineamiento múltiple es un paso previo habitual en análisis filogenéticos.</li>
+<li>Reconocer regiones conservadas y variables en un conjunto de secuencias.</li>
+<li>Comprender, a nivel conceptual, cómo se construyen árboles filogenéticos a partir de datos de secuencia.</li>
+<li>Diferenciar entre métodos basados en distancia y métodos basados en caracteres.</li>
+<li>Interpretar correctamente nodos, ramas, clados y topología.</li>
+<li>Comprender el significado de medidas de soporte como el bootstrap.</li>
+<li>Evitar errores frecuentes en la lectura de árboles filogenéticos.</li>
+<li>Relacionar los resultados computacionales con hipótesis evolutivas, sin interpretarlos como certezas absolutas.</li>
+</ul>
+<hr />
+<h1 id="introduccion">Introducción</h1>
+<p>En los temas anteriores hemos aprendido a comparar dos secuencias y a buscar secuencias similares en bases de datos.</p>
+<p>El siguiente paso consiste en estudiar <strong>más de dos secuencias simultáneamente</strong>.</p>
+<p>Cuando comparamos secuencias de distintas especies, genes o proteínas relacionadas, podemos plantearnos preguntas como:</p>
+<ul>
+<li>¿qué posiciones se conservan?</li>
+<li>¿qué regiones han cambiado?</li>
+<li>¿qué secuencias son más parecidas entre sí?</li>
+<li>¿qué grupos podrían compartir un ancestro común más reciente?</li>
+<li>¿cómo podemos representar esas relaciones?</li>
+</ul>
+<p>Estas preguntas nos llevan al análisis filogenético.</p>
+<p>La filogenia intenta reconstruir relaciones evolutivas entre organismos, genes o proteínas.</p>
+<p>En Bioinformática, estas relaciones se estudian frecuentemente a partir de secuencias mediante un proceso general:</p>
+<pre><code class="language-text">selección de secuencias
+        ↓
+alineamiento múltiple
+        ↓
+estimación de diferencias
+        ↓
+construcción del árbol
+        ↓
+evaluación del soporte
+        ↓
+interpretación biológica
+</code></pre>
+<p>El árbol filogenético es, por tanto, el resultado de una cadena de decisiones y análisis.</p>
+<p>No debe interpretarse como una representación directa e infalible de la historia evolutiva.</p>
+<hr />
+<h1 id="61-alineamiento-multiple">6.1. Alineamiento múltiple</h1>
+<h2 id="611-de-dos-secuencias-a-muchas-secuencias">6.1.1. De dos secuencias a muchas secuencias</h2>
+<p>Un alineamiento por pares compara dos secuencias.</p>
+<p>Un <strong>alineamiento múltiple de secuencias</strong> compara tres o más secuencias simultáneamente.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">Seq1    ATGCTAGCTA
+Seq2    ATGCTAGTTA
+Seq3    ATG-TAGCTA
+Seq4    ATGCTAGCAA
+</code></pre>
+<p>El objetivo es colocar posiciones potencialmente equivalentes en las mismas columnas.</p>
+<p>Cada columna representa una hipótesis de correspondencia entre posiciones.</p>
+<hr />
+<h2 id="612-que-podemos-observar-en-un-alineamiento-multiple">6.1.2. Qué podemos observar en un alineamiento múltiple</h2>
+<p>Un alineamiento múltiple permite identificar:</p>
+<ul>
+<li>posiciones conservadas;</li>
+<li>posiciones variables;</li>
+<li>sustituciones;</li>
+<li>inserciones y deleciones;</li>
+<li>regiones altamente conservadas;</li>
+<li>regiones más divergentes.</li>
+</ul>
+<p>Ejemplo:</p>
+<pre><code class="language-text">Seq1    ATGCTAGCTA
+Seq2    ATGCTAGTTA
+Seq3    ATG-TAGCTA
+Seq4    ATGCTAGCAA
+        *** **** *
+</code></pre>
+<p>Las posiciones conservadas pueden indicar:</p>
+<ul>
+<li>restricciones funcionales;</li>
+<li>regiones estructurales importantes;</li>
+<li>sitios activos;</li>
+<li>motivos conservados;</li>
+<li>o simplemente una evolución más lenta.</li>
+</ul>
+<hr />
+<h2 id="613-por-que-el-alineamiento-multiple-es-importante">6.1.3. Por qué el alineamiento múltiple es importante</h2>
+<p>El alineamiento múltiple se utiliza en:</p>
+<ul>
+<li>análisis filogenético;</li>
+<li>identificación de regiones conservadas;</li>
+<li>detección de motivos;</li>
+<li>comparación de familias de proteínas;</li>
+<li>anotación funcional;</li>
+<li>diseño de experimentos;</li>
+<li>estudio de evolución molecular.</li>
+</ul>
+<p>En filogenia, el alineamiento es especialmente importante porque el árbol se construye a partir de las diferencias observadas entre posiciones que asumimos comparables.</p>
+<hr />
+<h2 id="614-un-alineamiento-es-una-hipotesis">6.1.4. Un alineamiento es una hipótesis</h2>
+<p>Es importante comprender que un alineamiento no es una verdad absoluta.</p>
+<p>Cuando el programa coloca dos posiciones en la misma columna, está proponiendo que esas posiciones son comparables.</p>
+<p>En secuencias muy similares, esta correspondencia suele ser clara.</p>
+<p>En secuencias muy divergentes, puede haber varias soluciones posibles.</p>
+<p>Por ello, la calidad del alineamiento afecta directamente al análisis posterior.</p>
+<hr />
+<h2 id="615-estrategias-de-alineamiento-multiple">6.1.5. Estrategias de alineamiento múltiple</h2>
+<p>Comparar muchas secuencias simultáneamente es computacionalmente complejo.</p>
+<p>Por ello, las herramientas utilizan estrategias aproximadas.</p>
+<p>Una estrategia frecuente es el <strong>alineamiento progresivo</strong>.</p>
+<p>La idea general es:</p>
+<ol>
+<li>comparar las secuencias entre sí;</li>
+<li>estimar cuáles son más parecidas;</li>
+<li>alinear primero las más similares;</li>
+<li>incorporar progresivamente el resto.</li>
+</ol>
+<p>Herramientas como <strong>Clustal Omega</strong> utilizan este tipo de aproximaciones.</p>
+<hr />
+<h2 id="616-influencia-del-orden-de-alineamiento">6.1.6. Influencia del orden de alineamiento</h2>
+<p>En estrategias progresivas, las decisiones tomadas al principio pueden influir en el resultado final.</p>
+<p>Si una región queda mal alineada inicialmente, ese error puede propagarse.</p>
+<p>Por ello, no debemos asumir que todo alineamiento generado automáticamente es necesariamente correcto.</p>
+<p>Conviene revisar:</p>
+<ul>
+<li>zonas con muchos gaps;</li>
+<li>regiones muy variables;</li>
+<li>extremos de secuencias;</li>
+<li>secuencias mucho más largas o más cortas que el resto.</li>
+</ul>
+<hr />
+<h2 id="617-secuencias-adecuadas-para-comparar">6.1.7. Secuencias adecuadas para comparar</h2>
+<p>Antes de realizar un alineamiento múltiple debemos comprobar que las secuencias sean comparables.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>que representen el mismo gen o una familia relacionada;</li>
+<li>que correspondan a regiones homólogas;</li>
+<li>que tengan una longitud razonablemente compatible;</li>
+<li>que no mezclen fragmentos no equivalentes.</li>
+</ul>
+<p>Mezclar secuencias no relacionadas puede producir un alineamiento artificial y un árbol sin interpretación biológica válida.</p>
+<hr />
+<h1 id="62-construccion-computacional-de-arboles">6.2. Construcción computacional de árboles</h1>
+<h2 id="621-que-es-un-arbol-filogenetico">6.2.1. Qué es un árbol filogenético</h2>
+<p>Un árbol filogenético es una representación gráfica de hipótesis sobre relaciones evolutivas.</p>
+<p>Ejemplo simplificado:</p>
+<pre><code class="language-text">        ┌── Especie A
+    ┌───┤
+    │   └── Especie B
+────┤
+    │   ┌── Especie C
+    └───┤
+        └── Especie D
+</code></pre>
+<p>El árbol indica que A y B aparecen agrupadas entre sí, y C y D forman otro grupo.</p>
+<hr />
+<h2 id="622-partes-de-un-arbol">6.2.2. Partes de un árbol</h2>
+<h3 id="hojas-o-terminales">Hojas o terminales</h3>
+<p>Representan las secuencias u organismos analizados.</p>
+<h3 id="ramas">Ramas</h3>
+<p>Representan conexiones entre nodos.</p>
+<h3 id="nodos-internos">Nodos internos</h3>
+<p>Representan puntos de divergencia e hipotéticos ancestros comunes.</p>
+<h3 id="clados">Clados</h3>
+<p>Un clado es un grupo formado por un ancestro común y todos sus descendientes.</p>
+<h3 id="raiz">Raíz</h3>
+<p>La raíz representa el origen del árbol cuando el árbol está enraizado.</p>
+<hr />
+<h2 id="623-topologia">6.2.3. Topología</h2>
+<p>La <strong>topología</strong> describe el patrón de ramificación.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">((A,B),(C,D))
+</code></pre>
+<p>expresa que A y B están agrupados, y C y D forman otro grupo.</p>
+<p>La topología es uno de los elementos más importantes para interpretar relaciones.</p>
+<hr />
+<h2 id="624-arboles-enraizados-y-no-enraizados">6.2.4. Árboles enraizados y no enraizados</h2>
+<h3 id="arbol-enraizado">Árbol enraizado</h3>
+<p>Tiene un punto de origen definido y permite interpretar una dirección evolutiva.</p>
+<h3 id="arbol-no-enraizado">Árbol no enraizado</h3>
+<p>Representa relaciones entre secuencias, pero no establece por sí mismo cuál es el ancestro común más antiguo.</p>
+<p>Un árbol no enraizado puede mostrar agrupaciones sin indicar dirección temporal.</p>
+<hr />
+<h2 id="625-uso-de-un-grupo-externo">6.2.5. Uso de un grupo externo</h2>
+<p>Una forma habitual de enraizar un árbol es utilizar un <strong>outgroup</strong> o grupo externo.</p>
+<p>El outgroup es una secuencia relacionada con las demás, pero claramente más distante.</p>
+<p>Permite establecer una referencia externa para orientar el árbol.</p>
+<p>La selección del outgroup debe tener sentido biológico.</p>
+<hr />
+<h2 id="626-de-un-alineamiento-a-una-distancia">6.2.6. De un alineamiento a una distancia</h2>
+<p>Una estrategia sencilla para construir árboles consiste en calcular diferencias entre secuencias.</p>
+<p>Si dos secuencias presentan pocas diferencias, su distancia será pequeña.</p>
+<p>Si presentan muchas diferencias, su distancia será mayor.</p>
+<p>Podemos obtener una matriz conceptual como:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+<th style="text-align: right;">D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td>B</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr>
+<td>C</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>D</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Aquí A y B son más próximas, mientras que C y D forman otro grupo cercano.</p>
+<hr />
+<h2 id="627-metodos-basados-en-distancia">6.2.7. Métodos basados en distancia</h2>
+<p>Estos métodos transforman las diferencias entre secuencias en una matriz de distancias.</p>
+<p>Después utilizan esa matriz para construir el árbol.</p>
+<p>Dos métodos conocidos son:</p>
+<ul>
+<li><strong>UPGMA</strong></li>
+<li><strong>Neighbor-Joining</strong></li>
+</ul>
+<p>No es necesario implementar estos algoritmos en este curso.</p>
+<p>Lo importante es comprender su lógica.</p>
+<hr />
+<h2 id="628-upgma">6.2.8. UPGMA</h2>
+<p>UPGMA agrupa progresivamente las secuencias más cercanas.</p>
+<p>Es conceptualmente sencillo, pero supone que las secuencias evolucionan aproximadamente a una tasa constante.</p>
+<p>Esa suposición no siempre es realista.</p>
+<p>Por ello, su uso debe interpretarse con cautela.</p>
+<hr />
+<h2 id="629-neighbor-joining">6.2.9. Neighbor-Joining</h2>
+<p>Neighbor-Joining también utiliza distancias, pero no exige de la misma forma una tasa de evolución constante.</p>
+<p>Es un método ampliamente utilizado para construir árboles de manera relativamente rápida.</p>
+<hr />
+<h2 id="6210-metodos-basados-en-caracteres">6.2.10. Métodos basados en caracteres</h2>
+<p>Otros métodos utilizan directamente la información de cada posición del alineamiento.</p>
+<p>Entre ellos se encuentran:</p>
+<ul>
+<li>máxima parsimonia;</li>
+<li>máxima verosimilitud;</li>
+<li>métodos bayesianos.</li>
+</ul>
+<p>Estos métodos evalúan diferentes árboles posibles según criterios distintos.</p>
+<hr />
+<h2 id="6211-maxima-parsimonia">6.2.11. Máxima parsimonia</h2>
+<p>La máxima parsimonia busca el árbol que requiere el menor número de cambios evolutivos.</p>
+<p>La idea es intuitiva:</p>
+<blockquote>
+<p><strong>preferir la explicación que necesita menos cambios</strong></p>
+</blockquote>
+<p>Sin embargo, la evolución real no siempre sigue el camino más simple.</p>
+<hr />
+<h2 id="6212-maxima-verosimilitud">6.2.12. Máxima verosimilitud</h2>
+<p>La máxima verosimilitud evalúa qué árbol hace más probable observar los datos del alineamiento bajo un determinado modelo de evolución.</p>
+<p>Es más sofisticada que los métodos basados únicamente en distancia.</p>
+<p>Puede ofrecer análisis más realistas, pero requiere más cálculo.</p>
+<hr />
+<h2 id="6213-no-existe-un-unico-arbol-automatico">6.2.13. No existe un único árbol “automático”</h2>
+<p>El árbol obtenido depende de:</p>
+<ul>
+<li>secuencias seleccionadas;</li>
+<li>calidad del alineamiento;</li>
+<li>posiciones utilizadas;</li>
+<li>método de construcción;</li>
+<li>modelo evolutivo;</li>
+<li>parámetros;</li>
+<li>elección del outgroup.</li>
+</ul>
+<p>Por tanto, diferentes decisiones pueden generar árboles diferentes.</p>
+<hr />
+<h1 id="63-interpretacion-de-relaciones-evolutivas">6.3. Interpretación de relaciones evolutivas</h1>
+<h2 id="631-leer-agrupaciones">6.3.1. Leer agrupaciones</h2>
+<p>Consideremos:</p>
+<pre><code class="language-text">        ┌── A
+    ┌───┤
+    │   └── B
+────┤
+    │   ┌── C
+    └───┤
+        └── D
+</code></pre>
+<p>A y B comparten un ancestro común más reciente entre sí que con C o D.</p>
+<p>Del mismo modo, C y D forman otro grupo.</p>
+<hr />
+<h2 id="632-el-orden-vertical-no-importa">6.3.2. El orden vertical no importa</h2>
+<p>Los árboles pueden rotarse alrededor de un nodo sin cambiar su significado.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">    A
+           ─── nodo
+     /
+    B
+</code></pre>
+<p>y:</p>
+<pre><code class="language-text">    B
+           ─── nodo
+     /
+    A
+</code></pre>
+<p>representan la misma relación.</p>
+<p>Por ello, no debemos interpretar la posición “arriba” o “abajo” como más evolucionada o más antigua.</p>
+<hr />
+<h2 id="633-las-especies-actuales-no-son-ancestros-unas-de-otras">6.3.3. Las especies actuales no son ancestros unas de otras</h2>
+<p>Un error frecuente consiste en interpretar que una especie situada “antes” en el árbol es el ancestro de otra.</p>
+<p>En general, las hojas representan organismos o secuencias actuales.</p>
+<p>Dos especies actuales pueden compartir un ancestro común, pero una no tiene por qué ser el ancestro directo de la otra.</p>
+<hr />
+<h2 id="634-longitud-de-las-ramas">6.3.4. Longitud de las ramas</h2>
+<p>En algunos árboles, la longitud de las ramas contiene información.</p>
+<p>Puede representar:</p>
+<ul>
+<li>cantidad de cambio;</li>
+<li>distancia genética;</li>
+<li>o tiempo, dependiendo del tipo de árbol.</li>
+</ul>
+<p>Pero no todos los árboles utilizan la longitud de la misma forma.</p>
+<p>Antes de interpretarla debemos comprobar qué representa.</p>
+<hr />
+<h2 id="635-soporte-de-los-nodos">6.3.5. Soporte de los nodos</h2>
+<p>Un árbol puede mostrar una determinada agrupación, pero necesitamos saber hasta qué punto está respaldada por los datos.</p>
+<p>Una medida frecuente es el <strong>bootstrap</strong>.</p>
+<hr />
+<h2 id="636-bootstrap">6.3.6. Bootstrap</h2>
+<p>El bootstrap evalúa la estabilidad de las agrupaciones.</p>
+<p>De forma conceptual:</p>
+<ol>
+<li>se generan muchas versiones del alineamiento mediante remuestreo;</li>
+<li>se construye un árbol para cada versión;</li>
+<li>se observa cuántas veces aparece cada agrupación.</li>
+</ol>
+<p>Un nodo puede mostrar, por ejemplo:</p>
+<pre><code class="language-text">95
+</code></pre>
+<p>Esto significa que esa agrupación apareció en aproximadamente el 95 % de las réplicas de bootstrap.</p>
+<hr />
+<h2 id="637-que-significa-un-bootstrap-alto">6.3.7. Qué significa un bootstrap alto</h2>
+<p>Un valor alto indica que esa agrupación es estable frente al remuestreo de los datos.</p>
+<p>No significa:</p>
+<ul>
+<li>95 % de probabilidad de que el árbol sea verdadero;</li>
+<li>95 % de certeza evolutiva;</li>
+<li>ni que todo el árbol sea correcto.</li>
+</ul>
+<p>Es una medida de soporte de una agrupación concreta.</p>
+<hr />
+<h2 id="638-arbol-de-genes-y-arbol-de-especies">6.3.8. Árbol de genes y árbol de especies</h2>
+<p>Otro punto importante es distinguir entre:</p>
+<ul>
+<li>árbol de un gen;</li>
+<li>árbol de una proteína;</li>
+<li>árbol de especies.</li>
+</ul>
+<p>Un árbol construido a partir de un único gen refleja la historia de ese gen.</p>
+<p>Esa historia puede no coincidir perfectamente con la historia de las especies.</p>
+<p>Esto puede deberse a:</p>
+<ul>
+<li>duplicaciones;</li>
+<li>pérdidas génicas;</li>
+<li>transferencia horizontal;</li>
+<li>recombinación;</li>
+<li>tasas evolutivas diferentes.</li>
+</ul>
+<hr />
+<h2 id="639-homologia-ortologia-y-paralogia-en-arboles">6.3.9. Homología, ortología y paralogía en árboles</h2>
+<p>Los árboles ayudan a estudiar relaciones entre genes homólogos.</p>
+<p>Una duplicación puede producir genes parálogos.</p>
+<p>Una especiación puede producir genes ortólogos.</p>
+<p>Sin embargo, para distinguir estas relaciones correctamente es necesario interpretar el árbol en su contexto.</p>
+<p>No basta únicamente con observar qué secuencias aparecen juntas.</p>
+<hr />
+<h1 id="64-flujo-basico-de-analisis-filogenetico">6.4. Flujo básico de análisis filogenético</h1>
+<p>Un análisis sencillo puede seguir:</p>
+<pre><code class="language-text">1. Seleccionar secuencias
+        ↓
+2. Verificar que son comparables
+        ↓
+3. Realizar alineamiento múltiple
+        ↓
+4. Revisar el alineamiento
+        ↓
+5. Elegir método de construcción
+        ↓
+6. Construir el árbol
+        ↓
+7. Evaluar soporte
+        ↓
+8. Interpretar agrupaciones
+        ↓
+9. Relacionar con el contexto biológico
+</code></pre>
+<p>Cada etapa puede influir en el resultado final.</p>
+<hr />
+<h1 id="65-ejemplo-conceptual">6.5. Ejemplo conceptual</h1>
+<p>Supongamos que analizamos una misma proteína en cuatro especies:</p>
+<pre><code class="language-text">Humano
+Ratón
+Pez
+Levadura
+</code></pre>
+<p>Después del alineamiento múltiple observamos que humano y ratón presentan muchas posiciones conservadas.</p>
+<p>El pez presenta más diferencias.</p>
+<p>La levadura es la secuencia más divergente.</p>
+<p>El árbol podría mostrar:</p>
+<pre><code class="language-text">        ┌── Humano
+    ┌───┤
+    │   └── Ratón
+────┤
+    │   ┌── Pez
+    └───┤
+        └── Levadura
+</code></pre>
+<p>Esto sugeriría que humano y ratón presentan una relación más cercana para la secuencia analizada.</p>
+<p>Pero no debemos concluir únicamente a partir de este esquema que hemos reconstruido toda la historia de las especies.</p>
+<p>Estamos analizando una secuencia concreta.</p>
+<hr />
+<h1 id="66-errores-frecuentes">6.6. Errores frecuentes</h1>
+<h2 id="interpretar-cercania-visual-como-cercania-evolutiva">Interpretar cercanía visual como cercanía evolutiva</h2>
+<p>Lo importante es la topología, no la distancia visual entre nombres.</p>
+<h2 id="pensar-que-una-especie-actual-es-ancestro-de-otra">Pensar que una especie actual es ancestro de otra</h2>
+<p>Las hojas suelen representar linajes actuales.</p>
+<h2 id="ignorar-la-calidad-del-alineamiento">Ignorar la calidad del alineamiento</h2>
+<p>Un árbol construido sobre un mal alineamiento puede ser engañoso.</p>
+<h2 id="interpretar-bootstrap-como-probabilidad-de-verdad">Interpretar bootstrap como probabilidad de verdad</h2>
+<p>Es una medida de estabilidad o soporte, no una probabilidad absoluta.</p>
+<h2 id="confundir-arbol-de-genes-y-arbol-de-especies">Confundir árbol de genes y árbol de especies</h2>
+<p>La historia de un gen puede diferir de la historia de los organismos.</p>
+<h2 id="pensar-que-existe-un-unico-arbol-correcto-generado-automaticamente">Pensar que existe un único árbol correcto generado automáticamente</h2>
+<p>El resultado depende del método y de las decisiones tomadas.</p>
+<hr />
+<h1 id="67-cuestiones-guia">6.7. Cuestiones guía</h1>
+<ol>
+<li>¿Qué diferencia existe entre alineamiento por pares y alineamiento múltiple?</li>
+<li>¿Por qué el alineamiento múltiple es importante antes de construir un árbol?</li>
+<li>¿Qué información puede aportar una región altamente conservada?</li>
+<li>¿Por qué un alineamiento debe considerarse una hipótesis?</li>
+<li>¿Qué diferencia existe entre un árbol enraizado y uno no enraizado?</li>
+<li>¿Qué función tiene un outgroup?</li>
+<li>¿Qué diferencia conceptual existe entre métodos de distancia y métodos basados en caracteres?</li>
+<li>¿Qué representa un nodo interno?</li>
+<li>¿Por qué el orden vertical de las hojas no tiene significado?</li>
+<li>¿Qué nos indica un valor de bootstrap?</li>
+<li>¿Por qué un árbol de un gen no tiene por qué coincidir exactamente con un árbol de especies?</li>
+<li>¿Qué factores pueden cambiar el árbol obtenido?</li>
+</ol>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>El alineamiento múltiple compara tres o más secuencias simultáneamente.</li>
+<li>Cada columna del alineamiento representa una hipótesis de correspondencia.</li>
+<li>La calidad del alineamiento condiciona el análisis filogenético.</li>
+<li>Los árboles representan hipótesis sobre relaciones evolutivas.</li>
+<li>Los nodos internos representan ancestros comunes hipotéticos.</li>
+<li>La topología es más importante que la disposición visual.</li>
+<li>Los métodos de construcción pueden basarse en distancias o en caracteres.</li>
+<li>UPGMA y Neighbor-Joining son métodos basados en distancia.</li>
+<li>Máxima parsimonia y máxima verosimilitud utilizan enfoques diferentes.</li>
+<li>El bootstrap evalúa el soporte de agrupaciones concretas.</li>
+<li>Un árbol de genes no equivale necesariamente a un árbol de especies.</li>
+<li>La interpretación filogenética requiere combinar resultados computacionales y contexto biológico.</li>
+</ul>
+<hr />
+<h1 id="cierre-del-bloque-ii">Cierre del Bloque II</h1>
+<p>Este tema completa el <strong>Bloque II. Métodos computacionales para el análisis de secuencias</strong>.</p>
+<p>A lo largo del bloque se ha seguido una progresión:</p>
+<p><strong>Tema 4 → comprender qué significa comparar secuencias</strong></p>
+<p><strong>Tema 5 → alinear y buscar secuencias similares</strong></p>
+<p><strong>Tema 6 → comparar múltiples secuencias e interpretar relaciones evolutivas</strong></p>
+<p>La lógica global puede resumirse así:</p>
+<blockquote>
+<p><strong>comparar → alinear → buscar → evaluar → agrupar → interpretar</strong></p>
+</blockquote>
+<p>Estas competencias servirán de base para el Bloque III, donde el objetivo dejará de ser únicamente comparar secuencias y pasará a ser <strong>extraer e integrar información funcional de genes y proteínas</strong>.</p>
 
 
 

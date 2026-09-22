@@ -1426,27 +1426,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2419,27 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2462,16 +2444,450 @@
 
 
 <h1 id="tema-8-integracion-y-explotacion-de-informacion-biologica">Tema 8. Integración y explotación de información biológica</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="duracion">Duración</h2>
+<p><strong>2 horas de teoría</strong></p>
+<p>Este tema forma parte del <strong>Bloque III. Análisis funcional y minería de datos biológicos</strong>.</p>
+<p>De acuerdo con la guía docente, se estructura en tres apartados:</p>
 <ul>
-<li>8.1 Ontologías biológicas.</li>
-<li>8.2 Bases de conocimiento.</li>
-<li>8.3 Enriquecimiento funcional.</li>
+<li><strong>8.1. Ontologías biológicas.</strong></li>
+<li><strong>8.2. Bases de conocimiento.</strong></li>
+<li><strong>8.3. Enriquecimiento funcional.</strong></li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<hr />
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Explicar por qué es necesario utilizar vocabularios controlados para integrar información biológica.</li>
+<li>Comprender qué es una ontología y cómo organiza conceptos y relaciones.</li>
+<li>Interpretar la estructura básica de Gene Ontology.</li>
+<li>Diferenciar entre una base de datos y una base de conocimiento.</li>
+<li>Reconocer el valor de las referencias cruzadas y los identificadores en la integración de información.</li>
+<li>Comprender el concepto de enriquecimiento funcional.</li>
+<li>Interpretar de forma básica una lista de términos o rutas enriquecidas.</li>
+<li>Reconocer limitaciones y posibles sesgos en los análisis de enriquecimiento.</li>
+</ul>
+<hr />
+<h1 id="introduccion">Introducción</h1>
+<p>En el Tema 7 hemos visto cómo podemos asignar información funcional a genes y proteínas.</p>
+<p>Sin embargo, la Bioinformática moderna rara vez trabaja con una única entidad.</p>
+<p>Es habitual analizar:</p>
+<ul>
+<li>cientos de genes;</li>
+<li>miles de proteínas;</li>
+<li>resultados de expresión;</li>
+<li>variantes;</li>
+<li>conjuntos de candidatos;</li>
+<li>redes de interacción.</li>
+</ul>
+<p>Cuando la cantidad de información aumenta aparece un nuevo problema:</p>
+<blockquote>
+<p><strong>¿cómo integramos datos procedentes de recursos diferentes y los convertimos en conocimiento interpretable?</strong></p>
+</blockquote>
+<p>Para ello necesitamos:</p>
+<ul>
+<li>identificadores;</li>
+<li>vocabularios controlados;</li>
+<li>ontologías;</li>
+<li>bases de conocimiento;</li>
+<li>métodos que permitan resumir grandes listas de genes o proteínas.</li>
+</ul>
+<p>Este tema aborda precisamente ese paso: pasar de la anotación individual a la <strong>integración y explotación de información biológica</strong>.</p>
+<hr />
+<h1 id="81-ontologias-biologicas">8.1. Ontologías biológicas</h1>
+<h2 id="811-el-problema-del-lenguaje">8.1.1. El problema del lenguaje</h2>
+<p>Imaginemos que diferentes bases de datos describen una misma idea utilizando expresiones distintas:</p>
+<pre><code class="language-text">muerte celular programada
+programmed cell death
+apoptotic process
+apoptosis
+</code></pre>
+<p>Para una persona estas expresiones pueden resultar relacionadas.</p>
+<p>Para un sistema informático, son cadenas de texto diferentes.</p>
+<p>Si queremos integrar información procedente de distintas fuentes necesitamos vocabularios compartidos.</p>
+<hr />
+<h2 id="812-vocabulario-controlado">8.1.2. Vocabulario controlado</h2>
+<p>Un <strong>vocabulario controlado</strong> utiliza un conjunto definido de términos.</p>
+<p>En lugar de escribir libremente cualquier expresión, se seleccionan términos previamente establecidos.</p>
+<p>Esto reduce:</p>
+<ul>
+<li>ambigüedad;</li>
+<li>sinónimos inconsistentes;</li>
+<li>errores de escritura;</li>
+<li>problemas de integración.</li>
+</ul>
+<hr />
+<h2 id="813-que-es-una-ontologia">8.1.3. Qué es una ontología</h2>
+<p>Una ontología no es únicamente una lista de términos.</p>
+<p>Además de definir conceptos, representa relaciones entre ellos.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">proceso celular
+    └── muerte celular
+          └── proceso apoptótico
+</code></pre>
+<p>Los conceptos forman una estructura relacionada.</p>
+<p>Esta organización permite:</p>
+<ul>
+<li>búsquedas más precisas;</li>
+<li>comparación entre registros;</li>
+<li>integración de fuentes;</li>
+<li>análisis computacional.</li>
+</ul>
+<hr />
+<h2 id="814-identificadores-estables">8.1.4. Identificadores estables</h2>
+<p>Los términos de una ontología suelen disponer de identificadores.</p>
+<p>Esto evita depender exclusivamente del nombre textual.</p>
+<p>Por ejemplo, un término puede cambiar de descripción manteniendo un identificador que permite rastrearlo.</p>
+<p>Los identificadores facilitan la interoperabilidad.</p>
+<hr />
+<h2 id="815-gene-ontology">8.1.5. Gene Ontology</h2>
+<p><strong>Gene Ontology (GO)</strong> es una de las ontologías biológicas más utilizadas para describir funciones de genes y productos génicos.</p>
+<p>Se organiza en tres grandes ramas:</p>
+<h3 id="molecular-function">Molecular Function</h3>
+<p>Describe la actividad molecular.</p>
+<p>Ejemplos conceptuales:</p>
+<ul>
+<li>actividad enzimática;</li>
+<li>unión a ADN;</li>
+<li>unión a ATP.</li>
+</ul>
+<h3 id="biological-process">Biological Process</h3>
+<p>Describe procesos biológicos en los que participa la entidad.</p>
+<p>Ejemplos:</p>
+<ul>
+<li>división celular;</li>
+<li>reparación del ADN;</li>
+<li>metabolismo.</li>
+</ul>
+<h3 id="cellular-component">Cellular Component</h3>
+<p>Describe localización o componente celular.</p>
+<p>Ejemplos:</p>
+<ul>
+<li>núcleo;</li>
+<li>membrana;</li>
+<li>ribosoma.</li>
+</ul>
+<p>Recurso: https://geneontology.org/</p>
+<hr />
+<h2 id="816-relaciones-jerarquicas">8.1.6. Relaciones jerárquicas</h2>
+<p>Los términos pueden presentar relaciones como:</p>
+<ul>
+<li>un concepto es un tipo de otro;</li>
+<li>un proceso forma parte de otro;</li>
+<li>una entidad se relaciona con una función.</li>
+</ul>
+<p>Esto permite navegar desde conceptos generales hacia otros más específicos.</p>
+<hr />
+<h2 id="817-una-proteina-puede-tener-muchas-anotaciones">8.1.7. Una proteína puede tener muchas anotaciones</h2>
+<p>Una misma proteína puede asociarse simultáneamente con:</p>
+<ul>
+<li>varias funciones moleculares;</li>
+<li>varios procesos;</li>
+<li>diferentes localizaciones.</li>
+</ul>
+<p>Por ello, la anotación funcional no suele reducirse a una sola etiqueta.</p>
+<hr />
+<h2 id="818-evidencia-en-gene-ontology">8.1.8. Evidencia en Gene Ontology</h2>
+<p>Las anotaciones GO pueden estar respaldadas por distintos tipos de evidencia.</p>
+<p>Al interpretar un término GO conviene comprobar:</p>
+<ul>
+<li>si deriva de experimento;</li>
+<li>si ha sido inferido;</li>
+<li>si procede de análisis computacional;</li>
+<li>si ha sido revisado.</li>
+</ul>
+<p>El término y la evidencia son informaciones diferentes.</p>
+<hr />
+<h1 id="82-bases-de-conocimiento">8.2. Bases de conocimiento</h1>
+<h2 id="821-base-de-datos-frente-a-base-de-conocimiento">8.2.1. Base de datos frente a base de conocimiento</h2>
+<p>Una <strong>base de datos</strong> almacena información estructurada.</p>
+<p>Una <strong>base de conocimiento</strong> intenta además integrar y relacionar información para facilitar su interpretación.</p>
+<p>En la práctica, la frontera puede no ser absoluta, pero conceptualmente podemos distinguir:</p>
+<pre><code class="language-text">base de datos
+    → almacena registros
+
+base de conocimiento
+    → conecta registros, relaciones, evidencias y conocimiento biológico
+</code></pre>
+<hr />
+<h2 id="822-integracion-de-multiples-fuentes">8.2.2. Integración de múltiples fuentes</h2>
+<p>Una base de conocimiento puede combinar información sobre:</p>
+<ul>
+<li>genes;</li>
+<li>proteínas;</li>
+<li>funciones;</li>
+<li>enfermedades;</li>
+<li>rutas;</li>
+<li>estructuras;</li>
+<li>interacciones;</li>
+<li>publicaciones.</li>
+</ul>
+<p>La integración permite pasar de una visión aislada a una visión conectada.</p>
+<hr />
+<h2 id="823-identificadores-y-referencias-cruzadas">8.2.3. Identificadores y referencias cruzadas</h2>
+<p>La integración depende de poder reconocer que distintas fuentes hablan de la misma entidad.</p>
+<p>Para ello son esenciales:</p>
+<ul>
+<li>identificadores;</li>
+<li>referencias cruzadas;</li>
+<li>correspondencias entre recursos.</li>
+</ul>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">NCBI Gene
+    ↕
+UniProt
+    ↕
+Gene Ontology
+    ↕
+Reactome
+</code></pre>
+<p>Este tipo de conexión ya se introdujo en el Bloque I y ahora se utiliza para extraer conocimiento funcional.</p>
+<hr />
+<h2 id="824-uniprot-como-recurso-integrado">8.2.4. UniProt como recurso integrado</h2>
+<p>UniProt combina:</p>
+<ul>
+<li>secuencia;</li>
+<li>función;</li>
+<li>evidencias;</li>
+<li>dominios;</li>
+<li>localización;</li>
+<li>referencias;</li>
+<li>enlaces externos.</li>
+</ul>
+<p>Por ello, puede funcionar como punto de entrada para acceder a distintas capas de información.</p>
+<hr />
+<h2 id="825-reactome">8.2.5. Reactome</h2>
+<p><strong>Reactome</strong> es una base de conocimiento centrada en rutas y procesos biológicos.</p>
+<p>Permite relacionar genes y proteínas con:</p>
+<ul>
+<li>reacciones;</li>
+<li>procesos;</li>
+<li>rutas;</li>
+<li>entidades moleculares.</li>
+</ul>
+<p>Recurso: https://reactome.org/</p>
+<hr />
+<h2 id="826-interpro-y-la-integracion-de-firmas">8.2.6. InterPro y la integración de firmas</h2>
+<p>InterPro integra firmas procedentes de diferentes recursos para ofrecer una visión conjunta sobre:</p>
+<ul>
+<li>familias;</li>
+<li>dominios;</li>
+<li>regiones;</li>
+<li>sitios.</li>
+</ul>
+<p>Este enfoque evita consultar de forma aislada múltiples recursos especializados.</p>
+<hr />
+<h2 id="827-ventajas-de-integrar">8.2.7. Ventajas de integrar</h2>
+<p>La integración puede ayudar a:</p>
+<ul>
+<li>confirmar una anotación;</li>
+<li>descubrir relaciones;</li>
+<li>contextualizar genes;</li>
+<li>interpretar listas de candidatos;</li>
+<li>conectar secuencia y función;</li>
+<li>localizar evidencia complementaria.</li>
+</ul>
+<hr />
+<h2 id="828-riesgos-de-la-integracion">8.2.8. Riesgos de la integración</h2>
+<p>Integrar información también puede propagar problemas.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>anotaciones incorrectas;</li>
+<li>identificadores obsoletos;</li>
+<li>duplicados;</li>
+<li>diferencias entre versiones;</li>
+<li>inferencias automáticas no verificadas.</li>
+</ul>
+<p>Por ello, más información no siempre significa mejor información.</p>
+<hr />
+<h1 id="83-enriquecimiento-funcional">8.3. Enriquecimiento funcional</h1>
+<h2 id="831-del-gen-individual-a-una-lista">8.3.1. Del gen individual a una lista</h2>
+<p>Supongamos que un experimento produce una lista de 200 genes.</p>
+<p>Leer uno por uno sus registros sería poco eficiente.</p>
+<p>Queremos saber si existen patrones comunes.</p>
+<p>Podemos preguntar:</p>
+<blockquote>
+<p><strong>¿hay funciones o procesos representados con mayor frecuencia de la esperada?</strong></p>
+</blockquote>
+<p>Este es el objetivo general del enriquecimiento funcional.</p>
+<hr />
+<h2 id="832-idea-basica">8.3.2. Idea básica</h2>
+<p>Imaginemos que en una lista de genes aparecen muchos genes relacionados con:</p>
+<pre><code class="language-text">respuesta inmunitaria
+</code></pre>
+<p>Si esa proporción es mucho mayor que la observada en el conjunto de referencia, podemos considerar que el término está enriquecido.</p>
+<p>La comparación se realiza entre:</p>
+<ul>
+<li><strong>lista de interés</strong>;</li>
+<li><strong>conjunto de referencia o background</strong>.</li>
+</ul>
+<hr />
+<h2 id="833-conjunto-de-referencia">8.3.3. Conjunto de referencia</h2>
+<p>La elección del conjunto de referencia es fundamental.</p>
+<p>Puede ser:</p>
+<ul>
+<li>todo el genoma;</li>
+<li>todos los genes medidos;</li>
+<li>todas las proteínas detectadas;</li>
+<li>un conjunto experimental específico.</li>
+</ul>
+<p>Un background inadecuado puede generar conclusiones engañosas.</p>
+<hr />
+<h2 id="834-que-puede-enriquecerse">8.3.4. Qué puede enriquecerse</h2>
+<p>Podemos estudiar enriquecimiento de:</p>
+<ul>
+<li>términos GO;</li>
+<li>rutas;</li>
+<li>familias;</li>
+<li>funciones;</li>
+<li>procesos;</li>
+<li>otras categorías biológicas.</li>
+</ul>
+<hr />
+<h2 id="835-ejemplo-conceptual">8.3.5. Ejemplo conceptual</h2>
+<p>Supongamos:</p>
+<pre><code class="language-text">Lista analizada: 100 genes
+Genes relacionados con ciclo celular: 30
+</code></pre>
+<p>Si en el conjunto de referencia solo una pequeña proporción de genes pertenece a esa categoría, el resultado puede indicar un enriquecimiento del proceso de ciclo celular.</p>
+<p>El análisis intenta determinar si esa concentración podría explicarse fácilmente por azar.</p>
+<hr />
+<h2 id="836-significacion-estadistica">8.3.6. Significación estadística</h2>
+<p>Las herramientas de enriquecimiento asignan medidas estadísticas a los resultados.</p>
+<p>No es necesario desarrollar aquí el cálculo matemático, pero sí comprender que se compara:</p>
+<blockquote>
+<p><strong>lo observado frente a lo esperado</strong></p>
+</blockquote>
+<p>Un término con un valor estadístico favorable indica que aparece más representado de lo esperado bajo el modelo utilizado.</p>
+<hr />
+<h2 id="837-problema-de-las-comparaciones-multiples">8.3.7. Problema de las comparaciones múltiples</h2>
+<p>Un análisis puede evaluar cientos o miles de términos.</p>
+<p>Si realizamos muchas pruebas, algunas pueden parecer significativas por azar.</p>
+<p>Por ello se utilizan correcciones por comparaciones múltiples.</p>
+<p>Es frecuente encontrar medidas como:</p>
+<ul>
+<li>p-value;</li>
+<li>p-value ajustado;</li>
+<li>FDR.</li>
+</ul>
+<p>En este nivel del curso, lo importante es comprender que <strong>un p-value sin corregir no debería interpretarse de forma aislada cuando se prueban muchas categorías</strong>.</p>
+<hr />
+<h2 id="838-redundancia-de-resultados">8.3.8. Redundancia de resultados</h2>
+<p>Las ontologías son jerárquicas.</p>
+<p>Por ello, un análisis puede devolver términos muy relacionados.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">respuesta al estrés
+respuesta a estrés oxidativo
+respuesta celular a estrés oxidativo
+</code></pre>
+<p>No necesariamente representan tres descubrimientos independientes.</p>
+<p>La interpretación requiere agrupar y contextualizar términos.</p>
+<hr />
+<h2 id="839-herramientas-de-enriquecimiento">8.3.9. Herramientas de enriquecimiento</h2>
+<p>Existen diferentes herramientas y recursos que permiten realizar estos análisis.</p>
+<p>Entre ellos:</p>
+<ul>
+<li>Gene Ontology;</li>
+<li>Reactome;</li>
+<li>g:Profiler;</li>
+<li>Enrichr;</li>
+<li>herramientas integradas en plataformas de análisis.</li>
+</ul>
+<p>La herramienta concreta puede variar, pero el razonamiento es común.</p>
+<hr />
+<h2 id="8310-interpretacion-responsable">8.3.10. Interpretación responsable</h2>
+<p>Un resultado enriquecido no significa que:</p>
+<ul>
+<li>todos los genes de la lista participen en ese proceso;</li>
+<li>el proceso esté necesariamente activado;</li>
+<li>exista causalidad;</li>
+<li>el resultado sea biológicamente relevante sin contexto.</li>
+</ul>
+<p>El enriquecimiento ayuda a generar y priorizar interpretaciones.</p>
+<hr />
+<h1 id="84-flujo-de-integracion-y-enriquecimiento">8.4. Flujo de integración y enriquecimiento</h1>
+<pre><code class="language-text">lista de genes o proteínas
+        ↓
+normalización de identificadores
+        ↓
+anotaciones funcionales
+        ↓
+integración de recursos
+        ↓
+definición del background
+        ↓
+análisis de enriquecimiento
+        ↓
+corrección estadística
+        ↓
+interpretación biológica
+</code></pre>
+<hr />
+<h1 id="85-ejemplo-integrado">8.5. Ejemplo integrado</h1>
+<p>Supongamos que un experimento identifica genes cuya expresión cambia después de aplicar un tratamiento.</p>
+<p>Podemos:</p>
+<ol>
+<li>normalizar los identificadores;</li>
+<li>obtener términos GO;</li>
+<li>consultar rutas en Reactome;</li>
+<li>realizar un análisis de enriquecimiento;</li>
+<li>identificar procesos sobrerrepresentados;</li>
+<li>revisar los genes responsables del resultado;</li>
+<li>contrastar la interpretación con la literatura.</li>
+</ol>
+<p>Así pasamos de una lista extensa a una interpretación funcional organizada.</p>
+<hr />
+<h1 id="86-errores-frecuentes">8.6. Errores frecuentes</h1>
+<h2 id="mezclar-identificadores-sin-normalizarlos">Mezclar identificadores sin normalizarlos</h2>
+<p>Puede provocar pérdidas o duplicados.</p>
+<h2 id="ignorar-el-conjunto-de-referencia">Ignorar el conjunto de referencia</h2>
+<p>El resultado depende del background.</p>
+<h2 id="interpretar-cada-termino-como-independiente">Interpretar cada término como independiente</h2>
+<p>Las ontologías contienen relaciones jerárquicas.</p>
+<h2 id="utilizar-solo-el-p-value">Utilizar solo el p-value</h2>
+<p>Debe considerarse la corrección por comparaciones múltiples.</p>
+<h2 id="confundir-asociacion-con-causalidad">Confundir asociación con causalidad</h2>
+<p>Un término enriquecido no demuestra un mecanismo causal.</p>
+<h2 id="no-revisar-los-genes-que-originan-el-enriquecimiento">No revisar los genes que originan el enriquecimiento</h2>
+<p>La interpretación debe volver a los datos originales.</p>
+<hr />
+<h1 id="87-cuestiones-guia">8.7. Cuestiones guía</h1>
+<ol>
+<li>¿Por qué un vocabulario libre dificulta la integración de datos?</li>
+<li>¿Qué diferencia existe entre un vocabulario controlado y una ontología?</li>
+<li>¿Cuáles son las tres ramas principales de Gene Ontology?</li>
+<li>¿Por qué los identificadores son importantes para integrar recursos?</li>
+<li>¿Qué diferencia conceptual existe entre una base de datos y una base de conocimiento?</li>
+<li>¿Qué tipo de información aporta Reactome?</li>
+<li>¿Qué pregunta intenta responder un análisis de enriquecimiento?</li>
+<li>¿Por qué es importante elegir correctamente el background?</li>
+<li>¿Por qué debemos corregir por comparaciones múltiples?</li>
+<li>¿Por qué los términos enriquecidos pueden ser redundantes?</li>
+<li>¿Qué significa que un proceso esté enriquecido?</li>
+<li>¿Qué limitaciones deben considerarse antes de formular una conclusión biológica?</li>
+</ol>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>Las ontologías permiten representar conceptos y relaciones de forma computable.</li>
+<li>Gene Ontology organiza función molecular, proceso biológico y componente celular.</li>
+<li>Los identificadores y referencias cruzadas facilitan la integración.</li>
+<li>Las bases de conocimiento conectan entidades, evidencias y relaciones.</li>
+<li>Reactome permite contextualizar genes y proteínas en rutas.</li>
+<li>El enriquecimiento funcional resume patrones en listas de genes o proteínas.</li>
+<li>La elección del background condiciona el resultado.</li>
+<li>Las comparaciones múltiples deben corregirse.</li>
+<li>Un término enriquecido no implica causalidad.</li>
+<li>La interpretación debe volver siempre a los genes, evidencias y contexto biológico.</li>
+</ul>
+<hr />
+<h1 id="conexion-con-el-siguiente-tema">Conexión con el siguiente tema</h1>
+<p>Hasta ahora hemos trabajado con herramientas bioinformáticas que organizan, integran y analizan información.</p>
+<p>En el <strong>Tema 9. Inteligencia artificial y automatización en Bioinformática</strong> estudiaremos cómo automatizar tareas y cómo utilizar herramientas de IA como apoyo al análisis, manteniendo siempre:</p>
+<ul>
+<li>trazabilidad;</li>
+<li>reproducibilidad;</li>
+<li>verificación de resultados.</li>
+</ul>
 
 
 
