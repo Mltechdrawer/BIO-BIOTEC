@@ -1,0 +1,2604 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Solución de la actividad 2. Una secuencia muy parecida, ¿la misma especie? - Bioinformática - Grado en Biotecnología</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#solucion-de-la-actividad-2-una-secuencia-muy-parecida-la-misma-especie" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Bioinformática - Grado en Biotecnología" class="md-header__button md-logo" aria-label="Bioinformática - Grado en Biotecnología" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bioinformática - Grado en Biotecnología
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Solución de la actividad 2. Una secuencia muy parecida, ¿la misma especie?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bioinformática - Grado en Biotecnología" class="md-nav__button md-logo" aria-label="Bioinformática - Grado en Biotecnología" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bioinformática - Grado en Biotecnología
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contenidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque I. Gestión de información biológica y recursos bioinformáticos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque I. Gestión de información biológica y recursos bioinformáticos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teoría
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/teoria/tema01_introduccion_bioinformatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/teoria/tema02_bases_datos_biologicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/teoria/tema03_representacion_gestion_datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas en aula
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas en aula
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas de laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas de laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque II. Métodos computacionales para el análisis de secuencias
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque II. Métodos computacionales para el análisis de secuencias
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teoría
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/tema04_comparacion_secuencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/tema05_busqueda_alineamiento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/tema06_filogenia_computacional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas en aula
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas en aula
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula2_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula2_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula2_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula2_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aula2_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas de laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas de laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque III. Análisis funcional y minería de datos biológicos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque III. Análisis funcional y minería de datos biológicos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teoría
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/teoria/tema07_anotacion_computacional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/teoria/tema08_integracion_explotacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/teoria/tema09_ia_automatizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas en aula
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas en aula
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas de laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas de laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque IV. Bioinformática estructural y modelado computacional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque IV. Bioinformática estructural y modelado computacional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teoría
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/teoria/tema10_recursos_estructurales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/teoria/tema11_visualizacion_estructuras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/teoria/tema12_prediccion_ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas en aula
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas en aula
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas de laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas de laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bibliografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../proyecto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proyecto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ejecucion-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ejecución de referencia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-respuestas-a-las-preguntas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Respuestas a las preguntas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Respuestas a las preguntas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pregunta-1-leer-el-alineamiento-humano" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pregunta 1. Leer el alineamiento humano
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pregunta-2-interpretar-la-cobertura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pregunta 2. Interpretar la cobertura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pregunta-3-localizar-la-diferencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pregunta 3. Localizar la diferencia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pregunta-4-calcular-e-interpretar-el-porcentaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pregunta 4. Calcular e interpretar el porcentaje
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pregunta-5-identidad-y-especie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pregunta 5. Identidad y especie
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-solucion-de-la-puesta-en-comun" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Solución de la puesta en común
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-orientaciones-para-corregir" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Orientaciones para corregir
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-fuentes-y-trazabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Fuentes y trazabilidad
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="solucion-de-la-actividad-2-una-secuencia-muy-parecida-la-misma-especie">Solución de la actividad 2. Una secuencia muy parecida, ¿la misma especie?</h1>
+<p><strong>Asignatura:</strong> Bioinformática (Grado en Biotecnología)<br />
+<strong>Tema:</strong> 5. Búsqueda y alineamiento de secuencias<br />
+<strong>Documento:</strong> guía de corrección para el profesorado</p>
+<h2 id="1-ejecucion-de-referencia">1. Ejecución de referencia</h2>
+<p>Esta solución utiliza los resultados <strong>observados el 11 de octubre de 2026</strong> en la búsqueda de la primera actividad. Se reutiliza esa ejecución para examinar dos alineamientos; no se presenta como una segunda búsqueda independiente.</p>
+<ul>
+<li><strong>Consulta:</strong> <code>muestra_01_fragmento_ADN</code>, 189 nucleótidos, FASTA de la primera actividad.</li>
+<li><strong>Base de datos:</strong> Reference RNA sequences (<code>refseq_rna</code>).</li>
+<li><strong>Algoritmo:</strong> megablast, sin restricción de organismo ni exclusión de modelos XM.</li>
+<li><strong>RID:</strong> <code>CRH6UC2H014</code>.</li>
+<li><strong>Registro humano:</strong> <code>NM_000518.5</code>.</li>
+<li><strong>Registro de Pan paniscus:</strong> <code>XM_003819029.5</code>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Resultado</th>
+<th style="text-align: right;">Longitud de referencia</th>
+<th>Query</th>
+<th>Sbjct</th>
+<th>Identidades</th>
+<th>Gaps</th>
+<th style="text-align: right;">Cobertura de consulta</th>
+<th style="text-align: right;">Identidad en Descriptions</th>
+<th>E-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Homo sapiens, HBB</td>
+<td style="text-align: right;">628 nt</td>
+<td>1–189</td>
+<td>51–239</td>
+<td>189/189</td>
+<td>0/189</td>
+<td style="text-align: right;">100 %</td>
+<td style="text-align: right;">100,00 %</td>
+<td>2e-92</td>
+</tr>
+<tr>
+<td>Pan paniscus, beta-globina</td>
+<td style="text-align: right;">643 nt</td>
+<td>1–189</td>
+<td>66–254</td>
+<td>188/189</td>
+<td>0/189</td>
+<td style="text-align: right;">100 %</td>
+<td style="text-align: right;">99,47 %</td>
+<td>7e-91</td>
+</tr>
+</tbody>
+</table>
+<p>Estos valores corresponden a los accesos y la ejecución indicados. Las futuras búsquedas pueden devolver otros registros, orden o métricas.</p>
+<h2 id="2-respuestas-a-las-preguntas">2. Respuestas a las preguntas</h2>
+<h3 id="pregunta-1-leer-el-alineamiento-humano">Pregunta 1. Leer el alineamiento humano</h3>
+<p><strong>Query:</strong> desde 1 hasta 189.<br />
+<strong>Sbjct:</strong> desde 51 hasta 239.<br />
+<strong>Identities:</strong> 189/189 (100 %).<br />
+<strong>Longitud del transcrito:</strong> 628 nucleótidos.</p>
+<p>Todas las posiciones de la consulta coinciden con una región interna del transcrito. Las barras verticales señalan esas coincidencias. No se han introducido huecos: <strong>Gaps = 0/189 (0 %)</strong>.</p>
+<h3 id="pregunta-2-interpretar-la-cobertura">Pregunta 2. Interpretar la cobertura</h3>
+<p><strong>No:</strong> una cobertura de la consulta del 100 % no significa haber alineado todo el transcrito de referencia. Se han cubierto los <strong>189 nucleótidos de Query</strong>, alineados con las posiciones 51–239 de Sbjct. La referencia completa mide 628 nucleótidos.</p>
+<p>Como comprobación adicional para el profesorado, la región alineada representa aproximadamente <strong>189/628 × 100 = 30,10 %</strong> de la referencia. Este cálculo no es el valor de la columna <strong>Query Cover</strong> ni es necesario exigirlo al alumnado.</p>
+<h3 id="pregunta-3-localizar-la-diferencia">Pregunta 3. Localizar la diferencia</h3>
+<p>La diferencia aparece en la <strong>posición 9 de Query</strong>: la consulta contiene <strong>T</strong> y la referencia de Pan paniscus contiene <strong>C</strong>. Corresponde a la posición <strong>74 de Sbjct</strong>, porque el alineamiento comienza en la posición 66 de esa referencia.</p>
+<ul>
+<li>Consulta, primeras 12 bases: <code>ATGGTGCATCTG</code>.</li>
+<li>Referencia, región correspondiente: <code>ATGGTGCACCTG</code>.</li>
+</ul>
+<p>Se alinean <strong>189 posiciones</strong>, de las cuales <strong>188 son idénticas</strong>. Hay una discrepancia y ningún hueco. En este caso, la diferencia es una sustitución, no una inserción o una deleción. Esta observación no permite deducir por sí sola un efecto funcional.</p>
+<h3 id="pregunta-4-calcular-e-interpretar-el-porcentaje">Pregunta 4. Calcular e interpretar el porcentaje</h3>
+<p><strong>188/189 × 100 = 99,470899… %</strong>, que se expresa como <strong>99,47 %</strong> al redondear a dos decimales.</p>
+<p>En esta ejecución, <strong>Descriptions</strong> muestra <code>99.47%</code>, mientras que el panel <strong>Alignments</strong> muestra <code>188/189 (99%)</code>. Es el mismo cociente con diferente precisión de presentación. No hay una contradicción entre los resultados.</p>
+<p>La cobertura de la consulta sigue siendo del <strong>100 %</strong>: la posición diferente está alineada y cuenta para la cobertura, aunque no sea idéntica.</p>
+<h3 id="pregunta-5-identidad-y-especie">Pregunta 5. Identidad y especie</h3>
+<p><strong>No podemos asegurarlo únicamente con ese porcentaje.</strong> La consulta coincide exactamente con HBB humano, pero también presenta un <strong>99,47 % de identidad con cobertura completa frente a Pan paniscus</strong>, otra especie. Una región conservada puede ser muy parecida entre especies distintas.</p>
+<p>La identificación prevista en la primera actividad se apoya en la coincidencia exacta humana, la anotación del registro y la comparación de alternativas. BLAST muestra similitud; un umbral de identidad aislado no constituye una identificación inequívoca de especie.</p>
+<h2 id="3-solucion-de-la-puesta-en-comun">3. Solución de la puesta en común</h2>
+<p><strong>Sí, es compatible.</strong> Un alineamiento local busca regiones similares sin obligar a alinear la totalidad de ambas secuencias. En este caso, la región encontrada contiene toda la consulta de 189 nucleótidos, pero solo una parte del transcrito humano de 628 nucleótidos.</p>
+<p>Por tanto, <strong>100 % de cobertura de Query no convierte el resultado en un alineamiento global de ambas secuencias completas</strong>.</p>
+<h2 id="4-orientaciones-para-corregir">4. Orientaciones para corregir</h2>
+<p>Valorar que el alumnado distinga Query de Sbjct, ubique la discrepancia, explique el cálculo de identidad y razone por qué cobertura e identidad son diferentes. No es necesario exigir la posición 74 de la referencia ni el cálculo del 30,10 %.</p>
+<p>Si se utiliza otra ejecución, comprobar sus accesos y capturas antes de aplicar los valores numéricos de esta guía. Aceptar valores diferentes cuando estén documentados y correctamente interpretados. Si no se dispone del registro previsto, facilitar el Word con las imágenes de referencia.</p>
+<h2 id="5-fuentes-y-trazabilidad">5. Fuentes y trazabilidad</h2>
+<ul>
+<li><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Get&amp;RID=CRH6UC2H014">NCBI BLAST, ejecución CRH6UC2H014</a>. Enlace temporal; la evidencia se conserva en el Word.</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/nuccore/NM_000518.5">NCBI RefSeq, HBB humano NM_000518.5</a>.</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/nuccore/XM_003819029.5">NCBI RefSeq, Pan paniscus XM_003819029.5</a>.</li>
+<li><a href="https://blast.ncbi.nlm.nih.gov/doc/blast-help/">NCBI BLAST Help</a>.</li>
+<li><a href="https://mltechdrawer.github.io/BIO-BIOTEC/bloque2_analisis_secuencias/teoria/tema05_busqueda_alineamiento/">Tema 5 de la asignatura</a>.</li>
+</ul>
+<p><strong>Confianza: 99 %</strong> en la transcripción e interpretación de la ejecución documentada. La duración de la actividad es una estimación didáctica.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
