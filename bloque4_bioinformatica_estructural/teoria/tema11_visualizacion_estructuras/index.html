@@ -1931,27 +1931,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2419,27 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2462,16 +2444,617 @@
 
 
 <h1 id="tema-11-visualizacion-y-analisis-de-estructuras-biomoleculares">Tema 11. Visualización y análisis de estructuras biomoleculares</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="duracion">Duración</h2>
+<p><strong>2 horas de teoría</strong></p>
+<p>Este tema forma parte del <strong>Bloque IV. Bioinformática estructural y modelado computacional</strong>.</p>
+<p>De acuerdo con la estructura del curso, se organiza en tres apartados:</p>
 <ul>
-<li>11.1 Modelos tridimensionales.</li>
-<li>11.2 Herramientas de visualización.</li>
-<li>11.3 Análisis de interacciones moleculares.</li>
+<li><strong>11.1. Modelos tridimensionales.</strong></li>
+<li><strong>11.2. Herramientas de visualización.</strong></li>
+<li><strong>11.3. Análisis de interacciones moleculares.</strong></li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<hr />
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Interpretar una estructura biomolecular en tres dimensiones.</li>
+<li>Diferenciar entre distintas representaciones gráficas de una misma estructura.</li>
+<li>Identificar elementos de estructura secundaria y organización cuaternaria.</li>
+<li>Comprender qué información aporta una superficie molecular.</li>
+<li>Seleccionar una representación adecuada según la pregunta biológica.</li>
+<li>Reconocer las principales herramientas de visualización estructural.</li>
+<li>Identificar interacciones no covalentes relevantes entre biomoléculas.</li>
+<li>Interpretar contactos proteína-ligando y proteína-proteína.</li>
+<li>Comprender las limitaciones de una estructura estática y de un análisis exclusivamente visual.</li>
+</ul>
+<hr />
+<h1 id="introduccion">Introducción</h1>
+<p>En el Tema 10 vimos que una estructura biomolecular puede representarse digitalmente mediante coordenadas atómicas y metadatos.</p>
+<p>Sin embargo, disponer de esas coordenadas no significa comprender automáticamente la estructura.</p>
+<p>Un fichero estructural puede contener miles o incluso millones de posiciones atómicas. Para interpretar esa información necesitamos transformar los datos en representaciones visuales que permitan responder preguntas concretas.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>¿qué forma general tiene la proteína?</li>
+<li>¿dónde se encuentran las hélices y las láminas?</li>
+<li>¿qué residuos forman un sitio activo?</li>
+<li>¿qué cadenas participan en un complejo?</li>
+<li>¿dónde se une un ligando?</li>
+<li>¿qué contactos estabilizan una interacción?</li>
+<li>¿qué región está expuesta al solvente?</li>
+</ul>
+<p>La visualización molecular no es, por tanto, un recurso meramente ilustrativo.</p>
+<p>Es una herramienta de análisis.</p>
+<hr />
+<h1 id="111-modelos-tridimensionales">11.1. Modelos tridimensionales</h1>
+<h2 id="1111-de-las-coordenadas-al-modelo-visual">11.1.1. De las coordenadas al modelo visual</h2>
+<p>En un fichero estructural podemos encontrar coordenadas como:</p>
+<pre><code class="language-text">x, y, z
+</code></pre>
+<p>para cada átomo.</p>
+<p>El programa de visualización utiliza esas coordenadas para reconstruir la posición relativa de los átomos y representar la molécula en el espacio.</p>
+<p>Podemos pensar en el proceso como:</p>
+<pre><code class="language-text">coordenadas atómicas
+        ↓
+modelo geométrico
+        ↓
+representación gráfica
+        ↓
+interpretación biológica
+</code></pre>
+<p>La representación final depende de las decisiones del usuario.</p>
+<hr />
+<h2 id="1112-una-estructura-admite-multiples-representaciones">11.1.2. Una estructura admite múltiples representaciones</h2>
+<p>No existe una única forma correcta de representar una molécula.</p>
+<p>La misma proteína puede visualizarse como:</p>
+<ul>
+<li>líneas;</li>
+<li>sticks;</li>
+<li>bolas y varillas;</li>
+<li>esferas;</li>
+<li>cartoon;</li>
+<li>ribbon;</li>
+<li>superficie molecular;</li>
+<li>combinación de varias representaciones.</li>
+</ul>
+<p>Cada una destaca información diferente.</p>
+<hr />
+<h2 id="1113-representacion-por-lineas">11.1.3. Representación por líneas</h2>
+<p>La representación mediante líneas muestra enlaces de forma sencilla.</p>
+<p>Ventajas:</p>
+<ul>
+<li>poco coste visual;</li>
+<li>permite ver muchos átomos;</li>
+<li>útil para inspecciones rápidas.</li>
+</ul>
+<p>Limitaciones:</p>
+<ul>
+<li>puede resultar difícil interpretar estructuras grandes;</li>
+<li>no muestra bien el volumen real de los átomos.</li>
+</ul>
+<hr />
+<h2 id="1114-sticks-y-bolas-y-varillas">11.1.4. Sticks y bolas y varillas</h2>
+<p>En una representación de <strong>sticks</strong>, los enlaces aparecen como cilindros.</p>
+<p>En una representación de <strong>balls and sticks</strong>, los átomos se representan mediante esferas y los enlaces mediante cilindros.</p>
+<p>Es útil para:</p>
+<ul>
+<li>observar ligandos;</li>
+<li>estudiar sitios activos;</li>
+<li>identificar geometría local;</li>
+<li>analizar contactos.</li>
+</ul>
+<p>No es la mejor representación para comprender rápidamente la forma global de una proteína grande.</p>
+<hr />
+<h2 id="1115-representacion-de-esferas">11.1.5. Representación de esferas</h2>
+<p>Los átomos pueden representarse como esferas aproximando su volumen.</p>
+<p>Esta representación permite observar:</p>
+<ul>
+<li>ocupación espacial;</li>
+<li>empaquetamiento;</li>
+<li>accesibilidad;</li>
+<li>complementariedad.</li>
+</ul>
+<p>Puede ser útil para estudiar contactos estrechos o el volumen ocupado por una región.</p>
+<hr />
+<h2 id="1116-cartoon-y-ribbon">11.1.6. Cartoon y ribbon</h2>
+<p>Las representaciones <strong>cartoon</strong> o <strong>ribbon</strong> simplifican la cadena principal y resaltan elementos de estructura secundaria.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>hélices alfa;</li>
+<li>láminas beta;</li>
+<li>bucles.</li>
+</ul>
+<p>Son especialmente útiles para comprender:</p>
+<ul>
+<li>plegamiento;</li>
+<li>dominios;</li>
+<li>organización global;</li>
+<li>relaciones entre subunidades.</li>
+</ul>
+<p>Por este motivo son muy habituales en figuras científicas.</p>
+<hr />
+<h2 id="1117-estructura-secundaria">11.1.7. Estructura secundaria</h2>
+<p>En una proteína pueden distinguirse elementos como:</p>
+<h3 id="helices-alfa">Hélices alfa</h3>
+<p>Regiones helicoidales estabilizadas por puentes de hidrógeno internos.</p>
+<h3 id="laminas-beta">Láminas beta</h3>
+<p>Formadas por varias hebras beta asociadas.</p>
+<h3 id="giros-y-bucles">Giros y bucles</h3>
+<p>Conectan elementos de estructura secundaria y pueden participar en reconocimiento o unión.</p>
+<p>La distribución de estos elementos ayuda a caracterizar el plegamiento de una proteína.</p>
+<hr />
+<h2 id="1118-dominios-estructurales">11.1.8. Dominios estructurales</h2>
+<p>Una proteína puede contener regiones estructurales relativamente independientes denominadas <strong>dominios</strong>.</p>
+<p>Un dominio puede:</p>
+<ul>
+<li>plegarse de forma relativamente autónoma;</li>
+<li>tener una función concreta;</li>
+<li>aparecer conservado en distintas proteínas.</li>
+</ul>
+<p>La visualización permite observar si una proteína presenta:</p>
+<ul>
+<li>un único dominio;</li>
+<li>varios dominios;</li>
+<li>regiones flexibles entre dominios.</li>
+</ul>
+<hr />
+<h2 id="1119-estructura-cuaternaria">11.1.9. Estructura cuaternaria</h2>
+<p>Muchas proteínas funcionales están formadas por varias cadenas.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">cadena A + cadena B
+</code></pre>
+<p>o:</p>
+<pre><code class="language-text">A + B + C + D
+</code></pre>
+<p>La visualización tridimensional permite estudiar:</p>
+<ul>
+<li>cómo se organizan las subunidades;</li>
+<li>qué superficies están en contacto;</li>
+<li>si existe simetría;</li>
+<li>qué ligandos aparecen en las interfaces.</li>
+</ul>
+<hr />
+<h2 id="11110-colorear-para-interpretar">11.1.10. Colorear para interpretar</h2>
+<p>El color es una herramienta analítica.</p>
+<p>Una estructura puede colorearse por:</p>
+<ul>
+<li>cadena;</li>
+<li>elemento de estructura secundaria;</li>
+<li>dominio;</li>
+<li>residuo;</li>
+<li>propiedad química;</li>
+<li>conservación;</li>
+<li>carga;</li>
+<li>confianza del modelo.</li>
+</ul>
+<p>Por ejemplo, colorear cada cadena de forma diferente puede revelar rápidamente la organización de un complejo.</p>
+<p>El color debe elegirse para responder a una pregunta, no únicamente por razones estéticas.</p>
+<hr />
+<h2 id="11111-superficie-molecular">11.1.11. Superficie molecular</h2>
+<p>Una representación de superficie muestra el volumen externo de la molécula.</p>
+<p>Puede ser útil para estudiar:</p>
+<ul>
+<li>cavidades;</li>
+<li>canales;</li>
+<li>sitios de unión;</li>
+<li>interfaces;</li>
+<li>accesibilidad al solvente.</li>
+</ul>
+<p>Una superficie puede revelar características difíciles de observar con cartoon o sticks.</p>
+<hr />
+<h2 id="11112-propiedades-sobre-la-superficie">11.1.12. Propiedades sobre la superficie</h2>
+<p>Sobre una superficie pueden representarse propiedades como:</p>
+<ul>
+<li>carga electrostática;</li>
+<li>hidrofobicidad;</li>
+<li>conservación;</li>
+<li>accesibilidad.</li>
+</ul>
+<p>Esto permite relacionar forma y propiedades químicas.</p>
+<p>Por ejemplo, una cavidad con determinadas características puede ser compatible con la unión de un ligando.</p>
+<hr />
+<h1 id="112-herramientas-de-visualizacion">11.2. Herramientas de visualización</h1>
+<h2 id="1121-visualizacion-en-el-navegador">11.2.1. Visualización en el navegador</h2>
+<p>Actualmente muchas bases de datos estructurales incorporan visores tridimensionales en el navegador.</p>
+<p>Esto permite:</p>
+<ul>
+<li>rotar la molécula;</li>
+<li>hacer zoom;</li>
+<li>seleccionar cadenas;</li>
+<li>mostrar ligandos;</li>
+<li>cambiar representaciones;</li>
+<li>realizar medidas básicas.</li>
+</ul>
+<p>RCSB PDB y PDBe ofrecen este tipo de visualización integrada.</p>
+<hr />
+<h2 id="1122-mol">11.2.2. Mol*</h2>
+<p><strong>Mol</strong>* es un visor molecular web utilizado en recursos estructurales modernos.</p>
+<p>Permite trabajar directamente en el navegador con estructuras grandes y complejas.</p>
+<p>Entre sus posibilidades se encuentran:</p>
+<ul>
+<li>mostrar cadenas;</li>
+<li>seleccionar residuos;</li>
+<li>visualizar ligandos;</li>
+<li>cambiar estilos;</li>
+<li>inspeccionar ensamblajes;</li>
+<li>analizar regiones concretas.</li>
+</ul>
+<p>Para una primera exploración estructural, un visor web suele ser suficiente.</p>
+<hr />
+<h2 id="1123-pymol">11.2.3. PyMOL</h2>
+<p><strong>PyMOL</strong> es una herramienta ampliamente utilizada para visualización molecular.</p>
+<p>Permite:</p>
+<ul>
+<li>cargar estructuras;</li>
+<li>seleccionar regiones;</li>
+<li>cambiar representaciones;</li>
+<li>colorear;</li>
+<li>medir distancias;</li>
+<li>generar figuras;</li>
+<li>automatizar acciones mediante comandos.</li>
+</ul>
+<p>Su uso es frecuente en investigación y publicación científica.</p>
+<hr />
+<h2 id="1124-ucsf-chimerax">11.2.4. UCSF ChimeraX</h2>
+<p><strong>ChimeraX</strong> es otra herramienta de análisis y visualización estructural.</p>
+<p>Permite trabajar con:</p>
+<ul>
+<li>proteínas;</li>
+<li>complejos;</li>
+<li>mapas de densidad;</li>
+<li>modelos predichos;</li>
+<li>interacciones;</li>
+<li>superficies.</li>
+</ul>
+<p>Es especialmente útil cuando se necesita un análisis más avanzado que el que ofrece un visor web.</p>
+<hr />
+<h2 id="1125-visualizacion-interactiva-frente-a-figura-estatica">11.2.5. Visualización interactiva frente a figura estática</h2>
+<p>Una imagen incluida en un artículo muestra una vista seleccionada.</p>
+<p>Una herramienta interactiva permite:</p>
+<ul>
+<li>rotar;</li>
+<li>ampliar;</li>
+<li>ocultar elementos;</li>
+<li>seleccionar residuos;</li>
+<li>cambiar colores;</li>
+<li>medir;</li>
+<li>explorar regiones.</li>
+</ul>
+<p>Por ello, una imagen es una representación final, mientras que un visor es una herramienta de exploración.</p>
+<hr />
+<h2 id="1126-selecciones">11.2.6. Selecciones</h2>
+<p>Una de las operaciones fundamentales consiste en seleccionar partes de la estructura.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">cadena A
+residuo 150
+ligando ATP
+residuos a menos de 4 Å del ligando
+</code></pre>
+<p>Las selecciones permiten centrar el análisis en elementos concretos.</p>
+<hr />
+<h2 id="1127-medidas-geometricas">11.2.7. Medidas geométricas</h2>
+<p>Los visores permiten realizar medidas como:</p>
+<ul>
+<li>distancia entre átomos;</li>
+<li>ángulos;</li>
+<li>contactos;</li>
+<li>distancias entre residuos.</li>
+</ul>
+<p>Estas medidas ayudan a estudiar si una interacción es geométricamente plausible.</p>
+<hr />
+<h2 id="1128-superposicion-estructural">11.2.8. Superposición estructural</h2>
+<p>Dos estructuras pueden superponerse para analizar sus semejanzas y diferencias.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>misma proteína con y sin ligando;</li>
+<li>proteína normal y mutante;</li>
+<li>proteínas homólogas;</li>
+<li>estructura experimental y modelo predicho.</li>
+</ul>
+<p>La superposición permite identificar cambios conformacionales.</p>
+<hr />
+<h2 id="1129-rmsd">11.2.9. RMSD</h2>
+<p>Una medida frecuente para cuantificar diferencias estructurales es el <strong>RMSD</strong> (<em>Root Mean Square Deviation</em>).</p>
+<p>De forma conceptual, mide la distancia promedio entre posiciones correspondientes después de superponer las estructuras.</p>
+<p>En general:</p>
+<ul>
+<li>RMSD pequeño → estructuras más parecidas;</li>
+<li>RMSD grande → mayores diferencias.</li>
+</ul>
+<p>Sin embargo, debe interpretarse teniendo en cuenta:</p>
+<ul>
+<li>qué átomos se comparan;</li>
+<li>qué regiones se han alineado;</li>
+<li>tamaño de la proteína;</li>
+<li>flexibilidad.</li>
+</ul>
+<hr />
+<h2 id="11210-una-representacion-debe-responder-a-una-pregunta">11.2.10. Una representación debe responder a una pregunta</h2>
+<p>Ejemplos:</p>
+<h3 id="pregunta">Pregunta</h3>
+<p>¿Dónde está el ligando?</p>
+<p>Representación adecuada:</p>
+<pre><code class="language-text">proteína: cartoon
+ligando: sticks
+</code></pre>
+<h3 id="pregunta_1">Pregunta</h3>
+<p>¿Cómo se organizan las subunidades?</p>
+<p>Representación:</p>
+<pre><code class="language-text">cada cadena con un color distinto
+</code></pre>
+<h3 id="pregunta_2">Pregunta</h3>
+<p>¿Existe una cavidad?</p>
+<p>Representación:</p>
+<pre><code class="language-text">superficie molecular
+</code></pre>
+<p>La visualización debe diseñarse a partir del objetivo analítico.</p>
+<hr />
+<h1 id="113-analisis-de-interacciones-moleculares">11.3. Análisis de interacciones moleculares</h1>
+<h2 id="1131-las-estructuras-funcionan-mediante-interacciones">11.3.1. Las estructuras funcionan mediante interacciones</h2>
+<p>La función molecular depende en gran medida de interacciones entre:</p>
+<ul>
+<li>átomos;</li>
+<li>residuos;</li>
+<li>cadenas;</li>
+<li>proteínas;</li>
+<li>ácidos nucleicos;</li>
+<li>ligandos;</li>
+<li>iones;</li>
+<li>agua.</li>
+</ul>
+<p>El análisis estructural intenta identificar qué interacciones pueden contribuir a la estabilidad o al reconocimiento molecular.</p>
+<hr />
+<h2 id="1132-interacciones-covalentes-y-no-covalentes">11.3.2. Interacciones covalentes y no covalentes</h2>
+<p>Las interacciones pueden ser:</p>
+<h3 id="covalentes">Covalentes</h3>
+<p>Implican enlaces químicos fuertes.</p>
+<p>Ejemplo:</p>
+<ul>
+<li>puentes disulfuro.</li>
+</ul>
+<h3 id="no-covalentes">No covalentes</h3>
+<p>Son fundamentales para la estructura y el reconocimiento.</p>
+<p>Entre ellas:</p>
+<ul>
+<li>puentes de hidrógeno;</li>
+<li>interacciones electrostáticas;</li>
+<li>interacciones hidrofóbicas;</li>
+<li>fuerzas de van der Waals;</li>
+<li>interacciones aromáticas.</li>
+</ul>
+<hr />
+<h2 id="1133-puentes-de-hidrogeno">11.3.3. Puentes de hidrógeno</h2>
+<p>Un puente de hidrógeno se produce entre grupos químicos compatibles cuando existe una geometría adecuada.</p>
+<p>Puede contribuir a:</p>
+<ul>
+<li>estructura secundaria;</li>
+<li>reconocimiento de ligandos;</li>
+<li>interfaces proteína-proteína;</li>
+<li>unión proteína-ADN.</li>
+</ul>
+<p>Los visores pueden ayudar a identificar posibles puentes de hidrógeno.</p>
+<hr />
+<h2 id="1134-interacciones-electrostaticas">11.3.4. Interacciones electrostáticas</h2>
+<p>Residuos cargados pueden atraerse o repelerse.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>grupos con carga positiva;</li>
+<li>grupos con carga negativa.</li>
+</ul>
+<p>Estas interacciones pueden influir en:</p>
+<ul>
+<li>estabilidad;</li>
+<li>unión;</li>
+<li>orientación de ligandos.</li>
+</ul>
+<hr />
+<h2 id="1135-interacciones-hidrofobicas">11.3.5. Interacciones hidrofóbicas</h2>
+<p>Los grupos hidrofóbicos tienden a evitar el contacto con el agua.</p>
+<p>Este efecto contribuye significativamente al plegamiento de proteínas y a la formación de interfaces.</p>
+<p>En proteínas globulares, muchos residuos hidrofóbicos se encuentran en el interior.</p>
+<hr />
+<h2 id="1136-fuerzas-de-van-der-waals">11.3.6. Fuerzas de van der Waals</h2>
+<p>Son interacciones débiles a corta distancia.</p>
+<p>Aunque cada interacción individual es pequeña, muchas contribuciones pueden ser importantes para:</p>
+<ul>
+<li>empaquetamiento;</li>
+<li>complementariedad;</li>
+<li>estabilidad.</li>
+</ul>
+<hr />
+<h2 id="1137-puentes-disulfuro">11.3.7. Puentes disulfuro</h2>
+<p>Dos residuos de cisteína pueden formar un enlace covalente:</p>
+<pre><code class="language-text">Cys — S — S — Cys
+</code></pre>
+<p>Estos enlaces pueden estabilizar determinadas estructuras proteicas.</p>
+<p>Son especialmente frecuentes en algunas proteínas extracelulares.</p>
+<hr />
+<h2 id="1138-sitios-de-union">11.3.8. Sitios de unión</h2>
+<p>Un ligando suele unirse en una región concreta:</p>
+<ul>
+<li>cavidad;</li>
+<li>bolsillo;</li>
+<li>surco;</li>
+<li>superficie.</li>
+</ul>
+<p>El sitio de unión puede estar formado por residuos que aportan:</p>
+<ul>
+<li>carga;</li>
+<li>hidrofobicidad;</li>
+<li>geometría;</li>
+<li>enlaces de hidrógeno.</li>
+</ul>
+<p>La función depende de la combinación de estas propiedades.</p>
+<hr />
+<h2 id="1139-interaccion-proteina-ligando">11.3.9. Interacción proteína-ligando</h2>
+<p>Para analizar un complejo proteína-ligando podemos preguntar:</p>
+<ol>
+<li>¿dónde está situado el ligando?</li>
+<li>¿qué residuos están cerca?</li>
+<li>¿qué tipos de interacción aparecen?</li>
+<li>¿existe complementariedad geométrica?</li>
+<li>¿la unión se produce en un sitio funcional conocido?</li>
+</ol>
+<p>Una representación habitual es:</p>
+<pre><code class="language-text">proteína → cartoon
+residuos del sitio → sticks
+ligando → sticks o spheres
+</code></pre>
+<hr />
+<h2 id="11310-interacciones-proteina-proteina">11.3.10. Interacciones proteína-proteína</h2>
+<p>En un complejo entre proteínas podemos estudiar la <strong>interfaz</strong>.</p>
+<p>La interfaz está formada por los residuos de ambas cadenas que se encuentran en contacto.</p>
+<p>Puede incluir:</p>
+<ul>
+<li>interacciones hidrofóbicas;</li>
+<li>puentes de hidrógeno;</li>
+<li>interacciones electrostáticas;</li>
+<li>complementariedad de superficies.</li>
+</ul>
+<hr />
+<h2 id="11311-interacciones-con-acidos-nucleicos">11.3.11. Interacciones con ácidos nucleicos</h2>
+<p>Las proteínas pueden reconocer ADN o ARN mediante:</p>
+<ul>
+<li>carga;</li>
+<li>forma;</li>
+<li>puentes de hidrógeno;</li>
+<li>contactos con bases;</li>
+<li>contactos con el esqueleto fosfato.</li>
+</ul>
+<p>La visualización permite analizar qué regiones proteicas participan en la unión.</p>
+<hr />
+<h2 id="11312-distancia-no-equivale-automaticamente-a-interaccion">11.3.12. Distancia no equivale automáticamente a interacción</h2>
+<p>Dos átomos cercanos pueden ser candidatos a interacción.</p>
+<p>Pero la distancia por sí sola no es suficiente.</p>
+<p>También importan:</p>
+<ul>
+<li>orientación;</li>
+<li>naturaleza química;</li>
+<li>entorno;</li>
+<li>protonación;</li>
+<li>flexibilidad.</li>
+</ul>
+<p>Por ello, un análisis visual es una primera aproximación.</p>
+<hr />
+<h1 id="114-estructura-y-funcion">11.4. Estructura y función</h1>
+<p>La principal utilidad del análisis estructural consiste en relacionar forma y función.</p>
+<p>Podemos preguntarnos:</p>
+<ul>
+<li>¿por qué una enzima reconoce determinado sustrato?</li>
+<li>¿cómo una mutación puede alterar una interacción?</li>
+<li>¿por qué un fármaco se une a una proteína?</li>
+<li>¿cómo se forma un complejo?</li>
+<li>¿qué región puede ser una diana terapéutica?</li>
+</ul>
+<p>La estructura ayuda a generar explicaciones mecanísticas.</p>
+<hr />
+<h1 id="115-ejemplo-integrado-una-proteina-con-ligando">11.5. Ejemplo integrado: una proteína con ligando</h1>
+<p>Supongamos una estructura que contiene:</p>
+<pre><code class="language-text">proteína + ATP
+</code></pre>
+<p>Podemos seguir este análisis:</p>
+<h3 id="1-representar-la-proteina-como-cartoon">1. Representar la proteína como cartoon</h3>
+<p>Permite observar el plegamiento general.</p>
+<h3 id="2-mostrar-atp-como-sticks">2. Mostrar ATP como sticks</h3>
+<p>Permite localizar el ligando.</p>
+<h3 id="3-seleccionar-residuos-proximos">3. Seleccionar residuos próximos</h3>
+<p>Por ejemplo, residuos situados a una distancia pequeña del ATP.</p>
+<h3 id="4-mostrar-esos-residuos-como-sticks">4. Mostrar esos residuos como sticks</h3>
+<p>Permite analizar la geometría local.</p>
+<h3 id="5-identificar-contactos">5. Identificar contactos</h3>
+<p>Podemos buscar:</p>
+<ul>
+<li>puentes de hidrógeno;</li>
+<li>cargas complementarias;</li>
+<li>contactos hidrofóbicos.</li>
+</ul>
+<h3 id="6-interpretar">6. Interpretar</h3>
+<p>Podemos proponer qué residuos participan en el reconocimiento del ATP.</p>
+<p>El análisis no demuestra por sí solo la función de cada residuo, pero genera una interpretación estructural que puede contrastarse con información experimental.</p>
+<hr />
+<h1 id="116-comparacion-de-estructuras">11.6. Comparación de estructuras</h1>
+<p>Una misma proteína puede disponer de varias estructuras.</p>
+<p>Podemos comparar:</p>
+<pre><code class="language-text">proteína libre
+      vs
+proteína + ligando
+</code></pre>
+<p>Si al superponerlas observamos que un dominio cambia de posición, podemos plantear que la unión está asociada con un cambio conformacional.</p>
+<p>Pero debemos distinguir:</p>
+<ul>
+<li>diferencia estructural observada;</li>
+<li>interpretación funcional propuesta.</li>
+</ul>
+<hr />
+<h1 id="117-limitaciones-de-la-visualizacion-estructural">11.7. Limitaciones de la visualización estructural</h1>
+<h2 id="estructura-estatica">Estructura estática</h2>
+<p>Una estructura representa uno o varios estados, pero las biomoléculas son dinámicas.</p>
+<h2 id="condiciones-experimentales">Condiciones experimentales</h2>
+<p>La estructura puede haberse obtenido en condiciones diferentes del entorno celular.</p>
+<h2 id="regiones-ausentes">Regiones ausentes</h2>
+<p>Algunas regiones flexibles pueden no estar resueltas.</p>
+<h2 id="resolucion-limitada">Resolución limitada</h2>
+<p>No todos los átomos están definidos con la misma precisión.</p>
+<h2 id="modelo-frente-a-realidad">Modelo frente a realidad</h2>
+<p>La representación visual es un modelo construido a partir de datos experimentales o predicciones.</p>
+<hr />
+<h1 id="118-errores-frecuentes">11.8. Errores frecuentes</h1>
+<h2 id="utilizar-siempre-la-misma-representacion">Utilizar siempre la misma representación</h2>
+<p>Cada pregunta requiere una vista diferente.</p>
+<h2 id="confundir-color-con-propiedad-real">Confundir color con propiedad real</h2>
+<p>El color suele ser una elección del programa o del usuario.</p>
+<h2 id="asumir-que-proximidad-significa-interaccion">Asumir que proximidad significa interacción</h2>
+<p>Debe considerarse geometría y química.</p>
+<h2 id="interpretar-una-estructura-como-rigida">Interpretar una estructura como rígida</h2>
+<p>Las biomoléculas presentan dinámica conformacional.</p>
+<h2 id="ignorar-cadenas-o-ligandos">Ignorar cadenas o ligandos</h2>
+<p>Puede eliminar información esencial.</p>
+<h2 id="dar-significado-funcional-a-cualquier-diferencia-estructural">Dar significado funcional a cualquier diferencia estructural</h2>
+<p>Una diferencia observada necesita evidencia y contexto.</p>
+<h2 id="confundir-una-figura-atractiva-con-un-analisis-riguroso">Confundir una figura atractiva con un análisis riguroso</h2>
+<p>La visualización es útil cuando responde a una pregunta concreta.</p>
+<hr />
+<h1 id="119-cuestiones-guia">11.9. Cuestiones guía</h1>
+<ol>
+<li>¿Por qué una misma estructura puede representarse de formas diferentes?</li>
+<li>¿Qué información destaca una representación cartoon?</li>
+<li>¿Cuándo sería más útil mostrar una superficie molecular?</li>
+<li>¿Qué utilidad tiene colorear por cadenas?</li>
+<li>¿Qué diferencia existe entre una figura estática y un visor interactivo?</li>
+<li>¿Qué información aporta una superposición estructural?</li>
+<li>¿Qué representa conceptualmente el RMSD?</li>
+<li>¿Qué tipos principales de interacciones no covalentes pueden observarse?</li>
+<li>¿Por qué una distancia corta no demuestra por sí sola una interacción?</li>
+<li>¿Qué información puede obtenerse de una interfaz proteína-proteína?</li>
+<li>¿Cómo puede relacionarse un sitio de unión con la función?</li>
+<li>¿Qué limitaciones debemos recordar al interpretar una estructura tridimensional?</li>
+</ol>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>Las coordenadas estructurales necesitan herramientas de visualización para ser interpretadas.</li>
+<li>Una misma estructura admite múltiples representaciones.</li>
+<li>Cartoon permite comprender plegamiento y estructura secundaria.</li>
+<li>Sticks y bolas y varillas son útiles para analizar regiones locales y ligandos.</li>
+<li>Las superficies permiten estudiar forma, cavidades e interfaces.</li>
+<li>El color puede codificar información estructural o funcional.</li>
+<li>Los visores permiten seleccionar, medir y comparar estructuras.</li>
+<li>La superposición ayuda a detectar semejanzas y cambios conformacionales.</li>
+<li>Las interacciones moleculares dependen de geometría y propiedades químicas.</li>
+<li>Un contacto visual no constituye automáticamente una interacción funcional.</li>
+<li>La visualización es una herramienta de análisis, no únicamente de presentación.</li>
+<li>Toda interpretación estructural debe considerar las limitaciones del modelo.</li>
+</ul>
+<hr />
+<h1 id="conexion-con-el-siguiente-tema">Conexión con el siguiente tema</h1>
+<p>En este tema hemos aprendido a explorar y analizar estructuras tridimensionales.</p>
+<p>En el <strong>Tema 12. Predicción estructural mediante inteligencia artificial</strong> estudiaremos cómo obtener modelos estructurales cuando no existe una estructura experimental y analizaremos:</p>
+<ul>
+<li>fundamentos del modelado estructural;</li>
+<li>AlphaFold;</li>
+<li>medidas de confianza;</li>
+<li>limitaciones de los modelos predichos;</li>
+<li>aplicaciones emergentes de inteligencia artificial en Bioinformática estructural.</li>
+</ul>
 
 
 

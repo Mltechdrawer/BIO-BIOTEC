@@ -1954,27 +1954,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2419,27 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2462,16 +2444,632 @@
 
 
 <h1 id="tema-12-prediccion-estructural-mediante-inteligencia-artificial">Tema 12. Predicción estructural mediante inteligencia artificial</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="duracion">Duración</h2>
+<p><strong>2 horas de teoría</strong></p>
+<p>Este tema cierra el <strong>Bloque IV. Bioinformática estructural y modelado computacional</strong>.</p>
+<p>De acuerdo con la estructura del curso, se organiza en tres apartados:</p>
 <ul>
-<li>12.1 Modelado estructural.</li>
-<li>12.2 AlphaFold.</li>
-<li>12.3 Aplicaciones emergentes de IA en Bioinformática.</li>
+<li><strong>12.1. Modelado estructural.</strong></li>
+<li><strong>12.2. AlphaFold.</strong></li>
+<li><strong>12.3. Aplicaciones emergentes de IA en Bioinformática.</strong></li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<hr />
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Explicar qué significa modelar computacionalmente una estructura biomolecular.</li>
+<li>Diferenciar entre modelado por homología, predicción <em>de novo</em> y métodos actuales basados en inteligencia artificial.</li>
+<li>Comprender qué problema resuelve AlphaFold y qué tipo de información produce.</li>
+<li>Interpretar las principales medidas de confianza de una predicción estructural.</li>
+<li>Diferenciar confianza local y confianza en la disposición relativa de dominios o cadenas.</li>
+<li>Reconocer las limitaciones de los modelos estructurales predichos.</li>
+<li>Explicar por qué un modelo de alta confianza no sustituye automáticamente a una estructura experimental.</li>
+<li>Comprender algunas aplicaciones actuales de IA en predicción de complejos, interacciones y diseño biomolecular.</li>
+<li>Valorar de forma crítica cuándo una predicción puede ser útil y cuándo necesita validación adicional.</li>
+</ul>
+<hr />
+<h1 id="introduccion">Introducción</h1>
+<p>Durante décadas, conocer la estructura tridimensional de una proteína dependió principalmente de técnicas experimentales como:</p>
+<ul>
+<li>cristalografía de rayos X;</li>
+<li>resonancia magnética nuclear;</li>
+<li>microscopía electrónica criogénica.</li>
+</ul>
+<p>Estos métodos siguen siendo fundamentales, pero presentan limitaciones prácticas.</p>
+<p>Determinar experimentalmente una estructura puede requerir:</p>
+<ul>
+<li>producir la proteína;</li>
+<li>purificarla;</li>
+<li>obtener condiciones experimentales adecuadas;</li>
+<li>recopilar datos;</li>
+<li>construir y validar el modelo.</li>
+</ul>
+<p>Por ello, durante mucho tiempo existió una gran diferencia entre:</p>
+<pre><code class="language-text">número de secuencias conocidas
+        &gt;&gt;
+número de estructuras conocidas
+</code></pre>
+<p>El modelado computacional intentó reducir esa distancia.</p>
+<p>La inteligencia artificial ha transformado profundamente este problema.</p>
+<p>Hoy es posible obtener modelos estructurales de millones de proteínas con una calidad que, en muchos casos, permite formular hipótesis biológicas útiles.</p>
+<p>Pero una cuestión será central durante todo el tema:</p>
+<blockquote>
+<p><strong>una estructura predicha es un modelo, no una observación experimental</strong></p>
+</blockquote>
+<p>Por tanto, además de saber generar o consultar predicciones, debemos aprender a evaluar su confianza y sus limitaciones.</p>
+<hr />
+<h1 id="121-modelado-estructural">12.1. Modelado estructural</h1>
+<h2 id="1211-que-significa-modelar-una-estructura">12.1.1. Qué significa modelar una estructura</h2>
+<p>El <strong>modelado estructural</strong> intenta obtener una representación tridimensional aproximada de una biomolécula mediante métodos computacionales.</p>
+<p>La entrada puede ser, por ejemplo:</p>
+<pre><code class="language-text">secuencia de aminoácidos
+</code></pre>
+<p>y la salida:</p>
+<pre><code class="language-text">modelo tridimensional
+</code></pre>
+<p>El objetivo es estimar cómo podría organizarse la molécula en el espacio.</p>
+<hr />
+<h2 id="1212-por-que-la-secuencia-contiene-informacion-estructural">12.1.2. Por qué la secuencia contiene información estructural</h2>
+<p>La estructura de una proteína depende de su secuencia de aminoácidos y de las interacciones físicas y químicas entre sus residuos y el entorno.</p>
+<p>Por ello, en principio:</p>
+<pre><code class="language-text">secuencia
+   ↓
+estructura
+   ↓
+función
+</code></pre>
+<p>Sin embargo, predecir la estructura a partir de la secuencia es extremadamente complejo.</p>
+<p>El espacio de conformaciones posibles es enorme.</p>
+<hr />
+<h2 id="1213-modelado-por-homologia">12.1.3. Modelado por homología</h2>
+<p>Antes del auge de los métodos modernos de IA, una estrategia muy utilizada era el <strong>modelado por homología</strong>.</p>
+<p>La idea general es:</p>
+<blockquote>
+<p>proteínas con secuencias relacionadas suelen presentar estructuras relacionadas.</p>
+</blockquote>
+<p>El flujo básico es:</p>
+<pre><code class="language-text">secuencia problema
+      ↓
+buscar una proteína homóloga con estructura conocida
+      ↓
+alinear ambas secuencias
+      ↓
+usar la estructura conocida como molde
+      ↓
+construir un modelo
+</code></pre>
+<hr />
+<h2 id="1214-plantilla-o-template">12.1.4. Plantilla o template</h2>
+<p>La estructura conocida utilizada como referencia se denomina habitualmente <strong>template</strong>.</p>
+<p>La calidad del modelo depende, entre otros factores, de:</p>
+<ul>
+<li>similitud entre secuencias;</li>
+<li>calidad del alineamiento;</li>
+<li>calidad experimental de la plantilla;</li>
+<li>presencia de inserciones o deleciones;</li>
+<li>diferencias entre dominios.</li>
+</ul>
+<p>Si no existe una plantilla suficientemente relacionada, el modelado por homología pierde fiabilidad.</p>
+<hr />
+<h2 id="1215-modelado-de-novo">12.1.5. Modelado de novo</h2>
+<p>Otra estrategia intenta predecir la estructura sin utilizar directamente una única plantilla estructural cercana.</p>
+<p>Históricamente, estos métodos podían basarse en:</p>
+<ul>
+<li>principios físicos;</li>
+<li>búsqueda conformacional;</li>
+<li>fragmentos estructurales;</li>
+<li>funciones de energía.</li>
+</ul>
+<p>El problema es computacionalmente muy complejo.</p>
+<hr />
+<h2 id="1216-la-informacion-evolutiva">12.1.6. La información evolutiva</h2>
+<p>Las proteínas relacionadas evolucionan acumulando cambios.</p>
+<p>Algunas posiciones pueden variar de forma coordinada.</p>
+<p>Por ejemplo, si un cambio en una posición altera una interacción estructural, otra posición puede cambiar para compensarlo.</p>
+<p>Estas <strong>correlaciones evolutivas</strong> aportan información sobre qué residuos podrían estar próximos en la estructura tridimensional.</p>
+<p>Los métodos modernos de predicción aprovechan este tipo de información.</p>
+<hr />
+<h2 id="1217-alineamientos-multiples-como-fuente-de-informacion">12.1.7. Alineamientos múltiples como fuente de información</h2>
+<p>Un alineamiento múltiple de secuencias puede revelar:</p>
+<ul>
+<li>posiciones conservadas;</li>
+<li>posiciones variables;</li>
+<li>patrones de coevolución.</li>
+</ul>
+<p>Por tanto, conceptos trabajados en el Bloque II reaparecen aquí con una nueva finalidad.</p>
+<p>El alineamiento ya no se utiliza únicamente para estudiar relaciones evolutivas.</p>
+<p>También puede aportar señales útiles para inferir estructura.</p>
+<hr />
+<h1 id="122-alphafold">12.2. AlphaFold</h1>
+<h2 id="1221-el-problema-que-aborda">12.2.1. El problema que aborda</h2>
+<p>AlphaFold fue desarrollado para predecir la estructura tridimensional de proteínas a partir de su secuencia.</p>
+<p>Su impacto fue especialmente importante porque consiguió mejorar notablemente la precisión de la predicción estructural en muchos casos.</p>
+<p>El avance se hizo especialmente visible en la competición internacional <strong>CASP</strong> (<em>Critical Assessment of Structure Prediction</em>).</p>
+<hr />
+<h2 id="1222-alphafold-2">12.2.2. AlphaFold 2</h2>
+<p>AlphaFold 2 introdujo una arquitectura de aprendizaje profundo capaz de combinar distintas fuentes de información.</p>
+<p>A nivel conceptual utiliza información procedente de:</p>
+<ul>
+<li>secuencia;</li>
+<li>relaciones evolutivas;</li>
+<li>alineamientos múltiples;</li>
+<li>patrones aprendidos de estructuras conocidas.</li>
+</ul>
+<p>No necesitamos estudiar en este curso todos los detalles internos de la arquitectura.</p>
+<p>Lo importante es comprender que:</p>
+<blockquote>
+<p><strong>no busca simplemente una proteína parecida y copia su estructura</strong></p>
+</blockquote>
+<p>El modelo aprende relaciones complejas entre secuencia y geometría tridimensional.</p>
+<hr />
+<h2 id="1223-de-la-secuencia-al-modelo">12.2.3. De la secuencia al modelo</h2>
+<p>Conceptualmente:</p>
+<pre><code class="language-text">secuencia
+   ↓
+información evolutiva
+   ↓
+representación aprendida por el modelo
+   ↓
+restricciones geométricas
+   ↓
+coordenadas tridimensionales
+</code></pre>
+<p>La salida principal es un conjunto de coordenadas atómicas que puede visualizarse como cualquier otra estructura.</p>
+<hr />
+<h2 id="1224-alphafold-protein-structure-database">12.2.4. AlphaFold Protein Structure Database</h2>
+<p>Las predicciones pueden consultarse mediante <strong>AlphaFold Protein Structure Database (AlphaFold DB)</strong>.</p>
+<p>Recurso:</p>
+<p>https://alphafold.ebi.ac.uk/</p>
+<p>La base de datos permite buscar modelos asociados a proteínas y consultar:</p>
+<ul>
+<li>estructura predicha;</li>
+<li>secuencia;</li>
+<li>anotación procedente de UniProt;</li>
+<li>confianza local;</li>
+<li>error alineado predicho;</li>
+<li>dominios;</li>
+<li>modelos similares.</li>
+</ul>
+<hr />
+<h2 id="1225-prediccion-no-significa-certeza">12.2.5. Predicción no significa certeza</h2>
+<p>Una de las aportaciones más importantes de AlphaFold no es únicamente producir una estructura.</p>
+<p>También produce estimaciones de <strong>confianza</strong>.</p>
+<p>Esto permite distinguir:</p>
+<ul>
+<li>regiones predichas con alta confianza;</li>
+<li>regiones inciertas;</li>
+<li>posiciones relativas de dominios poco fiables.</li>
+</ul>
+<p>Por ello, interpretar AlphaFold exige mirar más que la imagen tridimensional.</p>
+<hr />
+<h2 id="1226-plddt">12.2.6. pLDDT</h2>
+<p>Una de las principales medidas es <strong>pLDDT</strong>.</p>
+<p>Es una estimación de confianza por residuo.</p>
+<p>Sus valores se encuentran aproximadamente entre:</p>
+<pre><code class="language-text">0 y 100
+</code></pre>
+<p>De forma orientativa:</p>
+<ul>
+<li><strong>pLDDT &gt; 90</strong>: confianza muy alta;</li>
+<li><strong>70–90</strong>: buena confianza;</li>
+<li><strong>50–70</strong>: baja confianza;</li>
+<li><strong>&lt; 50</strong>: región muy poco fiable.</li>
+</ul>
+<hr />
+<h2 id="1227-interpretacion-del-color">12.2.7. Interpretación del color</h2>
+<p>Los modelos de AlphaFold suelen colorearse según pLDDT.</p>
+<p>Esto permite reconocer visualmente:</p>
+<ul>
+<li>regiones muy fiables;</li>
+<li>regiones intermedias;</li>
+<li>regiones con baja confianza.</li>
+</ul>
+<p>Es importante comprender que el color no representa una propiedad química.</p>
+<p>Representa la confianza del modelo.</p>
+<hr />
+<h2 id="1228-baja-confianza-no-siempre-significa-error">12.2.8. Baja confianza no siempre significa error</h2>
+<p>Una región con pLDDT bajo puede corresponder a:</p>
+<ul>
+<li>región desordenada;</li>
+<li>linker flexible;</li>
+<li>extremo móvil;</li>
+<li>región cuya conformación depende de una interacción;</li>
+<li>región mal predicha.</li>
+</ul>
+<p>Por tanto:</p>
+<blockquote>
+<p><strong>baja confianza no equivale automáticamente a “modelo incorrecto”</strong></p>
+</blockquote>
+<p>Puede indicar que la región no adopta una única estructura estable de forma aislada.</p>
+<hr />
+<h2 id="1229-predicted-aligned-error">12.2.9. Predicted Aligned Error</h2>
+<p>Otra medida fundamental es <strong>PAE</strong> (<em>Predicted Aligned Error</em>).</p>
+<p>PAE ayuda a evaluar la confianza en la posición relativa entre distintas regiones.</p>
+<p>Por ejemplo, una proteína puede tener:</p>
+<ul>
+<li>dominio A bien predicho;</li>
+<li>dominio B bien predicho;</li>
+</ul>
+<p>pero AlphaFold puede no estar seguro de cómo se orientan entre sí.</p>
+<hr />
+<h2 id="12210-como-leer-pae-conceptualmente">12.2.10. Cómo leer PAE conceptualmente</h2>
+<p>PAE suele representarse mediante una matriz.</p>
+<p>Cada punto informa sobre el error esperado en la posición de una región respecto a otra.</p>
+<p>De forma conceptual:</p>
+<pre><code class="language-text">PAE bajo
+→ posición relativa más fiable
+
+PAE alto
+→ posición relativa incierta
+</code></pre>
+<hr />
+<h2 id="12211-confianza-local-frente-a-organizacion-global">12.2.11. Confianza local frente a organización global</h2>
+<p>Esta distinción es fundamental.</p>
+<p>Puede ocurrir:</p>
+<pre><code class="language-text">dominio A → pLDDT alto
+dominio B → pLDDT alto
+orientación A-B → PAE alto
+</code></pre>
+<p>En ese caso:</p>
+<ul>
+<li>cada dominio puede estar bien modelado;</li>
+<li>la relación espacial entre ellos puede ser incierta.</li>
+</ul>
+<p>Por ello, mirar solo pLDDT es insuficiente.</p>
+<hr />
+<h2 id="12212-modelos-y-estructuras-experimentales">12.2.12. Modelos y estructuras experimentales</h2>
+<p>Un modelo AlphaFold puede parecer visualmente muy convincente.</p>
+<p>Pero no debe interpretarse igual que una estructura experimental.</p>
+<p>Una estructura experimental está respaldada por datos físicos.</p>
+<p>Una predicción está respaldada por:</p>
+<ul>
+<li>un modelo computacional;</li>
+<li>información aprendida;</li>
+<li>estimaciones de confianza.</li>
+</ul>
+<p>Ambas son útiles, pero representan tipos de evidencia diferentes.</p>
+<hr />
+<h2 id="12213-comparacion-con-pdb">12.2.13. Comparación con PDB</h2>
+<p>Antes de interpretar una predicción puede ser útil comprobar si existe una estructura experimental relacionada.</p>
+<p>Podemos comparar:</p>
+<pre><code class="language-text">modelo AlphaFold
+       vs
+estructura PDB
+</code></pre>
+<p>Esto permite:</p>
+<ul>
+<li>validar regiones;</li>
+<li>comparar dominios;</li>
+<li>detectar diferencias;</li>
+<li>evaluar la utilidad del modelo.</li>
+</ul>
+<hr />
+<h2 id="12214-regiones-ausentes-en-estructuras-experimentales">12.2.14. Regiones ausentes en estructuras experimentales</h2>
+<p>Un aspecto interesante es que AlphaFold puede producir coordenadas para toda la secuencia.</p>
+<p>En una estructura experimental algunas regiones pueden faltar porque:</p>
+<ul>
+<li>son flexibles;</li>
+<li>no se resolvieron;</li>
+<li>no estaban presentes en la construcción experimental.</li>
+</ul>
+<p>Pero que AlphaFold proporcione coordenadas para esas regiones no significa que sean fiables.</p>
+<p>La confianza debe evaluarse.</p>
+<hr />
+<h1 id="123-aplicaciones-emergentes-de-ia-en-bioinformatica">12.3. Aplicaciones emergentes de IA en Bioinformática</h1>
+<h2 id="1231-mas-alla-de-una-proteina-aislada">12.3.1. Más allá de una proteína aislada</h2>
+<p>La predicción estructural moderna ya no se limita a una única cadena.</p>
+<p>Uno de los objetivos actuales es predecir:</p>
+<ul>
+<li>complejos proteína-proteína;</li>
+<li>proteína-ADN;</li>
+<li>proteína-ARN;</li>
+<li>proteína-ligando;</li>
+<li>complejos con iones;</li>
+<li>ensamblajes biomoleculares.</li>
+</ul>
+<hr />
+<h2 id="1232-alphafold-multimer">12.3.2. AlphaFold-Multimer</h2>
+<p>AlphaFold-Multimer extendió el enfoque a complejos formados por varias cadenas proteicas.</p>
+<p>Esto permite estudiar hipótesis sobre:</p>
+<ul>
+<li>oligomerización;</li>
+<li>interfaces;</li>
+<li>interacciones proteína-proteína.</li>
+</ul>
+<p>En este contexto, la confianza en una cadena individual no es suficiente.</p>
+<p>También debemos evaluar la confianza de la interfaz.</p>
+<hr />
+<h2 id="1233-confianza-en-interfaces">12.3.3. Confianza en interfaces</h2>
+<p>En complejos pueden utilizarse medidas específicas, como:</p>
+<ul>
+<li><strong>ipTM</strong>;</li>
+<li>medidas derivadas de PAE;</li>
+<li>otros indicadores de confianza de interfaces.</li>
+</ul>
+<p>El principio importante es:</p>
+<blockquote>
+<p><strong>una proteína puede estar bien modelada y, aun así, la interacción entre cadenas ser incierta</strong></p>
+</blockquote>
+<hr />
+<h2 id="1234-alphafold-3">12.3.4. AlphaFold 3</h2>
+<p>AlphaFold 3 amplió el problema de predicción conjunta hacia complejos biomoleculares más diversos.</p>
+<p>Puede modelar sistemas que incluyen:</p>
+<ul>
+<li>proteínas;</li>
+<li>ácidos nucleicos;</li>
+<li>moléculas pequeñas;</li>
+<li>iones;</li>
+<li>residuos modificados.</li>
+</ul>
+<p>Esto acerca la predicción estructural a problemas de interacción biomolecular mucho más amplios.</p>
+<hr />
+<h2 id="1235-interacciones-con-ligandos">12.3.5. Interacciones con ligandos</h2>
+<p>Una aplicación especialmente relevante es estudiar posibles complejos entre proteínas y pequeñas moléculas.</p>
+<p>Esto puede resultar útil en:</p>
+<ul>
+<li>descubrimiento de fármacos;</li>
+<li>priorización de compuestos;</li>
+<li>análisis de sitios de unión;</li>
+<li>generación de hipótesis.</li>
+</ul>
+<p>Sin embargo, una pose predicha no debe confundirse con evidencia experimental de unión.</p>
+<hr />
+<h2 id="1236-diseno-de-proteinas">12.3.6. Diseño de proteínas</h2>
+<p>La IA también se utiliza para diseñar nuevas proteínas.</p>
+<p>El problema cambia de dirección.</p>
+<p>En predicción estructural:</p>
+<pre><code class="language-text">secuencia
+   ↓
+estructura
+</code></pre>
+<p>En diseño:</p>
+<pre><code class="language-text">estructura o función deseada
+        ↓
+secuencia candidata
+</code></pre>
+<p>El objetivo puede ser crear proteínas con:</p>
+<ul>
+<li>nuevas funciones;</li>
+<li>mayor estabilidad;</li>
+<li>capacidad de unión;</li>
+<li>actividad enzimática;</li>
+<li>propiedades biotecnológicas.</li>
+</ul>
+<hr />
+<h2 id="1237-modelos-generativos">12.3.7. Modelos generativos</h2>
+<p>Los modelos generativos pueden proponer:</p>
+<ul>
+<li>nuevas secuencias;</li>
+<li>nuevas estructuras;</li>
+<li>variantes de proteínas;</li>
+<li>posibles complejos.</li>
+</ul>
+<p>Esto amplía el espacio que puede explorarse computacionalmente.</p>
+<p>Pero cualquier propuesta debe validarse.</p>
+<hr />
+<h2 id="1238-ingenieria-de-proteinas">12.3.8. Ingeniería de proteínas</h2>
+<p>En Biotecnología, estas técnicas pueden apoyar:</p>
+<ul>
+<li>diseño de enzimas;</li>
+<li>optimización de proteínas;</li>
+<li>anticuerpos;</li>
+<li>biosensores;</li>
+<li>proteínas de unión;</li>
+<li>desarrollo de biomateriales.</li>
+</ul>
+<p>La combinación de predicción, diseño y experimentación puede acelerar ciclos de ingeniería.</p>
+<hr />
+<h2 id="1239-prediccion-y-medicina">12.3.9. Predicción y medicina</h2>
+<p>Los modelos estructurales también pueden ayudar a estudiar:</p>
+<ul>
+<li>efecto de variantes;</li>
+<li>posibles mecanismos moleculares;</li>
+<li>sitios de unión;</li>
+<li>proteínas asociadas a enfermedades.</li>
+</ul>
+<p>Pero una predicción estructural por sí sola no determina:</p>
+<ul>
+<li>patogenicidad;</li>
+<li>eficacia terapéutica;</li>
+<li>seguridad de un compuesto.</li>
+</ul>
+<hr />
+<h1 id="124-que-puede-hacer-bien-alphafold">12.4. Qué puede hacer bien AlphaFold</h1>
+<p>En muchos casos, AlphaFold puede proporcionar modelos útiles de:</p>
+<ul>
+<li>dominios globulares;</li>
+<li>estructuras conservadas;</li>
+<li>regiones con abundante información evolutiva;</li>
+<li>plegamientos proteicos.</li>
+</ul>
+<p>Puede ser especialmente útil cuando:</p>
+<ul>
+<li>no existe estructura experimental;</li>
+<li>queremos formular una hipótesis;</li>
+<li>necesitamos localizar dominios;</li>
+<li>queremos diseñar experimentos;</li>
+<li>queremos comparar una proteína con otras estructuras.</li>
+</ul>
+<hr />
+<h1 id="125-que-puede-resultar-problematico">12.5. Qué puede resultar problemático</h1>
+<p>Hay situaciones que requieren especial cautela.</p>
+<h2 id="regiones-intrinsecamente-desordenadas">Regiones intrínsecamente desordenadas</h2>
+<p>Pueden no tener una estructura estable única.</p>
+<h2 id="regiones-flexibles">Regiones flexibles</h2>
+<p>La conformación puede cambiar.</p>
+<h2 id="orientacion-entre-dominios">Orientación entre dominios</h2>
+<p>Puede ser incierta aunque cada dominio sea correcto.</p>
+<h2 id="complejos">Complejos</h2>
+<p>La interfaz puede no estar bien predicha.</p>
+<h2 id="estados-conformacionales">Estados conformacionales</h2>
+<p>Una proteína puede adoptar varios estados funcionales.</p>
+<h2 id="ligandos-y-entorno">Ligandos y entorno</h2>
+<p>La estructura puede depender de:</p>
+<ul>
+<li>ligando;</li>
+<li>membrana;</li>
+<li>pH;</li>
+<li>modificaciones;</li>
+<li>otras proteínas.</li>
+</ul>
+<hr />
+<h1 id="126-una-proteina-no-tiene-necesariamente-una-unica-estructura">12.6. Una proteína no tiene necesariamente una única estructura</h1>
+<p>Una proteína puede existir en diferentes estados:</p>
+<pre><code class="language-text">abierta
+cerrada
+activa
+inactiva
+unida
+libre
+</code></pre>
+<p>Un modelo predicho representa una posibilidad estructural.</p>
+<p>No necesariamente describe todos los estados funcionales.</p>
+<p>Esta idea conecta con lo estudiado en el Tema 11 sobre dinámica y cambio conformacional.</p>
+<hr />
+<h1 id="127-ejemplo-de-interpretacion-de-un-modelo-alphafold">12.7. Ejemplo de interpretación de un modelo AlphaFold</h1>
+<p>Supongamos que observamos una proteína predicha.</p>
+<h3 id="region-1">Región 1</h3>
+<pre><code class="language-text">pLDDT = 95
+</code></pre>
+<p>Podemos considerarla una región de alta confianza.</p>
+<h3 id="region-2">Región 2</h3>
+<pre><code class="language-text">pLDDT = 45
+</code></pre>
+<p>Debe interpretarse con mucha cautela.</p>
+<h3 id="dos-dominios">Dos dominios</h3>
+<p>Ambos presentan pLDDT alto, pero el PAE entre ellos es elevado.</p>
+<p>Conclusión:</p>
+<ul>
+<li>los dominios individuales pueden estar bien predichos;</li>
+<li>su orientación relativa es incierta.</li>
+</ul>
+<p>Esta conclusión es mucho más rigurosa que afirmar simplemente:</p>
+<blockquote>
+<p>“AlphaFold ha predicho correctamente la proteína”.</p>
+</blockquote>
+<hr />
+<h1 id="128-flujo-responsable-de-trabajo">12.8. Flujo responsable de trabajo</h1>
+<p>Un flujo básico podría ser:</p>
+<pre><code class="language-text">secuencia
+   ↓
+buscar estructura experimental
+   ↓
+consultar modelo predicho
+   ↓
+examinar pLDDT
+   ↓
+examinar PAE
+   ↓
+identificar dominios
+   ↓
+comparar con evidencia disponible
+   ↓
+formular hipótesis
+   ↓
+validar
+</code></pre>
+<hr />
+<h1 id="129-prediccion-y-validacion-experimental">12.9. Predicción y validación experimental</h1>
+<p>La predicción puede ayudar a decidir:</p>
+<ul>
+<li>qué mutación estudiar;</li>
+<li>qué dominio expresar;</li>
+<li>qué residuo modificar;</li>
+<li>qué interacción comprobar;</li>
+<li>qué experimento diseñar.</li>
+</ul>
+<p>Por tanto, uno de los usos más potentes de la IA es:</p>
+<blockquote>
+<p><strong>generar hipótesis estructurales que orienten la experimentación</strong></p>
+</blockquote>
+<p>No sustituir necesariamente la experimentación.</p>
+<hr />
+<h1 id="1210-reproducibilidad">12.10. Reproducibilidad</h1>
+<p>Cuando se utiliza un modelo predicho conviene registrar:</p>
+<ul>
+<li>secuencia utilizada;</li>
+<li>identificador;</li>
+<li>herramienta;</li>
+<li>versión;</li>
+<li>fecha;</li>
+<li>modelo seleccionado;</li>
+<li>métricas de confianza;</li>
+<li>parámetros, cuando proceda.</li>
+</ul>
+<p>Esto permite interpretar y reproducir el análisis.</p>
+<hr />
+<h1 id="1211-errores-frecuentes">12.11. Errores frecuentes</h1>
+<h2 id="considerar-que-alphafold-resolvio-experimentalmente-una-estructura">Considerar que AlphaFold “resolvió” experimentalmente una estructura</h2>
+<p>AlphaFold predice modelos.</p>
+<h2 id="interpretar-toda-la-estructura-con-la-misma-confianza">Interpretar toda la estructura con la misma confianza</h2>
+<p>La confianza puede variar residuo a residuo.</p>
+<h2 id="ignorar-pae">Ignorar PAE</h2>
+<p>Unos dominios bien predichos pueden estar mal orientados entre sí.</p>
+<h2 id="asumir-que-plddt-bajo-significa-necesariamente-error">Asumir que pLDDT bajo significa necesariamente error</h2>
+<p>Puede reflejar desorden o flexibilidad.</p>
+<h2 id="confundir-un-complejo-predicho-con-una-interaccion-demostrada">Confundir un complejo predicho con una interacción demostrada</h2>
+<p>Una predicción necesita validación.</p>
+<h2 id="usar-un-modelo-como-prueba-de-funcion">Usar un modelo como prueba de función</h2>
+<p>La estructura puede apoyar una hipótesis, no demostrar automáticamente una función.</p>
+<h2 id="ignorar-estados-alternativos">Ignorar estados alternativos</h2>
+<p>Las proteínas son dinámicas.</p>
+<h2 id="no-comparar-con-estructuras-experimentales-existentes">No comparar con estructuras experimentales existentes</h2>
+<p>Puede perderse información esencial.</p>
+<hr />
+<h1 id="1212-cuestiones-guia">12.12. Cuestiones guía</h1>
+<ol>
+<li>¿Qué diferencia existe entre modelado por homología y predicción estructural moderna?</li>
+<li>¿Qué papel tiene la información evolutiva en la predicción?</li>
+<li>¿Qué produce AlphaFold como resultado?</li>
+<li>¿Qué representa pLDDT?</li>
+<li>¿Qué significa una región con pLDDT bajo?</li>
+<li>¿Qué información aporta PAE?</li>
+<li>¿Cómo puede ser posible que dos dominios estén bien predichos pero su orientación relativa no?</li>
+<li>¿Qué diferencia existe entre una estructura experimental y un modelo AlphaFold?</li>
+<li>¿Qué tipo de sistemas puede abordar AlphaFold 3?</li>
+<li>¿Por qué una interacción predicha no constituye evidencia experimental?</li>
+<li>¿Qué aplicaciones puede tener la IA en ingeniería de proteínas?</li>
+<li>¿Qué información debe conservarse para utilizar un modelo de forma reproducible?</li>
+</ol>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>El modelado estructural intenta obtener una representación tridimensional a partir de información computacional.</li>
+<li>El modelado por homología utiliza estructuras conocidas como plantilla.</li>
+<li>Los métodos modernos de IA integran secuencia, información evolutiva y patrones estructurales.</li>
+<li>AlphaFold produce modelos estructurales y estimaciones de confianza.</li>
+<li>pLDDT mide confianza local por residuo.</li>
+<li>PAE ayuda a evaluar confianza en posiciones relativas entre regiones.</li>
+<li>Una región de baja confianza puede corresponder a flexibilidad o desorden.</li>
+<li>Un modelo predicho no equivale a una estructura experimental.</li>
+<li>La predicción de complejos requiere evaluar también la confianza de interfaces.</li>
+<li>AlphaFold 3 amplía la predicción a complejos con proteínas, ácidos nucleicos, ligandos e iones.</li>
+<li>La IA también se utiliza para diseño e ingeniería de proteínas.</li>
+<li>Toda predicción debe interpretarse con evidencia, contexto y validación.</li>
+</ul>
+<hr />
+<h1 id="cierre-del-bloque-iv">Cierre del Bloque IV</h1>
+<p>Este tema completa el <strong>Bloque IV. Bioinformática estructural y modelado computacional</strong>.</p>
+<p>La progresión del bloque ha sido:</p>
+<p><strong>Tema 10 → localizar y comprender cómo se representan las estructuras</strong></p>
+<p><strong>Tema 11 → visualizar y analizar estructuras e interacciones</strong></p>
+<p><strong>Tema 12 → modelar y predecir estructuras mediante métodos computacionales e inteligencia artificial</strong></p>
+<p>La lógica global puede resumirse así:</p>
+<blockquote>
+<p><strong>representar → visualizar → analizar → predecir → validar</strong></p>
+</blockquote>
+<p>Con este bloque se completa también el recorrido conceptual de la asignatura:</p>
+<pre><code class="language-text">información biológica
+        ↓
+secuencias
+        ↓
+función
+        ↓
+estructura
+        ↓
+modelado y predicción
+</code></pre>
+<p>La Bioinformática aparece así como un proceso integrado que conecta datos, algoritmos, conocimiento biológico y herramientas computacionales para formular y contrastar hipótesis.</p>
 
 
 

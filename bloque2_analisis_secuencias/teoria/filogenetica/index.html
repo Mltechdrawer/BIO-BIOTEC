@@ -1,0 +1,2764 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>De las secuencias de ADN al árbol filogenético: cinco primates - Bioinformática - Grado en Biotecnología</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#de-las-secuencias-de-adn-al-arbol-filogenetico-cinco-primates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Bioinformática - Grado en Biotecnología" class="md-header__button md-logo" aria-label="Bioinformática - Grado en Biotecnología" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bioinformática - Grado en Biotecnología
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              De las secuencias de ADN al árbol filogenético: cinco primates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bioinformática - Grado en Biotecnología" class="md-nav__button md-logo" aria-label="Bioinformática - Grado en Biotecnología" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bioinformática - Grado en Biotecnología
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contenidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque I. Gestión de información biológica y recursos bioinformáticos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque I. Gestión de información biológica y recursos bioinformáticos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teoría
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/teoria/tema01_introduccion_bioinformatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/teoria/tema02_bases_datos_biologicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/teoria/tema03_representacion_gestion_datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas en aula
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas en aula
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/aula/aula1_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas de laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas de laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque1_gestion_informacion/laboratorio/lab1_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque II. Métodos computacionales para el análisis de secuencias
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque II. Métodos computacionales para el análisis de secuencias
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teoría
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tema04_comparacion_secuencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tema05_busqueda_alineamiento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tema06_filogenia_computacional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas en aula
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas en aula
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula/aula2_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula/aula2_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula/aula2_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula/aula2_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula/aula2_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas de laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas de laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../laboratorio/lab2_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque III. Análisis funcional y minería de datos biológicos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque III. Análisis funcional y minería de datos biológicos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teoría
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/teoria/tema07_anotacion_computacional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/teoria/tema08_integracion_explotacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/teoria/tema09_ia_automatizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas en aula
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas en aula
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/aula/aula3_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 3.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas de laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas de laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque3_analisis_funcional/laboratorio/lab3_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 3.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque IV. Bioinformática estructural y modelado computacional
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque IV. Bioinformática estructural y modelado computacional
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teoría
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/teoria/tema10_recursos_estructurales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/teoria/tema11_visualizacion_estructuras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/teoria/tema12_prediccion_ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tema 12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas en aula
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas en aula
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/aula/aula4_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aula 4.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prácticas de laboratorio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas de laboratorio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloque4_bioinformatica_estructural/laboratorio/lab4_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Laboratorio 4.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bibliografía
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../proyecto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proyecto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-seleccion-de-las-secuencias-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Selección de las secuencias reales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-validacion-de-las-secuencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Validación de las secuencias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-alineamiento-y-calculo-de-distancias" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Alineamiento y cálculo de distancias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Alineamiento y cálculo de distancias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matriz-de-distancias-p-calculada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matriz de distancias p (calculada)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-construccion-del-arbol-con-upgma" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Construcción del árbol con UPGMA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-interpretacion-y-limitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Interpretación y limitaciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-para-reflexionar" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Para reflexionar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-reproducibilidad-y-materiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Reproducibilidad y materiales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="de-las-secuencias-de-adn-al-arbol-filogenetico-cinco-primates">De las secuencias de ADN al árbol filogenético: cinco primates</h1>
+<blockquote>
+<p>Ejemplo ilustrativo calculado a partir de cinco registros GenBank. El árbol representa la inferencia obtenida con <strong>UPGMA</strong> sobre el gen mitocondrial <strong>COX1</strong>; este ejemplo no es una demostración definitiva de la filogenia de especies.</p>
+</blockquote>
+<p><img alt="Animación: del ADN al árbol UPGMA" src="imagenes/construccion-upgma.gif" /></p>
+<h2 id="objetivos">Objetivos</h2>
+<p>Comprender cómo se seleccionan secuencias homólogas, por qué se alinean, cómo se calcula una matriz de distancias genéticas y cómo UPGMA construye un árbol a partir de ella. Se muestran <strong>todos los resultados calculados</strong> y se proporcionan archivos para reproducirlos.</p>
+<h2 id="1-seleccion-de-las-secuencias-reales">1. Selección de las secuencias reales</h2>
+<p>Elegimos el gen mitocondrial ortólogo <strong>COX1</strong> (citocromo c oxidasa, subunidad I) en cinco primates. Se recuperó la región <strong>secuencia codificante</strong> (<code>CDS</code>, del inglés <em>Coding Sequence</em>) anotada de cada registro GenBank, no un intervalo arbitrario del genoma.</p>
+<table>
+<thead>
+<tr>
+<th>Especie</th>
+<th>Accesión NCBI</th>
+<th>Coordenadas CDS (1-based, inclusivas)</th>
+<th style="text-align: right;">Longitud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Humano (<em>Homo sapiens</em>)</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_012920.1">NC_012920.1</a></td>
+<td>5904–7445</td>
+<td style="text-align: right;">1542 nt</td>
+</tr>
+<tr>
+<td>Chimpancé (<em>Pan troglodytes</em>)</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_001643.1">NC_001643.1</a></td>
+<td>5321–6862</td>
+<td style="text-align: right;">1542 nt</td>
+</tr>
+<tr>
+<td>Gorila (<em>Gorilla gorilla</em>)</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_001645.1">NC_001645.1</a></td>
+<td>5325–6875</td>
+<td style="text-align: right;">1551 nt</td>
+</tr>
+<tr>
+<td>Orangután (<em>Pongo pygmaeus</em>)</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_001646.1">NC_001646.1</a></td>
+<td>5332–6882</td>
+<td style="text-align: right;">1551 nt</td>
+</tr>
+<tr>
+<td>Gibón (<em>Hylobates lar</em>)</td>
+<td><a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002082.1">NC_002082.1</a></td>
+<td>5322–6863</td>
+<td style="text-align: right;">1542 nt</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reproducibilidad: Visualización en navegador</strong> los registros originales se conservan en
+<code>genbank/</code>, las CDS extraídas en
+<a href="secuencias-cox1.txt" target="_blank" rel="noopener noreferrer">secuencias-cox1.fasta</a>
+y los metadatos en
+<a href="validacion-cox1.txt" target="_blank" rel="noopener noreferrer">validacion-cox1.csv</a>.</p>
+<p><strong>Reproducibilidad: Descargas en equipo</strong> los registros originales se conservan en
+<code>genbank/</code>, las CDS extraídas en
+<a href="secuencias-cox1.fasta" target="_blank" rel="noopener noreferrer">secuencias-cox1.fasta</a>
+y los metadatos en
+<a href="validacion-cox1.csv" target="_blank" rel="noopener noreferrer">validacion-cox1.csv</a>.</p>
+<details>
+<summary>¿Qué es una CDS y en qué se diferencia del ARN mensajero maduro?</summary>
+<p>La <strong>CDS</strong> es la región que codifica una proteína. En un ARNm eucariota nuclear, la CDS no incluye las regiones no traducidas (UTR); los intrones se eliminan durante el procesamiento del ARN. En nuestro ejercicio, extraemos las CDS como <strong>ADN</strong> a partir de las anotaciones GenBank, no moléculas de ARN.</p>
+<p>El gen mitocondrial <strong>COX1</strong> presenta particularidades respecto a muchos genes nucleares, entre ellas el uso del código genético mitocondrial de vertebrados.</p>
+</details>
+
+<h2 id="2-validacion-de-las-secuencias">2. Validación de las secuencias</h2>
+<p>Seleccionamos previamente las cinco especies, el marcador COX1 y los registros GenBank. A continuación, el programa <a href="procesar_datos.py"><code>procesar_datos.py</code></a> comprueba automáticamente la accesión y la especie de cada registro; localiza una única <code>CDS</code> anotada como COX1 (o denominación equivalente); extrae la secuencia respetando la orientación de su anotación; verifica que contiene únicamente <code>A</code>, <code>C</code>, <code>G</code> y <code>T</code> y que su longitud es múltiplo de tres; y comprueba que su traducción con el <strong>código mitocondrial de vertebrados (tabla 2)</strong> no presenta paradas internas.</p>
+<p><strong>Resultados:</strong> cinco CDS válidas para estas comprobaciones, ninguna base <code>N</code>, ninguna parada interna; todas las CDS están anotadas en la hebra positiva. Las diferencias de longitud (1542 frente a 1551 nt) evidencian la necesidad de establecer correspondencias entre posiciones mediante un alineamiento; incluso secuencias de igual longitud pueden requerirlo. Estas comprobaciones no sustituyen una revisión filogenética exhaustiva de ortología, calidad de ensamblaje y posible sesgo de secuencia.</p>
+<details>
+<summary>¿Cómo interpretamos los resultados de validación?</summary>
+<p><strong>Cinco CDS válidas:</strong> las cinco secuencias superaron las pruebas concretas del programa; no significa que hayan superado todas las evaluaciones biológicas posibles.</p>
+<p><strong>Ninguna base N:</strong> no aparecen nucleótidos desconocidos; esto no descarta por sí solo errores de secuenciación.</p>
+<p><strong>Sin paradas internas:</strong> la traducción no contiene señales de terminación inesperadas antes del final. Para COX1 se usa el código mitocondrial de vertebrados, en el que, por ejemplo, TGA codifica triptófano.</p>
+<p><strong>Hebra positiva:</strong> las anotaciones de las cinco CDS están orientadas en el sentido positivo de sus respectivas secuencias de referencia; no implica que esa hebra sea biológicamente superior.</p>
+<p><strong>Longitudes diferentes:</strong> tres secuencias miden 1542 nt y dos 1551 nt. La diferencia no demuestra por sí sola dónde ocurrió una inserción o deleción evolutiva.</p>
+<p><strong>Limitaciones:</strong> las pruebas no verifican exhaustivamente la ortología, la calidad del ensamblaje ni posibles sesgos de composición o evolución. La ortología es una hipótesis razonable para este marcador, pero no queda demostrada solo por estas comprobaciones.</p>
+</details>
+
+<details>
+<summary>¿Qué decisiones tomamos y qué operaciones realiza Python?</summary>
+<p><strong>Decisiones metodológicas:</strong> elegir especies, gen, registros y estrategia de análisis. <strong>Operaciones automatizadas:</strong> leer GenBank, localizar la CDS, extraerla, comprobar caracteres y traducción, generar el alineamiento, calcular distancias y ejecutar UPGMA.</p>
+<p>El archivo <a href="procesar_datos.py">procesar_datos.py</a> permite examinar la implementación. La extracción mediante <code>f.extract(r.seq)</code> respeta la orientación anotada; el código registra las coordenadas, pero no contiene una instrucción independiente que exija que la hebra sea positiva.</p>
+</details>
+
+<h2 id="3-alineamiento-y-calculo-de-distancias">3. Alineamiento y cálculo de distancias</h2>
+<p>Realizamos un <strong>alineamiento global progresivo anclado a la secuencia humana</strong>: cada CDS se alineó globalmente frente a la humana y las inserciones respecto a esa referencia se incorporaron en columnas comunes. Se utilizó <code>Bio.Align.PairwiseAligner</code> con puntuaciones <code>match=2</code>, <code>mismatch=-1</code>, apertura de hueco <code>-6</code> y extensión <code>-0.5</code>. Es un procedimiento reproducible y apropiado para estas secuencias próximas, <strong>pero no equivale a ejecutar MAFFT o Clustal Omega</strong>. Para un estudio de investigación convendría contrastarlo con un alineamiento codón-consciente.</p>
+<details>
+<summary>¿Qué otras herramientas permiten realizar alineamientos múltiples?</summary>
+<p><strong>MAFFT</strong> y <strong>Clustal Omega</strong> son programas especializados para alinear múltiples secuencias de ADN, ARN o proteínas. Utilizan estrategias de alineamiento que pueden diferir de nuestro procedimiento de alineamientos por parejas anclados a una referencia.</p>
+<p>En este ejercicio <strong>no ejecutamos</strong> ninguno de ellos: usamos <code>Bio.Align.PairwiseAligner</code> desde Python. Sus árboles guía de alineamiento, cuando se emplean, no deben confundirse con el árbol filogenético inferido posteriormente.</p>
+<p>Herramientas: <a href="https://mafft.cbrc.jp/alignment/software/" target="_blank" rel="noopener noreferrer">MAFFT</a> y <a href="https://www.ebi.ac.uk/jdispatcher/msa/clustalo" target="_blank" rel="noopener noreferrer">Clustal Omega (EMBL-EBI)</a>.</p>
+</details>
+
+<p>El alineamiento resultante contiene <strong>1560 columnas</strong>. Se comprobó que, al eliminar los huecos de cada secuencia alineada, se recupera exactamente la CDS original. Archivo: <a href="alineamiento-cox1.fasta"><code>alineamiento-cox1.fasta</code></a>.</p>
+<p>Para cada pareja de especies se calculó la <strong>distancia p</strong>:</p>
+
+<p style="text-align: center; font-size: 1.15em;">
+  p<sub>ij</sub> =
+  <span style="display: inline-block; text-align: center; vertical-align: middle;">
+    <span style="display: block; border-bottom: 1px solid; padding: 0 8px 4px;">
+      Número de nucleótidos diferentes
+    </span>
+    <span style="display: block; padding: 4px 8px 0;">
+      Número de posiciones comparables
+    </span>
+  </span>
+</p>
+
+<p>Las posiciones con huecos o caracteres distintos de <code>A/C/G/T</code> se excluyeron <strong>por pareja</strong>. Por ello el denominador puede variar entre comparaciones. La distancia p mide diferencias observadas; no corrige sustituciones múltiples ni debe interpretarse automáticamente como tiempo evolutivo.</p>
+<h3 id="matriz-de-distancias-p-calculada">Matriz de distancias p (calculada)</h3>
+<table>
+<thead>
+<tr>
+<th>Especie</th>
+<th style="text-align: right;">Humano</th>
+<th style="text-align: right;">Chimpancé</th>
+<th style="text-align: right;">Gorila</th>
+<th style="text-align: right;">Orangután</th>
+<th style="text-align: right;">Gibón</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Humano</td>
+<td style="text-align: right;">0.00000</td>
+<td style="text-align: right;">0.08690</td>
+<td style="text-align: right;">0.10895</td>
+<td style="text-align: right;">0.14462</td>
+<td style="text-align: right;">0.14916</td>
+</tr>
+<tr>
+<td>Chimpancé</td>
+<td style="text-align: right;">0.08690</td>
+<td style="text-align: right;">0.00000</td>
+<td style="text-align: right;">0.10052</td>
+<td style="text-align: right;">0.14332</td>
+<td style="text-align: right;">0.15499</td>
+</tr>
+<tr>
+<td>Gorila</td>
+<td style="text-align: right;">0.10895</td>
+<td style="text-align: right;">0.10052</td>
+<td style="text-align: right;">0.00000</td>
+<td style="text-align: right;">0.15110</td>
+<td style="text-align: right;">0.14462</td>
+</tr>
+<tr>
+<td>Orangután</td>
+<td style="text-align: right;">0.14462</td>
+<td style="text-align: right;">0.14332</td>
+<td style="text-align: right;">0.15110</td>
+<td style="text-align: right;">0.00000</td>
+<td style="text-align: right;">0.15305</td>
+</tr>
+<tr>
+<td>Gibón</td>
+<td style="text-align: right;">0.14916</td>
+<td style="text-align: right;">0.15499</td>
+<td style="text-align: right;">0.14462</td>
+<td style="text-align: right;">0.15305</td>
+<td style="text-align: right;">0.00000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo de cálculo con los datos reales:</strong> humano–chimpancé: <strong>134 diferencias / 1542 posiciones comparables = 0.08690</strong>. Los diez recuentos se encuentran en <a href="diferencias.csv"><code>diferencias.csv</code></a>.</p>
+<h2 id="4-construccion-del-arbol-con-upgma">4. Construcción del árbol con UPGMA</h2>
+<p>UPGMA (<em>Unweighted Pair Group Method with Arithmetic Mean</em>) es un método de agrupamiento jerárquico que construye un árbol enraizado a partir de una matriz de distancias. En cada paso fusiona los grupos más cercanos. Para una explicación numérica con animación interactiva, consulta <a href="../metodos_upgma_neighbor_joining/">UPGMA y Neighbor-Joining</a>.</p>
+<details>
+<summary>¿Cómo funciona UPGMA y qué supone el reloj molecular?</summary>
+<p>Primero se identifica la menor distancia entre grupos y se fusiona esa pareja. Después se calculan las distancias del grupo nuevo al resto, ponderando por el número de secuencias. El proceso continúa hasta que solo queda un grupo.</p>
+<p>La altura de cada nodo nuevo es la mitad de la distancia de fusión; las ramas se obtienen restando alturas. UPGMA produce un árbol <strong>ultramétrico</strong>, coherente con un modelo de reloj molecular estricto. Que el árbol resulte ultramétrico por construcción <strong>no prueba</strong> que los datos cumplan ese supuesto.</p>
+</details>
+
+<p>UPGMA une en cada iteración los dos grupos con menor distancia y actualiza las distancias al resto mediante la <strong>media ponderada por el número de secuencias</strong>:</p>
+<p style="text-align: center; font-size: 1.1em;">
+  d(A ∪ B, C) =
+  <span style="display: inline-block; text-align: center; vertical-align: middle;">
+    <span style="display: block; border-bottom: 1px solid; padding: 0 8px 4px;">
+      |A| · d(A,C) + |B| · d(B,C)
+    </span>
+    <span style="display: block; padding: 4px 8px 0;">
+      |A| + |B|
+    </span>
+  </span>
+</p>
+
+<p>La altura del nuevo nodo es <code>d(A,B)/2</code>; cada longitud de rama se obtiene restando la altura del nodo hijo a la del padre.</p>
+<table>
+<thead>
+<tr>
+<th>Iteración</th>
+<th>Grupos unidos</th>
+<th style="text-align: right;">Distancia</th>
+<th style="text-align: right;">Altura del nodo</th>
+<th>Grupo resultante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Humano + Chimpancé</td>
+<td style="text-align: right;">0.08690</td>
+<td style="text-align: right;">0.04345</td>
+<td>G1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Humano,Chimpancé + Gorila</td>
+<td style="text-align: right;">0.10473</td>
+<td style="text-align: right;">0.05237</td>
+<td>G2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Humano,Chimpancé,Gorila + Orangután</td>
+<td style="text-align: right;">0.14635</td>
+<td style="text-align: right;">0.07317</td>
+<td>G3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Humano,Chimpancé,Gorila,Orangután + Gibón</td>
+<td style="text-align: right;">0.15045</td>
+<td style="text-align: right;">0.07523</td>
+<td>G4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actualización real de la primera fusión:</strong> se unen humano y chimpancé; las nuevas distancias del grupo <code>{humano, chimpancé}</code> son:</p>
+<ul>
+<li>A <em>Gorilla gorilla</em>: <strong>0.10473</strong>.</li>
+<li>A <em>Pongo pygmaeus</em>: <strong>0.14397</strong>.</li>
+<li>A <em>Hylobates lar</em>: <strong>0.15208</strong>.</li>
+</ul>
+<p>Las matrices de cada iteración están almacenadas en <a href="resultados.json"><code>resultados.json</code></a> y el historial completo de fusiones en <a href="iteraciones-upgma.csv"><code>iteraciones-upgma.csv</code></a>.</p>
+<p><img alt="Árbol final" src="imagenes/arbol-upgma.png" /></p>
+<p>El árbol final se encuentra también en formato <a href="arbol-upgma.nwk">Newick</a>. Se comprobó que todas sus hojas tienen la misma distancia a la raíz (característica de UPGMA).</p>
+<details>
+<summary>¿Qué es el formato Newick y cómo se interpreta?</summary>
+<p><strong>Newick</strong> representa un árbol mediante texto: los paréntesis delimitan agrupaciones, las comas separan ramas, los dos puntos introducen longitudes de rama y el punto y coma cierra el árbol.</p>
+<p>Por ejemplo, <code>((Humano:1,Chimpance:1):2,Gorila:3);</code> representa un árbol en el que humano y chimpancé comparten un nodo, y las cifras indican longitudes de rama, no necesariamente años.</p>
+<p>El archivo <a href="arbol-upgma.nwk">arbol-upgma.nwk</a> contiene la estructura y longitudes calculadas, que pueden visualizarse con herramientas compatibles, como Biopython o iTOL.</p>
+</details>
+
+<h2 id="5-interpretacion-y-limitaciones">5. Interpretación y limitaciones</h2>
+<p>En este ejemplo, <strong>humano y chimpancé</strong> se agrupan primero; después se incorpora el gorila, luego el orangután y por último el gibón. Esta es la <strong>topología inferida a partir de estas secuencias y de este procedimiento</strong>. No implica que una especie actual sea ancestro de otra. Los nodos representan ancestros comunes inferidos y las ramas están medidas en unidades de distancia p, no en años.</p>
+<p>UPGMA supone una <strong>tasa evolutiva aproximadamente constante</strong> (reloj molecular estricto). El árbol UPGMA es ultramétrico por construcción; <strong>esto no demuestra que los datos satisfagan el supuesto del reloj molecular</strong>. Además, un único gen mitocondrial describe una historia genética particular, no necesariamente toda la historia de las especies. Para inferencias robustas deben considerarse más genes, modelos de sustitución, métodos alternativos y soporte estadístico.</p>
+<h2 id="6-para-reflexionar">6. Para reflexionar</h2>
+<ul>
+<li>¿Por qué no se comparan genes distintos?  </li>
+<li>¿Por qué las CDS tienen diferentes longitudes?</li>
+<li>¿Qué significa <code>p = 0,08690</code> para humano y chimpancé?</li>
+<li>¿Por qué cambian las distancias al formar un grupo?</li>
+<li>¿Qué supuesto introduce UPGMA y qué limitaciones tiene un árbol basado en un solo gen?</li>
+</ul>
+<h2 id="7-reproducibilidad-y-materiales">7. Reproducibilidad y materiales</h2>
+<p>Los archivos GenBank de entrada están en <code>genbank/</code>. Para reproducir los resultados se requiere Python 3 con <code>biopython</code>, <code>matplotlib</code>, <code>numpy</code> y <code>pillow</code>. Ejecutar desde la carpeta del proyecto <code>python procesar_datos.py</code> y luego <code>python generar_animacion.py</code>. No es necesario ejecutar nada para <strong>visualizar</strong> el Markdown, la figura y el GIF publicados en GitHub Pages.</p>
+<p><strong>Trazabilidad:</strong> <a href="validacion-cox1.csv"><code>validacion-cox1.csv</code></a> · <a href="secuencias-cox1.fasta"><code>secuencias-cox1.fasta</code></a> · <a href="alineamiento-cox1.fasta"><code>alineamiento-cox1.fasta</code></a> · <a href="diferencias.csv"><code>diferencias.csv</code></a> · <a href="distancias.csv"><code>distancias.csv</code></a> · <a href="iteraciones-upgma.csv"><code>iteraciones-upgma.csv</code></a> · <a href="resultados.json"><code>resultados.json</code></a> · <a href="arbol-upgma.nwk"><code>arbol-upgma.nwk</code></a>.</p>
+<p><strong><a href="../../aula/ejercicio_guiado_upgma/">Actividad guiada: construye tu primer árbol filogenético</a></strong></p>
+<p><strong>Referencias:</strong> <a href="https://www.ncbi.nlm.nih.gov/nuccore/">NCBI Nucleotide</a>, <a href="https://biopython.org/">Biopython</a>, <a href="https://mafft.cbrc.jp/alignment/software/">MAFFT</a>, <a href="https://docs.github.com/en/pages">GitHub Pages</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

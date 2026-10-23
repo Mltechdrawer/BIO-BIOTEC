@@ -1908,27 +1908,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2419,27 +2410,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-de-la-sesion" class="md-nav__link">
+  <a href="#duracion" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos de la sesión
+      Duración
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contenidos" class="md-nav__link">
+  <a href="#objetivos-de-aprendizaje" class="md-nav__link">
     <span class="md-ellipsis">
-      Contenidos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades-o-cuestiones-guia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actividades o cuestiones guía
+      Objetivos de aprendizaje
     </span>
   </a>
   
@@ -2462,15 +2444,473 @@
 
 
 <h1 id="tema-10-recursos-computacionales-para-el-analisis-estructural">Tema 10. Recursos computacionales para el análisis estructural</h1>
-<h2 id="objetivos-de-la-sesion">Objetivos de la sesión</h2>
-<p>Pendiente de desarrollar.</p>
-<h2 id="contenidos">Contenidos</h2>
+<h2 id="duracion">Duración</h2>
+<p><strong>1 hora de teoría</strong></p>
+<p>Este tema abre el <strong>Bloque IV. Bioinformática estructural y modelado computacional</strong>.</p>
+<p>De acuerdo con la estructura del curso, se organiza en dos apartados:</p>
 <ul>
-<li>10.1 Bases de datos estructurales.</li>
-<li>10.2 Representación digital de biomoléculas.</li>
+<li><strong>10.1. Bases de datos estructurales.</strong></li>
+<li><strong>10.2. Representación digital de biomoléculas.</strong></li>
 </ul>
-<h2 id="actividades-o-cuestiones-guia">Actividades o cuestiones guía</h2>
-<p>Pendiente de desarrollar.</p>
+<hr />
+<h2 id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Al finalizar este tema, el estudiante será capaz de:</p>
+<ul>
+<li>Explicar qué información aporta una estructura biomolecular.</li>
+<li>Identificar los principales recursos utilizados para consultar estructuras tridimensionales.</li>
+<li>Diferenciar estructuras experimentales de modelos computacionales.</li>
+<li>Interpretar la información básica de un registro estructural.</li>
+<li>Comprender cómo se representa digitalmente una biomolécula.</li>
+<li>Reconocer la diferencia entre secuencia, coordenadas atómicas y representación tridimensional.</li>
+<li>Identificar cadenas, residuos, átomos, ligandos y ensamblajes biológicos.</li>
+<li>Comprender la importancia de los formatos estructurales y de los metadatos asociados.</li>
+</ul>
+<hr />
+<h1 id="introduccion">Introducción</h1>
+<p>Hasta ahora hemos trabajado principalmente con secuencias, anotaciones y relaciones funcionales.</p>
+<p>En este bloque cambiaremos de nivel.</p>
+<p>Pasaremos de preguntas como:</p>
+<blockquote>
+<p><strong>¿qué secuencia es esta?</strong></p>
+</blockquote>
+<p>o:</p>
+<blockquote>
+<p><strong>¿qué función puede tener esta proteína?</strong></p>
+</blockquote>
+<p>a preguntas como:</p>
+<blockquote>
+<p><strong>¿qué forma tridimensional adopta esta biomolécula?</strong></p>
+</blockquote>
+<p>y:</p>
+<blockquote>
+<p><strong>¿cómo se relaciona esa estructura con su función?</strong></p>
+</blockquote>
+<p>La estructura tridimensional es fundamental porque muchas funciones biológicas dependen directamente de la forma.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>una enzima necesita una geometría concreta en su sitio activo;</li>
+<li>una proteína receptora debe reconocer determinadas moléculas;</li>
+<li>un anticuerpo depende de la forma de sus regiones de unión;</li>
+<li>una proteína de membrana necesita una organización compatible con la bicapa;</li>
+<li>un complejo molecular necesita superficies de interacción adecuadas.</li>
+</ul>
+<p>La Bioinformática estructural permite almacenar, consultar, representar, visualizar y analizar este tipo de información mediante recursos computacionales.</p>
+<hr />
+<h1 id="101-bases-de-datos-estructurales">10.1. Bases de datos estructurales</h1>
+<h2 id="1011-que-contiene-una-base-de-datos-estructural">10.1.1. Qué contiene una base de datos estructural</h2>
+<p>Una base de datos estructural almacena información sobre la organización tridimensional de biomoléculas.</p>
+<p>Puede incluir:</p>
+<ul>
+<li>proteínas;</li>
+<li>ADN;</li>
+<li>ARN;</li>
+<li>complejos proteína-proteína;</li>
+<li>complejos proteína-ADN;</li>
+<li>complejos con ligandos;</li>
+<li>complejos con fármacos;</li>
+<li>otras macromoléculas biológicas.</li>
+</ul>
+<p>La información puede incluir tanto la estructura propiamente dicha como metadatos asociados.</p>
+<hr />
+<h2 id="1012-el-protein-data-bank">10.1.2. El Protein Data Bank</h2>
+<p>El <strong>Protein Data Bank (PDB)</strong> es el archivo internacional de referencia para estructuras tridimensionales de macromoléculas biológicas.</p>
+<p>Cada estructura depositada dispone de un identificador PDB.</p>
+<p>Ejemplo clásico:</p>
+<pre><code class="language-text">4HHB
+</code></pre>
+<p>corresponde a una estructura de hemoglobina humana.</p>
+<p>Uno de los portales de consulta más utilizados es:</p>
+<p>https://www.rcsb.org/</p>
+<hr />
+<h2 id="1013-que-podemos-encontrar-en-un-registro-pdb">10.1.3. Qué podemos encontrar en un registro PDB</h2>
+<p>Un registro estructural puede contener:</p>
+<ul>
+<li>identificador;</li>
+<li>título;</li>
+<li>biomolécula;</li>
+<li>organismo;</li>
+<li>autores;</li>
+<li>publicación asociada;</li>
+<li>método experimental;</li>
+<li>resolución, cuando procede;</li>
+<li>cadenas;</li>
+<li>secuencias;</li>
+<li>ligandos;</li>
+<li>iones;</li>
+<li>moléculas de agua;</li>
+<li>coordenadas atómicas;</li>
+<li>ensamblajes biológicos;</li>
+<li>referencias cruzadas.</li>
+</ul>
+<p>Por tanto, un registro PDB es mucho más que una imagen tridimensional.</p>
+<hr />
+<h2 id="1014-estructura-y-evidencia-experimental">10.1.4. Estructura y evidencia experimental</h2>
+<p>Una estructura depositada en PDB suele proceder de un método experimental de determinación estructural.</p>
+<p>Entre los principales métodos se encuentran:</p>
+<ul>
+<li><strong>cristalografía de rayos X</strong>;</li>
+<li><strong>microscopía electrónica criogénica (cryo-EM)</strong>;</li>
+<li><strong>resonancia magnética nuclear (NMR)</strong>.</li>
+</ul>
+<p>Cada método produce datos con características diferentes.</p>
+<p>No es necesario estudiar aquí su fundamento físico en detalle, pero sí comprender que la estructura observada depende del método y de la calidad de los datos experimentales.</p>
+<hr />
+<h2 id="1015-cristalografia-de-rayos-x">10.1.5. Cristalografía de rayos X</h2>
+<p>Ha sido históricamente uno de los métodos más utilizados.</p>
+<p>Requiere obtener cristales de la molécula o complejo. A partir del patrón de difracción se reconstruye un modelo estructural.</p>
+<p>Una característica importante es la <strong>resolución</strong>.</p>
+<p>De forma general:</p>
+<blockquote>
+<p><strong>menor valor numérico de resolución → mayor nivel de detalle</strong></p>
+</blockquote>
+<p>Por ejemplo, una estructura a 1,5 Å suele ofrecer más detalle que una estructura a 3,5 Å.</p>
+<p>Sin embargo, la calidad de una estructura no debe evaluarse únicamente con una cifra.</p>
+<hr />
+<h2 id="1016-cryo-em">10.1.6. Cryo-EM</h2>
+<p>La microscopía electrónica criogénica ha adquirido gran importancia en los últimos años.</p>
+<p>Permite estudiar especialmente bien:</p>
+<ul>
+<li>grandes complejos;</li>
+<li>proteínas de membrana;</li>
+<li>ensamblajes macromoleculares.</li>
+</ul>
+<p>No requiere cristalización de la misma forma que la cristalografía de rayos X.</p>
+<p>El resultado final también es un modelo estructural derivado de datos experimentales.</p>
+<hr />
+<h2 id="1017-nmr">10.1.7. NMR</h2>
+<p>La resonancia magnética nuclear puede utilizarse para estudiar estructuras de biomoléculas en solución.</p>
+<p>En algunos casos, el resultado no es una única conformación, sino un conjunto de modelos compatibles con los datos experimentales.</p>
+<p>Esto es importante porque una proteína no siempre debe imaginarse como una estructura completamente rígida.</p>
+<hr />
+<h2 id="1018-estructuras-experimentales-y-modelos-computacionales">10.1.8. Estructuras experimentales y modelos computacionales</h2>
+<p>En este bloque debemos mantener una distinción clara entre:</p>
+<h3 id="estructura-experimental">Estructura experimental</h3>
+<p>Se obtiene a partir de datos físicos medidos experimentalmente.</p>
+<h3 id="modelo-computacional">Modelo computacional</h3>
+<p>Se obtiene mediante métodos de predicción o modelado.</p>
+<p>Ambos pueden visualizarse de forma tridimensional, pero no representan el mismo nivel de evidencia.</p>
+<p>Esta diferencia será esencial en el Tema 12.</p>
+<hr />
+<h2 id="1019-rcsb-pdb">10.1.9. RCSB PDB</h2>
+<p>RCSB PDB permite:</p>
+<ul>
+<li>buscar estructuras;</li>
+<li>consultar metadatos;</li>
+<li>visualizar modelos;</li>
+<li>examinar secuencias;</li>
+<li>identificar ligandos;</li>
+<li>analizar ensamblajes;</li>
+<li>descargar ficheros estructurales.</li>
+</ul>
+<p>Puede realizarse una búsqueda mediante:</p>
+<ul>
+<li>identificador PDB;</li>
+<li>nombre de proteína;</li>
+<li>organismo;</li>
+<li>autor;</li>
+<li>ligando;</li>
+<li>secuencia;</li>
+<li>palabras clave.</li>
+</ul>
+<hr />
+<h2 id="10110-pdbe-y-pdbj">10.1.10. PDBe y PDBj</h2>
+<p>El archivo PDB es gestionado internacionalmente a través del <strong>Worldwide Protein Data Bank (wwPDB)</strong>.</p>
+<p>Entre sus principales portales se encuentran:</p>
+<ul>
+<li><strong>RCSB PDB</strong></li>
+<li><strong>PDBe</strong></li>
+<li><strong>PDBj</strong></li>
+</ul>
+<p>Estos recursos acceden al mismo archivo estructural internacional, aunque presentan interfaces y herramientas diferentes.</p>
+<hr />
+<h1 id="102-representacion-digital-de-biomoleculas">10.2. Representación digital de biomoléculas</h1>
+<h2 id="1021-una-estructura-como-conjunto-de-coordenadas">10.2.1. Una estructura como conjunto de coordenadas</h2>
+<p>Una biomolécula tridimensional puede representarse computacionalmente mediante las coordenadas de sus átomos.</p>
+<p>Para cada átomo podemos almacenar aproximadamente:</p>
+<pre><code class="language-text">átomo
+residuo
+cadena
+x
+y
+z
+</code></pre>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">CA  ALA  A  12.5  8.1  3.4
+</code></pre>
+<p>Las coordenadas <code>x</code>, <code>y</code> y <code>z</code> determinan la posición del átomo en el espacio tridimensional.</p>
+<hr />
+<h2 id="1022-jerarquia-estructural">10.2.2. Jerarquía estructural</h2>
+<p>Una estructura puede entenderse como una jerarquía:</p>
+<pre><code class="language-text">estructura
+   ↓
+cadenas
+   ↓
+residuos
+   ↓
+átomos
+</code></pre>
+<p>Esta organización permite seleccionar y analizar partes concretas de una biomolécula.</p>
+<hr />
+<h2 id="1023-atomos">10.2.3. Átomos</h2>
+<p>El nivel más detallado de la representación estructural corresponde a los átomos.</p>
+<p>Cada átomo puede tener información asociada:</p>
+<ul>
+<li>tipo;</li>
+<li>elemento químico;</li>
+<li>residuo al que pertenece;</li>
+<li>cadena;</li>
+<li>coordenadas;</li>
+<li>ocupación;</li>
+<li>factor de temperatura.</li>
+</ul>
+<hr />
+<h2 id="1024-residuos">10.2.4. Residuos</h2>
+<p>Los átomos se agrupan en residuos.</p>
+<p>En una proteína, cada residuo corresponde normalmente a un aminoácido.</p>
+<p>Por ejemplo:</p>
+<pre><code class="language-text">ALA
+GLY
+LYS
+TRP
+</code></pre>
+<p>En ADN o ARN los residuos corresponden a nucleótidos.</p>
+<hr />
+<h2 id="1025-cadenas">10.2.5. Cadenas</h2>
+<p>Las estructuras pueden contener una o varias cadenas.</p>
+<p>Una cadena puede representar:</p>
+<ul>
+<li>una proteína;</li>
+<li>una parte de una proteína;</li>
+<li>un ácido nucleico;</li>
+<li>una subunidad de un complejo.</li>
+</ul>
+<p>Es importante no asumir que:</p>
+<blockquote>
+<p><strong>una entrada PDB = una única proteína</strong></p>
+</blockquote>
+<p>Muchos registros representan complejos con varias cadenas.</p>
+<hr />
+<h2 id="1026-ligandos">10.2.6. Ligandos</h2>
+<p>Una estructura puede contener moléculas que no forman parte de la cadena principal.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>ATP;</li>
+<li>NAD;</li>
+<li>iones;</li>
+<li>inhibidores;</li>
+<li>fármacos;</li>
+<li>cofactores;</li>
+<li>sustratos.</li>
+</ul>
+<p>Estas moléculas se denominan frecuentemente <strong>ligandos</strong>.</p>
+<p>Su posición puede ser especialmente importante para interpretar la función.</p>
+<hr />
+<h2 id="1027-moleculas-de-agua">10.2.7. Moléculas de agua</h2>
+<p>Los ficheros estructurales pueden incluir moléculas de agua.</p>
+<p>No son necesariamente ruido.</p>
+<p>Algunas participan en:</p>
+<ul>
+<li>estabilización;</li>
+<li>puentes de hidrógeno;</li>
+<li>reconocimiento molecular;</li>
+<li>interacción con ligandos.</li>
+</ul>
+<hr />
+<h2 id="1028-unidad-asimetrica-y-ensamblaje-biologico">10.2.8. Unidad asimétrica y ensamblaje biológico</h2>
+<p>Un concepto importante es distinguir entre:</p>
+<h3 id="unidad-asimetrica">Unidad asimétrica</h3>
+<p>Contenido estructural determinado en el experimento cristalográfico o depositado según el método.</p>
+<h3 id="ensamblaje-biologico">Ensamblaje biológico</h3>
+<p>Organización molecular que se considera biológicamente relevante.</p>
+<p>En algunos casos ambas coinciden.</p>
+<p>En otros, el ensamblaje funcional contiene varias copias o combinaciones de cadenas.</p>
+<p>Por ello, al estudiar una proteína oligomérica no basta con observar cualquier representación disponible.</p>
+<hr />
+<h2 id="1029-formato-pdb-tradicional">10.2.9. Formato PDB tradicional</h2>
+<p>Durante décadas se utilizó ampliamente el formato de texto denominado <strong>PDB</strong>.</p>
+<p>Una línea típica podía contener información como:</p>
+<pre><code class="language-text">ATOM      1  N   VAL A   1      11.104  13.207   2.100
+</code></pre>
+<p>Este formato es relativamente sencillo de leer visualmente.</p>
+<p>Sin embargo, tiene limitaciones heredadas de su diseño original.</p>
+<hr />
+<h2 id="10210-pdbxmmcif">10.2.10. PDBx/mmCIF</h2>
+<p>El formato moderno principal para los datos del PDB es <strong>PDBx/mmCIF</strong>.</p>
+<p>Permite representar estructuras mucho más grandes y metadatos más complejos.</p>
+<p>Su organización utiliza categorías y atributos.</p>
+<p>Ejemplo conceptual:</p>
+<pre><code class="language-text">_atom_site.label_atom_id
+_atom_site.label_comp_id
+_atom_site.Cartn_x
+_atom_site.Cartn_y
+_atom_site.Cartn_z
+</code></pre>
+<p>El formato PDBx/mmCIF es actualmente la referencia para el archivo estructural.</p>
+<hr />
+<h2 id="10211-por-que-evolucionan-los-formatos">10.2.11. Por qué evolucionan los formatos</h2>
+<p>Las estructuras actuales pueden contener:</p>
+<ul>
+<li>cientos de cadenas;</li>
+<li>millones de átomos;</li>
+<li>grandes complejos;</li>
+<li>numerosos ligandos;</li>
+<li>metadatos extensos.</li>
+</ul>
+<p>Los formatos antiguos no fueron diseñados para esa escala.</p>
+<p>Por ello, la representación digital también debe evolucionar.</p>
+<hr />
+<h2 id="10212-del-fichero-a-la-imagen">10.2.12. Del fichero a la imagen</h2>
+<p>Un fichero estructural no contiene una “fotografía” de la proteína.</p>
+<p>Contiene datos.</p>
+<p>El software de visualización interpreta esos datos y genera una representación.</p>
+<p>Podemos representar la misma estructura de muchas formas:</p>
+<ul>
+<li>átomos;</li>
+<li>bolas y varillas;</li>
+<li>líneas;</li>
+<li>superficie;</li>
+<li>cartoon;</li>
+<li>ribbon;</li>
+<li>representación de hélices y láminas.</li>
+</ul>
+<p>Por tanto:</p>
+<blockquote>
+<p><strong>estructura digital y representación visual no son exactamente lo mismo</strong></p>
+</blockquote>
+<hr />
+<h1 id="103-niveles-de-representacion-de-proteinas">10.3. Niveles de representación de proteínas</h1>
+<p>Para interpretar estructuras conviene recordar los niveles clásicos:</p>
+<h2 id="estructura-primaria">Estructura primaria</h2>
+<p>Secuencia de aminoácidos.</p>
+<h2 id="estructura-secundaria">Estructura secundaria</h2>
+<p>Patrones locales como:</p>
+<ul>
+<li>hélices alfa;</li>
+<li>láminas beta;</li>
+<li>giros.</li>
+</ul>
+<h2 id="estructura-terciaria">Estructura terciaria</h2>
+<p>Organización tridimensional completa de una cadena.</p>
+<h2 id="estructura-cuaternaria">Estructura cuaternaria</h2>
+<p>Organización de varias cadenas o subunidades.</p>
+<p>La Bioinformática estructural trabaja especialmente con los niveles tridimensionales, pero estos dependen de la secuencia.</p>
+<hr />
+<h1 id="104-metadatos-estructurales">10.4. Metadatos estructurales</h1>
+<p>Una estructura debe interpretarse junto con sus metadatos.</p>
+<p>Entre los más importantes:</p>
+<ul>
+<li>método experimental;</li>
+<li>resolución;</li>
+<li>organismo;</li>
+<li>cadenas;</li>
+<li>mutaciones;</li>
+<li>ligandos;</li>
+<li>condiciones experimentales;</li>
+<li>publicación asociada;</li>
+<li>fecha;</li>
+<li>ensamblaje biológico.</li>
+</ul>
+<p>Dos estructuras de una misma proteína pueden representar situaciones diferentes.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>proteína libre;</li>
+<li>proteína unida a un ligando;</li>
+<li>proteína mutante;</li>
+<li>proteína en complejo;</li>
+<li>proteína de otra especie.</li>
+</ul>
+<hr />
+<h1 id="105-ejemplo-conceptual">10.5. Ejemplo conceptual</h1>
+<p>Supongamos que buscamos una enzima en PDB.</p>
+<p>Encontramos tres estructuras:</p>
+<h3 id="estructura-a">Estructura A</h3>
+<pre><code class="language-text">proteína sin ligando
+</code></pre>
+<h3 id="estructura-b">Estructura B</h3>
+<pre><code class="language-text">proteína + sustrato
+</code></pre>
+<h3 id="estructura-c">Estructura C</h3>
+<pre><code class="language-text">proteína + inhibidor
+</code></pre>
+<p>Las tres corresponden a la misma proteína, pero aportan información diferente.</p>
+<p>La estructura B puede ayudar a identificar el sitio activo.</p>
+<p>La estructura C puede ayudar a estudiar interacción con un compuesto.</p>
+<p>La comparación entre ellas puede mostrar cambios conformacionales.</p>
+<p>Por ello, elegir una estructura no consiste únicamente en seleccionar el primer resultado.</p>
+<hr />
+<h1 id="106-del-registro-estructural-al-analisis">10.6. Del registro estructural al análisis</h1>
+<p>Un flujo básico puede ser:</p>
+<pre><code class="language-text">identificar proteína
+      ↓
+buscar en PDB
+      ↓
+seleccionar estructura
+      ↓
+revisar método y calidad
+      ↓
+identificar cadenas y ligandos
+      ↓
+descargar/visualizar
+      ↓
+analizar
+</code></pre>
+<p>La selección correcta de la estructura condicionará cualquier análisis posterior.</p>
+<hr />
+<h1 id="107-errores-frecuentes">10.7. Errores frecuentes</h1>
+<h2 id="pensar-que-pdb-contiene-unicamente-proteinas">Pensar que PDB contiene únicamente proteínas</h2>
+<p>También incluye ácidos nucleicos y complejos biomoleculares.</p>
+<h2 id="confundir-estructura-experimental-con-modelo-computacional">Confundir estructura experimental con modelo computacional</h2>
+<p>Ambos pueden visualizarse en 3D, pero su origen y evidencia son diferentes.</p>
+<h2 id="elegir-la-primera-estructura-disponible">Elegir la primera estructura disponible</h2>
+<p>Puede no ser la más adecuada para la pregunta biológica.</p>
+<h2 id="ignorar-ligandos-y-cadenas">Ignorar ligandos y cadenas</h2>
+<p>Pueden ser esenciales para interpretar la función.</p>
+<h2 id="interpretar-una-estructura-como-una-fotografia-fija">Interpretar una estructura como una fotografía fija</h2>
+<p>Las biomoléculas son dinámicas y una estructura representa un estado determinado.</p>
+<h2 id="confundir-fichero-y-visualizacion">Confundir fichero y visualización</h2>
+<p>El fichero almacena datos estructurales; el programa decide cómo representarlos gráficamente.</p>
+<h2 id="ignorar-el-ensamblaje-biologico">Ignorar el ensamblaje biológico</h2>
+<p>La unidad mostrada inicialmente puede no corresponder al complejo funcional.</p>
+<hr />
+<h1 id="108-cuestiones-guia">10.8. Cuestiones guía</h1>
+<ol>
+<li>¿Qué información aporta una estructura tridimensional que no aporta directamente una secuencia?</li>
+<li>¿Qué es el Protein Data Bank?</li>
+<li>¿Qué diferencia existe entre estructura experimental y modelo computacional?</li>
+<li>¿Qué métodos experimentales se utilizan habitualmente para determinar estructuras?</li>
+<li>¿Qué significa la resolución en cristalografía?</li>
+<li>¿Por qué una entrada PDB puede contener varias cadenas?</li>
+<li>¿Qué información puede aportar un ligando?</li>
+<li>¿Qué diferencia existe entre unidad asimétrica y ensamblaje biológico?</li>
+<li>¿Qué representa una coordenada atómica?</li>
+<li>¿Qué diferencia existe entre formato PDB y PDBx/mmCIF?</li>
+<li>¿Por qué no debe interpretarse una estructura como una fotografía estática definitiva?</li>
+<li>¿Qué metadatos revisarías antes de seleccionar una estructura para un análisis?</li>
+</ol>
+<hr />
+<h1 id="ideas-clave">Ideas clave</h1>
+<ul>
+<li>La Bioinformática estructural estudia la representación, consulta y análisis computacional de estructuras biomoleculares.</li>
+<li>PDB es el archivo internacional de referencia para estructuras macromoleculares.</li>
+<li>Las estructuras experimentales pueden proceder de cristalografía, cryo-EM o NMR.</li>
+<li>Una estructura digital se representa mediante coordenadas y metadatos.</li>
+<li>Las estructuras se organizan en cadenas, residuos y átomos.</li>
+<li>Los ligandos y ensamblajes pueden ser fundamentales para interpretar la función.</li>
+<li>PDBx/mmCIF es el formato moderno principal del archivo PDB.</li>
+<li>El fichero estructural contiene datos; la visualización es una representación de esos datos.</li>
+<li>Una misma proteína puede tener múltiples estructuras que representan estados diferentes.</li>
+<li>La selección de una estructura debe responder a una pregunta biológica concreta.</li>
+</ul>
+<hr />
+<h1 id="conexion-con-el-siguiente-tema">Conexión con el siguiente tema</h1>
+<p>En este tema hemos aprendido dónde se almacenan las estructuras biomoleculares y cómo se representan digitalmente.</p>
+<p>En el <strong>Tema 11. Visualización y análisis de estructuras biomoleculares</strong> estudiaremos cómo utilizar esas representaciones para:</p>
+<ul>
+<li>explorar modelos tridimensionales;</li>
+<li>visualizar elementos estructurales;</li>
+<li>analizar superficies y regiones;</li>
+<li>estudiar interacciones moleculares.</li>
+</ul>
 
 
 
