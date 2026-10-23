@@ -1,0 +1,5 @@
+paso,grupo_A,grupo_B,distancia,altura,miembros_A,miembros_B,nuevo_grupo,nuevas_distancias
+1,Homo sapiens,Pan troglodytes,0.08690012970168612,0.04345006485084306,Homo sapiens,Pan troglodytes,G1,"{'Gorilla gorilla': 0.10473411154345007, 'Pongo pygmaeus': 0.14396887159533073, 'Hylobates lar': 0.15207522697795073}"
+2,G1,Gorilla gorilla,0.10473411154345007,0.052367055771725034,Homo sapiens;Pan troglodytes,Gorilla gorilla,G2,"{'Pongo pygmaeus': 0.14634673584089927, 'Hylobates lar': 0.14958927799394728}"
+3,G2,Pongo pygmaeus,0.14634673584089927,0.07317336792044964,Homo sapiens;Pan troglodytes;Gorilla gorilla,Pongo pygmaeus,G3,{'Hylobates lar': 0.15045395590142674}
+4,G3,Hylobates lar,0.15045395590142674,0.07522697795071337,Homo sapiens;Pan troglodytes;Gorilla gorilla;Pongo pygmaeus,Hylobates lar,G4,{}

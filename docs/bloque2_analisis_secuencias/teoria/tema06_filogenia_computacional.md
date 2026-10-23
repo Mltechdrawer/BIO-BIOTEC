@@ -322,8 +322,10 @@ Después utilizan esa matriz para construir el árbol.
 
 Dos métodos conocidos son:
 
-- **UPGMA**
+- **UPGMA** *(Unweighted Pair Group Method with Arithmetic Mean)*
 - **Neighbor-Joining**
+
+**[Estudiar UPGMA y Neighbor-Joining](metodos_upgma_neighbor_joining.md)**
 
 No es necesario implementar estos algoritmos en este curso.
 
@@ -681,6 +683,19 @@ El resultado depende del método y de las decisiones tomadas.
 - El bootstrap evalúa el soporte de agrupaciones concretas.
 - Un árbol de genes no equivale necesariamente a un árbol de especies.
 - La interpretación filogenética requiere combinar resultados computacionales y contexto biológico.
+
+---
+## Ejemplo práctico: construcción de un árbol filogenético
+
+Para comprender cómo se obtiene un árbol filogenético a partir
+de secuencias reales de ADN, se presenta un ejemplo completo
+utilizando el gen mitocondrial COX1 de cinco especies de primates.
+
+El recurso permite seguir el proceso desde la selección y el
+alineamiento de las secuencias hasta el cálculo de distancias
+genéticas y la construcción del árbol mediante UPGMA.
+
+**[Consultar el ejemplo paso a paso](filogenetica/index.md)**
 
 ---
 

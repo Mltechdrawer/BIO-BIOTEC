@@ -1,0 +1,11 @@
+especie_1,especie_2,diferencias,posiciones_comparables,distancia_p
+Pan troglodytes,Homo sapiens,134,1542,0.086900130
+Gorilla gorilla,Homo sapiens,168,1542,0.108949416
+Gorilla gorilla,Pan troglodytes,155,1542,0.100518807
+Pongo pygmaeus,Homo sapiens,223,1542,0.144617380
+Pongo pygmaeus,Pan troglodytes,221,1542,0.143320363
+Pongo pygmaeus,Gorilla gorilla,233,1542,0.151102464
+Hylobates lar,Homo sapiens,230,1542,0.149156939
+Hylobates lar,Pan troglodytes,239,1542,0.154993515
+Hylobates lar,Gorilla gorilla,223,1542,0.144617380
+Hylobates lar,Pongo pygmaeus,236,1542,0.153047990
