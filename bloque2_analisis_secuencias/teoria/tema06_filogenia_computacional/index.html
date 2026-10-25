@@ -2710,29 +2710,29 @@ Seq4    ATGCTAGCAA
 <p>Es un método ampliamente utilizado para construir árboles de manera relativamente rápida.</p>
 <hr />
 <h2 id="6210-metodos-basados-en-caracteres">6.2.10. Métodos basados en caracteres</h2>
-<p>Otros métodos utilizan directamente la información de cada posición del alineamiento.</p>
-<p>Entre ellos se encuentran:</p>
-<ul>
-<li>máxima parsimonia;</li>
-<li>máxima verosimilitud;</li>
-<li>métodos bayesianos.</li>
-</ul>
-<p>Estos métodos evalúan diferentes árboles posibles según criterios distintos.</p>
+<p>A diferencia de los métodos basados en distancias, estos métodos analizan directamente la información de las posiciones del alineamiento, sin resumirla previamente en una única distancia entre cada par de secuencias.</p>
+<p>Tres enfoques importantes son la <strong>máxima parsimonia</strong>, la <strong>máxima verosimilitud</strong> y la <strong>inferencia bayesiana</strong>.</p>
+<p>Cada uno utiliza un criterio diferente para evaluar las posibles relaciones evolutivas.</p>
 <hr />
 <h2 id="6211-maxima-parsimonia">6.2.11. Máxima parsimonia</h2>
-<p>La máxima parsimonia busca el árbol que requiere el menor número de cambios evolutivos.</p>
+<p>La <strong>máxima parsimonia</strong> (<em>Maximum Parsimony</em>, MP) busca el árbol filogenético que permite explicar las diferencias observadas entre las secuencias con el <strong>menor número posible de cambios evolutivos</strong>.</p>
 <p>La idea es intuitiva:</p>
 <blockquote>
-<p><strong>preferir la explicación que necesita menos cambios</strong></p>
+<p><strong>Preferir la hipótesis evolutiva que requiere menos cambios.</strong></p>
 </blockquote>
-<p>Sin embargo, la evolución real no siempre sigue el camino más simple.</p>
+<p>Sin embargo, la evolución real no siempre sigue el camino más simple: pueden producirse cambios repetidos o reversiones que este criterio no representa adecuadamente.</p>
 <hr />
 <h2 id="6212-maxima-verosimilitud">6.2.12. Máxima verosimilitud</h2>
-<p>La máxima verosimilitud evalúa qué árbol hace más probable observar los datos del alineamiento bajo un determinado modelo de evolución.</p>
-<p>Es más sofisticada que los métodos basados únicamente en distancia.</p>
-<p>Puede ofrecer análisis más realistas, pero requiere más cálculo.</p>
+<p>La <strong>máxima verosimilitud</strong> (<em>Maximum Likelihood</em>, ML) evalúa diferentes árboles y busca aquel bajo el cual es <strong>más probable observar las secuencias del alineamiento</strong>, suponiendo un determinado modelo de evolución molecular.</p>
+<p>Estos modelos permiten tener en cuenta, por ejemplo, que algunas sustituciones de nucleótidos pueden ser más frecuentes que otras.</p>
+<p>A diferencia de la máxima parsimonia, no se limita a contar cambios: evalúa la probabilidad de los datos bajo cada hipótesis evolutiva. Generalmente requiere un mayor esfuerzo computacional.</p>
 <hr />
-<h2 id="6213-no-existe-un-unico-arbol-automatico">6.2.13. No existe un único árbol “automático”</h2>
+<h2 id="6213-inferencia-bayesiana">6.2.13. Inferencia bayesiana</h2>
+<p>La <strong>inferencia bayesiana</strong> (<em>Bayesian Inference</em>) utiliza modelos de evolución molecular y el <strong>teorema de Bayes</strong> para estimar la probabilidad posterior de diferentes árboles filogenéticos a partir de las secuencias observadas y unas probabilidades previas.</p>
+<p>En lugar de elegir únicamente un árbol según un criterio de optimización, permite estudiar una distribución de árboles posibles y estimar el grado de apoyo de determinadas agrupaciones.</p>
+<p>Suele recurrir a técnicas de muestreo computacional para aproximar esas probabilidades. Sus resultados dependen del modelo evolutivo y de las probabilidades previas seleccionadas.</p>
+<hr />
+<h2 id="6214-no-existe-un-unico-arbol-automatico">6.2.14. No existe un único árbol “automático”</h2>
 <p>El árbol obtenido depende de:</p>
 <ul>
 <li>secuencias seleccionadas;</li>
@@ -2929,7 +2929,7 @@ Levadura
 <li>La topología es más importante que la disposición visual.</li>
 <li>Los métodos de construcción pueden basarse en distancias o en caracteres.</li>
 <li>UPGMA y Neighbor-Joining son métodos basados en distancia.</li>
-<li>Máxima parsimonia y máxima verosimilitud utilizan enfoques diferentes.</li>
+<li>Máxima parsimonia minimiza los cambios; máxima verosimilitud evalúa la probabilidad de los datos bajo un modelo; e inferencia bayesiana estima probabilidades posteriores de los árboles.</li>
 <li>El bootstrap evalúa el soporte de agrupaciones concretas.</li>
 <li>Un árbol de genes no equivale necesariamente a un árbol de especies.</li>
 <li>La interpretación filogenética requiere combinar resultados computacionales y contexto biológico.</li>
