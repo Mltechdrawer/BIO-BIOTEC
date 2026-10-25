@@ -697,6 +697,8 @@ genéticas y la construcción del árbol mediante UPGMA.
 
 **[Consultar el ejemplo paso a paso](filogenetica/index.md)**
 
+**[Ejercicio](practica_filogenia_COX1_NGPhylogeny.md)**
+
 ---
 
 # Cierre del Bloque II
