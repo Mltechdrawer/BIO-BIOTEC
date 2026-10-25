@@ -100,4 +100,4 @@ Prepara un documento breve con:
 
 ---
 
-**Nota para el profesorado:** antes de publicar la actividad, insertar el enlace exacto a los FASTA del ejemplo anterior y realizar una ejecución de prueba con esos datos para confirmar los nombres de los controles y los resultados descargables. No se han inventado agrupaciones ni respuestas dependientes de secuencias aún no disponibles.
+
