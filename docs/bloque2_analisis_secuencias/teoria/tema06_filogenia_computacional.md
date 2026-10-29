@@ -327,6 +327,21 @@ Dos métodos conocidos son:
 
 **[Estudiar UPGMA y Neighbor-Joining](metodos_upgma_neighbor_joining.md)**
 
+### Construcciones progresivas de los árboles
+
+<a href="../upgma_interactivo/index.html"
+   target="_blank"
+   rel="noopener noreferrer">
+   Explorar la construcción de UPGMA paso a paso
+</a>
+
+<a href="../neighbor_joining_interactivo/index.html"
+   target="_blank"
+   rel="noopener noreferrer">
+   Explorar Neighbor-Joining paso a paso
+</a>
+
+
 No es necesario implementar estos algoritmos en este curso.
 
 Lo importante es comprender su lógica.
@@ -373,6 +388,13 @@ La idea es intuitiva:
 
 Sin embargo, la evolución real no siempre sigue el camino más simple: pueden producirse cambios repetidos o reversiones que este criterio no representa adecuadamente.
 
+<a href="../maxima_parsimonia_interactivo/index.html"
+   target="_blank"
+   rel="noopener noreferrer">
+   Máxima parsimonia paso a paso
+</a>
+
+
 ---
 
 ## 6.2.12. Máxima verosimilitud
@@ -383,6 +405,13 @@ Estos modelos permiten tener en cuenta, por ejemplo, que algunas sustituciones d
 
 A diferencia de la máxima parsimonia, no se limita a contar cambios: evalúa la probabilidad de los datos bajo cada hipótesis evolutiva. Generalmente requiere un mayor esfuerzo computacional.
 
+
+<a href="../maxima_verosimilitud_interactivo/index.html"
+   target="_blank"
+   rel="noopener noreferrer">
+   Máxima verosimilitud paso a paso
+</a>
+
 ---
 
 ## 6.2.13. Inferencia bayesiana
@@ -392,6 +421,12 @@ La **inferencia bayesiana** (*Bayesian Inference*) utiliza modelos de evolución
 En lugar de elegir únicamente un árbol según un criterio de optimización, permite estudiar una distribución de árboles posibles y estimar el grado de apoyo de determinadas agrupaciones.
 
 Suele recurrir a técnicas de muestreo computacional para aproximar esas probabilidades. Sus resultados dependen del modelo evolutivo y de las probabilidades previas seleccionadas.
+
+<a href="../inferencia_bayesiana_interactivo/index.html"
+   target="_blank"
+   rel="noopener noreferrer">
+   Inferencia bayesiana paso a paso
+</a>
 
 ---
 
