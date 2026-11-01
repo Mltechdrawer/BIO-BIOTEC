@@ -1,117 +1,68 @@
-# Práctica de Aula 3.1. Caso aplicado de anotación funcional
+# Práctica · Anotación computacional de proteínas
 
-## Duración
+## 1. Planteamiento
 
-**1 hora**
+Un equipo de investigación ha obtenido una secuencia de aminoácidos sin identificar. Tu tarea es proponer una **anotación funcional razonada**: qué proteína puede ser, qué actividad desempeña y qué evidencias sustentan esa conclusión. No basta con copiar la descripción de una base de datos: hay que explicar el camino seguido y el grado de confianza de cada afirmación.
 
-Esta actividad inicia las prácticas de aula del **Bloque III. Análisis funcional y minería de datos biológicos**.
+## 2. Objetivos de aprendizaje
 
-Se realizará en **parejas o pequeños grupos**.
+- Reconocer las etapas básicas de un flujo de anotación funcional.
+- Interpretar resultados de similitud (identidad, cobertura, E-value) sin equiparar similitud con demostración de función.
+- Relacionar dominios y familias de proteínas con posibles funciones biológicas.
+- Diferenciar anotaciones revisadas, predicciones computacionales y evidencia experimental.
+- Redactar una anotación funcional trazable, con referencias y limitaciones.
 
-## Objetivos
+## 3. Material de partida
 
-Al finalizar la sesión, el estudiante será capaz de:
+Disponen de la siguiente secuencia de aminoácidos en formato FASTA. El identificador es deliberadamente neutro para realizar primero el análisis sin conocer su identidad. **No deben modificar la secuencia.**
 
-- Analizar información funcional procedente de distintas fuentes.
-- Diferenciar anotación experimental e inferida.
-- Identificar dominios, familias y funciones asociadas a una proteína.
-- Relacionar información de UniProt, InterPro y Gene Ontology.
-- Formular una interpretación funcional prudente y justificada.
-- Reconocer limitaciones en una anotación bioinformática.
-
-## 1. Caso de partida
-
-Cada grupo recibirá un **gen o proteína diferente**.
-
-El caso incluirá como mínimo:
-
-- identificador;
-- organismo;
-- enlace inicial a un recurso;
-- una breve pregunta biológica.
-
-Ejemplos de preguntas:
-
-> ¿Qué función puede atribuirse a esta proteína y qué evidencias la respaldan?
-
-> ¿Qué información funcional puede obtenerse a partir de sus dominios y anotaciones?
-
-> ¿Qué parte de la anotación está respaldada por evidencia experimental y cuál procede de inferencia?
-
-## 2. Fuentes que deben consultarse
-
-Se utilizarán principalmente:
-
-- **UniProt**  
-  https://www.uniprot.org/
-
-- **InterPro**  
-  https://www.ebi.ac.uk/interpro/
-
-- **Gene Ontology**  
-  https://geneontology.org/
-
-## 3. Análisis del caso
-
-### 3.1. Identificación inicial
-
-Completa:
-
-```text
-Gen/proteína:
-Organismo:
-Identificador:
-Longitud, si procede:
-Fuente inicial:
+```fasta
+>PROTEINA_X | muestra para anotación
+MKALIVLGLVLLSVTVQGKVFERCELARTLKRLGMDGYRGISLANWMCLAKWESGYNTRA
+TNYNAGDRSTDYGIFQINSRYWCNDGKTPGAVNACHLSCSALLQDNIADAVACAKRVVRD
+PQGIRAWVAWRNRCQNRDVRQYVQGCGV
 ```
 
-### 3.2. Anotación en UniProt
+Deben utilizar **NCBI Protein BLAST (BLASTp)**, **InterPro** y **UniProtKB**. Conserven los identificadores y enlaces de todos los registros consultados.
 
-Localiza:
+## 4. Actividades
 
-- nombre recomendado;
-- función;
-- estado revisado/no revisado;
-- evidencias;
-- dominios o regiones;
-- referencias relevantes.
+### Actividad 1 · Revisión inicial de la secuencia
 
-### 3.3. Dominios y familias
+1. Guardar la secuencia en un archivo FASTA. Comprobar que el alfabeto corresponde a una proteína y anota su longitud.
+2. Antes de consultar bases de datos, deben explicar por qué la secuencia por sí sola no permite asegurar su función biológica.
 
-Consulta InterPro e identifica:
+### Actividad 2 · Búsqueda por similitud con BLASTp
 
-- familia;
-- dominios;
-- regiones conservadas;
-- sitios funcionales, si existen.
+1. Buscar la secuencia mediante BLASTp en una base de datos de proteínas apropiada. Indicar la base de datos seleccionada y la fecha de consulta.
+2. Recoger **tres coincidencias relevantes**: identificador, organismo, descripción, identidad, cobertura de la consulta y E-value.
+3. Proponer una primera hipótesis de identidad o familia de proteína y explica qué resultados la apoyan. ¿Qué no puede demostrarse solamente con BLASTp?
 
-### 3.4. Gene Ontology
+### Actividad 3 · Dominios y familias con InterPro
 
-Selecciona al menos un término de cada categoría cuando esté disponible:
+1. Analizar la secuencia en InterPro, mediante búsqueda de secuencia si el servicio está disponible o a partir de un identificador de proteína obtenido anteriormente.
+2. Anotar la familia o firmas identificadas y, cuando proceda, sus posiciones aproximadas en la secuencia. Distingue **dominio, familia y motivo** si aparecen resultados de distintos tipos.
+3. Explicar si el análisis de InterPro respalda, matiza o contradice la hipótesis obtenida con BLASTp.
 
-| Categoría | Término | ID GO | Evidencia |
-|---|---|---|---|
-| Molecular Function | | | |
-| Biological Process | | | |
-| Cellular Component | | | |
+### Actividad 4 · Contraste de anotaciones con UniProtKB
 
-## 4. Primera interpretación funcional
+1. Localizar el registro de UniProtKB que mejor corresponda a la secuencia. Indica su accesión, organismo, nombre recomendado y estado de revisión.
+2. Recoger la función, actividad molecular, localización y alguna característica relevante que conste en el registro. Para cada afirmación principal identifica, cuando figure, si procede de literatura/experimentos, inferencia o anotación automática.
+3. Comparar el registro principal con otro resultado relacionado o no revisado, si está disponible. Describe una diferencia en la precisión de la anotación o en la evidencia disponible; si no encuentras uno apropiado, justifícalo.
 
-Redacta un texto de **150–200 palabras** que responda:
+### Actividad 5 · Informe de anotación funcional
 
-1. ¿Qué función puede atribuirse a la proteína?
-2. ¿Qué evidencias apoyan esa interpretación?
-3. ¿Qué información procede de anotación automática?
-4. ¿Qué limitaciones presenta la conclusión?
+1. Redactar una **anotación final de 5–8 líneas** que incluya: nombre propuesto, función, familia o rasgo de secuencia que la sustenta, localización si está respaldada, fuentes consultadas y grado de certeza.
+2. Indicar **dos limitaciones concretas** del procedimiento y una comprobación adicional que permitiría aumentar la confianza en la anotación.
+3. Responder brevemente: **¿por qué no es correcto afirmar que la función está demostrada experimentalmente solo porque BLASTp devuelve una coincidencia con E-value muy bajo?**
 
-## 5. Entregable parcial
+## 5. Entrega 
 
-Al finalizar la sesión se entregará:
+Deben entregar **un archivo PDF** con el informe (2–3 páginas), una tabla de coincidencias BLASTp y las referencias o URL de las entradas utilizadas. Las capturas de pantalla son opcionales.
 
-- identificación del caso;
-- tabla GO;
-- dominios y familia;
-- resumen de UniProt;
-- primera interpretación funcional.
+## 6. Recursos
 
-Este material se completará en la siguiente práctica de aula.
+- [Tema 7. Anotación computacional de genes y proteínas](https://mltechdrawer.github.io/BIO-BIOTEC/bloque3_analisis_funcional/teoria/tema07_anotacion_computacional/)
+- [NCBI BLASTp](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE=Proteins)
+- [InterPro](https://www.ebi.ac.uk/interpro/)
+- [UniProtKB](https://www.uniprot.org/uniprotkb)

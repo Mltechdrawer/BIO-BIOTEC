@@ -16,7 +16,30 @@ Al terminar la actividad podrás:
 
 ## 2. Material necesario
 
-- Los **mismos archivos FASTA de COX1 utilizados en el último ejemplo de clase**. Descárgalos desde el material de la asignatura. **Pendiente de incorporar aquí el enlace directo a esos archivos**.
+- Los **mismos archivos FASTA de COX1 utilizados en el último ejemplo de clase**. 
+
+Elegimos el gen mitocondrial ortólogo **COX1** (citocromo c oxidasa, subunidad I) en cinco primates. Se recuperó la región **secuencia codificante** (`CDS`, del inglés *Coding Sequence*) anotada de cada registro GenBank, no un intervalo arbitrario del genoma.
+
+| Especie | Accesión NCBI | Coordenadas CDS (1-based, inclusivas) | Longitud |
+|---|---|---|---:|
+| Humano (*Homo sapiens*) | [NC_012920.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_012920.1) | 5904–7445 | 1542 nt |
+| Chimpancé (*Pan troglodytes*) | [NC_001643.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_001643.1) | 5321–6862 | 1542 nt |
+| Gorila (*Gorilla gorilla*) | [NC_001645.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_001645.1) | 5325–6875 | 1551 nt |
+| Orangután (*Pongo pygmaeus*) | [NC_001646.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_001646.1) | 5332–6882 | 1551 nt |
+| Gibón (*Hylobates lar*) | [NC_002082.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_002082.1) | 5322–6863 | 1542 nt |
+
+**Reproducibilidad: Visualización en navegador** los registros originales se conservan en
+`genbank/`, las CDS extraídas en
+<a href="../filogenetica/secuencias-cox1.txt" target="_blank" rel="noopener noreferrer">secuencias-cox1.fasta</a>
+y los metadatos en
+<a href="../filogenetica/validacion-cox1.txt" target="_blank" rel="noopener noreferrer">validacion-cox1.csv</a>.
+
+**Reproducibilidad: Descargas en equipo** los registros originales se conservan en
+`genbank/`, las CDS extraídas en
+<a href="../filogenetica/secuencias-cox1.fasta" target="_blank" rel="noopener noreferrer">secuencias-cox1.fasta</a>
+y los metadatos en
+<a href="../filogenetica/validacion-cox1.csv" target="_blank" rel="noopener noreferrer">validacion-cox1.csv</a>.
+
 - Navegador web y acceso a [NGPhylogeny.fr](https://ngphylogeny.fr/).
 - El árbol UPGMA del ejemplo anterior, para compararlo con el resultado de esta práctica.
 
