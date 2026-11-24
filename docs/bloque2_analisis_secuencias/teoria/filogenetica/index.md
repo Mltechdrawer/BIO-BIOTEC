@@ -169,7 +169,7 @@ UPGMA supone una **tasa evolutiva aproximadamente constante** (reloj molecular e
 
 ## 7. Reproducibilidad y materiales
 
-Los archivos GenBank los pueden descargar desde los enlaces que pueden encontrar en la sección 1 de esta página. Para reproducir los resultados se requiere Python 3 con `biopython`, `matplotlib`, `numpy` y `pillow`. Ejecutar desde la carpeta del proyecto [`python procesar_datos.py`] (procesar_datos.py) y luego [`python generar_animacion.py`] (generar_animacion.py). No es necesario ejecutar nada para **visualizar** el Markdown, la figura y el GIF publicados en GitHub Pages.
+Los archivos GenBank los pueden descargar desde los enlaces que pueden encontrar en la sección 1 de esta página. Para reproducir los resultados se requiere Python 3 con `biopython`, `matplotlib`, `numpy` y `pillow`. Ejecutar desde la carpeta del proyecto [`python procesar_datos.py`](procesar_datos.py) y luego [`python generar_animacion.py`](generar_animacion.py). No es necesario ejecutar nada para **visualizar** el Markdown, la figura y el GIF publicados en GitHub Pages.
 
 **Trazabilidad:** [`validacion-cox1.csv`](validacion-cox1.csv) · [`secuencias-cox1.fasta`](secuencias-cox1.fasta) · [`alineamiento-cox1.fasta`](alineamiento-cox1.fasta) · [`diferencias.csv`](diferencias.csv) · [`distancias.csv`](distancias.csv) · [`iteraciones-upgma.csv`](iteraciones-upgma.csv) · [`resultados.json`](resultados.json) · [`arbol-upgma.nwk`](arbol-upgma.nwk).
 
